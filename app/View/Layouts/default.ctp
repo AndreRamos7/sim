@@ -35,6 +35,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     echo $this->fetch('meta');
                     echo $this->fetch('css');
                     echo $this->fetch('script');
+                    
             ?>
 
 
@@ -53,7 +54,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </script>
     </head>
     <body>
-
+       
        <header> </header>
         <nav> 
             <ul class="menuv">
@@ -72,19 +73,19 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </div>
         <footer>
 
-              <div id="logosim" class="ladoalado"> 
+              <div id="logosim" > 
                 <p class="marginleft"><img src="/sim/app/webroot/img/ico/icoSim.png"> </p>
-                <p class="marginleft legenda"> Desenvolvido por | <a href="mailto:biasilvabsi11@gmail.com" text-decoration="none"> Bianca Silva </a> |</p> 
+                <p class="marginleft legenda"> Desenvolvido por | <a href="mailto:biasilvabsi11@gmail.com" text-decoration="none"> Bianca Silva </a> | <a href="mailto:andre-rammos@hotmail.com" text-decoration="none"> André Ramos </a></p> 
               </div>
 
-              <div id="contatos" class="ladoalado">
+              <div id="contatos" >
                 <p class="textocentro"> Entre em contato conosco! </p>
                 <p class="textocentro"> Email: contato@sistemasim.com.br </p>
                 <p class="textocentro"> Telefone (Castanhal): (91) 3721-6210 </p>
                 <p class="textocentro"> Endereço (Castanhal): </p>    
               </div>
 
-              <div id="redesocial" class="ladoalado">
+              <div id="redesocial">
                 <p> Redes Sociais </p> 
                 <a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img class="imgicon" src="/sim/app/webroot/img/ico/icnface.png" alt='Facebook'></a>
                 <a href="https://twitter.com/agorasim_" ><img class="imgicon" src="/sim/app/webroot/img/ico/icntwit.png" alt='twitter'></a>
