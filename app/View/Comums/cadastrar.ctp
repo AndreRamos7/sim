@@ -117,7 +117,7 @@
         
        
     <fieldset>
-        <input type="button" value="Voltar" id="btnvoltar" onclick="history.back();"> 
+        <input type="button" value="Voltar" id="btnvoltar"  onclick="history.back();"> 
         <input type="submit" value="Salvar cadastro" id="btncadastrar">        
     </fieldset>
 

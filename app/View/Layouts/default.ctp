@@ -30,7 +30,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
                     echo $this->Html->css('style');
                     echo $this->Html->script('jquery-1.10.2.min');
-
+                    
 
                     echo $this->fetch('meta');
                     echo $this->fetch('css');
@@ -51,6 +51,57 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                             return false;
                     });
             });
+            
+            $(function (){
+    // ## Abrindo ModalEstudantes
+    $('#botaoAbrirModal1').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockEstudantes ').addClass('md-showEstudantes');
+    });
+      
+    // ## Fechando Modal Estudantes
+    $('#md-closeEstudantes, #md-overlayEstudantes').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockEstudantes').removeClass('md-showEstudantes');
+    });
+    
+    // ## Abrindo ModalComuns
+    $('#botaoAbrirModal2').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockComuns ').addClass('md-showComuns');
+    });
+      
+    // ## Fechando Modal Comuns
+    $('#md-closeComuns, #md-overlayComuns').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockComuns').removeClass('md-showComuns');
+    });
+    
+    // ## Abrindo ModalEmpresas
+    $('#botaoAbrirModal3').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockEmpresas ').addClass('md-showEmpresas');
+    });
+      
+    // ## Fechando ModalEmpresas
+    $('#md-closeEmpresas, #md-overlayEmpresas').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockEmpresas').removeClass('md-showEmpresas');
+    });
+    
+    // ## Abrindo ModalGratuitos
+    $('#botaoAbrirModal4').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockGratuitos ').addClass('md-showGratuitos');
+    });
+      
+    // ## Fechando ModalEmpresas
+    $('#md-closeGratuitos, #md-overlayGratuitos').on('click', function ( event ){
+        event.preventDefault();
+        $('#md-blockGratuitos').removeClass('md-showGratuitos');
+    });
+});
+
         </script>
     </head>
     <body>

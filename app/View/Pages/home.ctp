@@ -1,10 +1,6 @@
-<section id="home">
-            <article>
-                <div id="desktop">
+    <div id="desktop">
                 
-                <div class="container-fluid col-lg-offset-4">
-                     <section class="col-lg-10">
-                
+                    
                         <ul id="menu">                                 
                             <li class="header">  <img src="img/BandeiraPara.png" class="imgminiatura"> Escolha a sua cidade: </li>                    
                             
@@ -27,7 +23,6 @@
                             </li>
 	      
                         </ul>
-
-                    </section></div>
-                    </div> 
-</section>
+        </div>
+                  
+                                  
