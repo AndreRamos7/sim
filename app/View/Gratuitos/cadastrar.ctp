@@ -1,114 +1,125 @@
-<!DOCTYPE html>
+<?php
+    $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
+?>
+<div class="box">
+    <form action="/sim/Gratuitos/cadastrar/<?php echo $cidade;?>" id="GratuitoCadastrarForm" method="post" accept-charset="utf-8">
+        <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
+        <h1 class="boxh1"> Cadastro de Gratuidades /  <?php echo $cidadeSPC;?> </h1>
+            <?php 
+                $msg = $this->Session->flash();
+                 if(isset($msg) and $msg != ""){
+                     echo "<script>alert('$msg')</script>";
+                 }
+             ?>
+            <fieldset>    
+                <legend>Dados Pessoais</legend>
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            <label>* Nome completo: </label><br>
+                            <input name="data[Gratuito][nome]" id="GratuitoNome" maxlength="200" type="text" size="80" required  class="campos campogrande">
+                        </td> 
+                    </tr>
 
-<!-- CADASTRO DE USUÁRIOS DO TIPO GRATUITO -->
+                    <tr >
+                        <td >
+                            <label>*RG: </label><br/>
+                            <input name="data[Gratuito][rg]" id="GratuitoRg" maxlength="20" type="text" required class="campos campopequeno rg">
+                        </td>            
+                        <td >
+                            <label>* Orgão Emissor: </label><br>
+                            <input name="data[Gratuito][emissor]" id="GratuitoEmissor" maxlength="10" type="text" required  class="campos campopequeno">
+                        </td>
+                    </tr>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-    
-    <form action="/sim/gratuitos/cadastrar" id="GratuitoCadastrarForm" method="post" accept-charset="utf-8">
-    
-        <h1 class="boxh1"> Cadastro de Gratuitos / Cidade </h1>
-        
-        <div class="box">
-        <label>
-            <span> Nome completo: * </span>
-        <input name="data[Gratuito][nome]" id="gratuitoNome" maxlength="200" type="text" size="80" required>
-        </label> 
-        
-        <label>
-        <span> RG: * </span> 
-        <input name="data[Gratuito][rg]" id="gratuitoRg" maxlength="20" type="text" required>
-        </label>
-                
-        <label>
-        <span> Órgão Emissor: * </span> 
-        <input name="data[Gratuito][emissor]" id="gratuitoEmissor" maxlength="10" type="text" required >
-        </label> 
+                    <tr>
+                        <td>
+                            <label>* CPF:</label><br>
+                            <input name="data[Gratuito][cpf]" maxlength="20" type="text" id="GratuitoCpf" required class="campos campopequeno cpf">
+                        </td>
+                        <td>
+                            <label>* Data de Nascimento: </label><br>   
+                            <input name="data[Gratuito][dataNasc]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" readonly="">
+                        </td>
+                    </tr>
+                    <tr>                        
+                        <td >
+                            <label>* Nº Aposentadoria: </label><br>   
+                            <input name="data[Gratuito][nroAposentadoria]" id="EstudanteNroAposentadoria" maxlength="10" type="text" required  class="campos campopequeno">
+                        </td>
+                        <td >
+                            <label>* Sexo: </label><br>                    
+                            <label><input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="F"> F </label>
+                            <label><input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="M"> M </label>
+                        </td>
+                     </tr>            
+                </table>
+            </fieldset>
 
-        <label>
-        <span> CPF: * </span> 
-        <input name="data[Gratuito][cpf]" maxlength="20" type="text" id="gratuitoCpf" required>
-        </label>
-        
-        <label>
-        <span> Sexo:  </span> 
-        <input name="data[Gratuito][sexo]" id="gratuitoSexo" maxlength="1" type="radio" value="F"> F
-        <input name="data[Gratuito][sexo]" id="gratuitoSexo" maxlength="1" type="radio" value="M"> M
-        </label>
-            
-        <label>
-        <span> Data de Nascimento: *</span> 
-        <input name="data[Gratuito][dataNasc]" id="gratuitoDataNasc" maxlength="20" type="text" required>
-        </label>
-                
-        <label>
-        <span> Número de aposent. : *</span> 
-        <input name="data[Gratuito][nroAposentadoria]" id="gratuitoNroAposentadoria" maxlength="20" type="text" required>
-        </label>
-        
-        <label>
-        <span> Data de Validade:*</span> 
-        <input name="data[Gratuito][dataValidade]" id="gratuitoDataValidade" maxlength="20" type="text" required>
-        </label>
-        
-        <label>
-        <span> Limite mensal:*</span> 
-        <input name="data[Gratuito][limiteMensal]" id="gratuitoLimiteMensal" maxlength="20" type="text" required>
-        </label>
-              
-        <!-- ESTADO SÓ O UF, CAMPO SELECT -->
-        <label>
-        <span> Estado: </span> 
-        <select name="data[Gratuito][estado]" id="gratuitoEstado" maxlength="1" >
-        <option value="PA"> PA </option>
-        </select>
-        </label>
-        
-        <!-- CAMPO SELECT SÓ COM A OPÇÃO "CASTANHAL" -->
-        <label>
-        <span> Cidade: </span> 
-        <select name="data[Gratuito][cidade]" id="gratuitoCidade" maxlength="20">
-        <option value="Castanhal"> Castanhal </option>
-        </select>
-        </label>
-       
-        <label>
-        <span> Endereço: *</span> 
-        <input name="data[Gratuito][endereco]" id="gratuitoEndereco" maxlength="100" type="text" size="80" required>
-        <p class="legenda"> *Ex: Rua Maria Caetana da Mota, 43. </p>
-        </label>
 
-        <label>
-        <span> Bairro: *</span>
-        <input name="data[Gratuito][bairro]" id="gratuitoBairro" maxlength="50" type="text" size="50" required>
-        </label>
+            <fieldset>    
+                <legend>Endereço</legend>
+                <table>
+                    <tr >
+                        <td colspan="2">
+                            <label>* Endereço: </label>
+                            <input name="data[Gratuito][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="GratuitoEndereco" maxlength="100" type="text" size="80" required class="campos campogrande">
+                        </td>
+                    </tr>
 
-        <label>
-        <span> CEP: *</span>
-        <input name="data[Gratuito][cep]" id="gratuitoCep" maxlength="20" type="text" required>
-        </label>
+                    <tr >
+                        <td >
+                            <label>* Bairro: </label><br>
+                            <input name="data[Gratuito][bairro]" id="GratuitoBairo" maxlength="50" type="text" size="30" required class="campos campopequeno">        
+                        </td>
+                        <td >
+                            <label>* CEP: </label><br>
+                            <input name="data[Gratuito][cep]" id="GratuitoCep" maxlength="20" type="text" required class="campos  campopequeno cep">
+                        </td>
+                    </tr>
 
-        <label>
-        <span> Telefone: *</span> 
-        <input name="data[Gratuito][telefone]" id="gratuitoTelefone" maxlength="15" type="text" required>
-        </label>
 
-        <label>
-        <span> Celular: </span> 
-        <input name="data[Gratuito][celular]" id="gratuitoCelular" maxlength="15" type="text">
-        </label>
-        
-        <label>
-        <p class="legenda" align="right"> * Campos obrigatórios! </p>
-        <input type="submit" value="Salvar cadastro" class="button">
-        <input type="button" value="Voltar" class="button" onclick=""> 
-        </label>
+                    <tr class="groupfield">
+                        <td >
+                            <label>* Cidade: </label><br>
+                            <select name="data[Gratuito][cidade]" id="GratuitoCidade" maxlength="20" class="campos campopequeno" >
+                                <option value="<?php echo $cidadeSPC;?>"> <?php echo $cidadeSPC;?> </option>
+                            </select>
+                        </td>
+                        <td >
+                            <label>* Estado: </label><br>
+                            <select name="data[Gratuito][estado]" id="GratuitoEstado" maxlength="1"  class="campos campopequeno" >
+                                <option value="PA"> PA </option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
 
-        </div>
-        </form>
-  </body>
-</html>
+            <fieldset>    
+                <legend>Contatos</legend>
+                <table>
+                    <tr>
+                        <td>
+                            <label>* Telefone: </label>
+                            <input name="data[Gratuito][telefone]" id="GratuitoTelefone" maxlength="15" type="text" required class="campos campopequeno telefone">        
+                        </td>            
+                        <td>
+                            <label>Celular: </label>
+                            <input name="data[Gratuito][celular]" id="GratuitoCelular" maxlength="15" type="text" class="campos campopequeno celular">        
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+
+
+        <fieldset>
+            <h5>* Campos obrigatórios</h5>
+            <input type="button" value="Voltar" id="btnvoltar" onclick="history.back();"> 
+            <input type="submit" value="Salvar cadastro" id="btncadastrar">        
+        </fieldset>
+
+
+    </form>
+</div>

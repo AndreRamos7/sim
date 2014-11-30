@@ -1,128 +1,136 @@
-<!DOCTYPE html>
+<?php
+    $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
+?>
+<div class="box">
+<form action="/sim/Empresas/cadastrar/<?php echo $cidade;?>" id="EmpresaCadastrarForm" method="post" accept-charset="utf-8">
+    <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
+    <h1 class="boxh1"> Cadastro de Empresas /  <?php echo $cidadeSPC;?> </h1>
+        <?php 
+           $msg = $this->Session->flash();
+            if(isset($msg) and $msg != ""){
+                echo "<script>alert('$msg')</script>";
+            }
+        ?>
+        <fieldset>    
+            <legend>Dados da Empresa</legend>
+            <table>
+                <tr >
+                    <td colspan="2">
+                        <label>* Nome fantasia: </label>
+                        <input name="data[Empresa][nomeFantasia]" id="EmpresaNomeFantasia" maxlength="200" type="text" size="80" required  class="campos campogrande">
+                    </td> 
+                </tr>
+                <tr>
+                    <td  colspan="2">
+                        <label> Razão Social: </label>
+                        <input name="data[Empresa][razaoSocial]" id="EmpresaRazaoSocial" maxlength="100" type="text" size="" class="campos campogrande">
+                    </td>
+                </tr>
 
-<!-- CADASTRO DE EMPRESAS -->
+                <tr >
+                    <td >
+                        <label>* Quant. VT's: </label><br>
+                        <input name="data[Empresa][qtdVts]" id="EmpresaQtdVts" maxlength="20" type="text" required class="campos campopequeno">
+                    </td>            
+                    <td >
+                        <label>* Quantidade de Funcionários: </label><br>
+                        <input name="data[Empresa][qtdFuncionarios]" id="EmpresaQtdFuncionarios" maxlength="10" type="text" required  class="campos campopequeno">
+                    </td>
+                </tr>
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
+                <tr >
+                    <td >
+                        <label>* CNPJ:</label><br>
+                        <input name="data[Empresa][cnpj]" maxlength="20" type="text" id="EmpresaCnpj" required class="campos campopequeno cnpj">
+                    </td>
+                    <td >
+                        <label for="EmpresaInscEstadual"> Inscrição Estadual: </label><br>
+                        <input name="data[Empresa][inscEstadual]" id="EmpresaInscEstadual" maxlength="14" type="text" class="campos campopequeno"> 
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        
+        <fieldset>    
+            <legend>Endereço</legend>
+            <table>
+                <tr>
+                     <td  colspan="2">
+                        <label>* Endereço: </label><br>
+                        <input name="data[Empresa][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="EmpresaEndereco" maxlength="100" type="text" size="80" required class="campos campogrande">
+                    </td>
+                </tr>
+
+                <tr >
+                    <td >
+                        <label>* Bairro: </label><br>
+                        <input name="data[Empresa][bairro]" id="EmpresaBairro" maxlength="50" type="text" size="30" required class="campos campopequeno">        
+                    </td>
+                    <td>
+                        <label>* CEP: </label><br>
+                        <input name="data[Empresa][cep]" id="EmpresaCep" maxlength="20" type="text" required class="campos campopequeno cep">
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td >
+                        <label>* Cidade: </label><br>
+                        <select name="data[Empresa][cidade]" id="EmpresaCidade" maxlength="20" class="campos  campopequeno" >                
+                            <option value="<?php echo $cidadeSPC;?>"><?php echo $cidadeSPC;?></option>
+                        </select>
+                    </td>
+                    <td >
+                        <label>* Estado: </label><br>
+                        <select name="data[Empresa][estado]" id="EmpresaEstado" maxlength="1"  class="campos  campopequeno" >
+                            <option value="PA"> PA </option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <fieldset>    
+            <legend>Contatos</legend>
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <label for="ComumEmail">* Email: </label>
+                        <input name="data[Empresa][email]" id="EmpresaEmail" maxlength="100" type="email" size="80" required class="campos campogrande">
+                    </td>
+                </tr>    
+                <tr>
+                    <td colspan="2">
+                        <label> Site: </label>
+                        <input name="data[Empresa][site]" id="EmpresaSite" maxlength="100" type="text" size="80" class="campos campogrande">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>* Telefone: </label><br>
+                        <input name="data[Empresa][telefone]" id="EmpresaTelefone" maxlength="15" type="text" required class="campos campopequeno telefone">        
+                    </td>            
+                    <td>
+                        <label> Celular: </label><br>
+                        <input name="data[Empresa][celular]" id="EmpresaCelular" maxlength="15" type="text" class="campos campopequeno celular">        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label> Fax: </label><br>
+                        <input name="data[Empresa][fax]" id="EmpresaFax" maxlength="15" type="text" class="campos campopequeno fax">        
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <h5>* Campos obrigatórios</h5>
+            <input type="button" value="Voltar" id="btnvoltar" onclick="history.back();"> 
+            <input type="submit" value="Salvar cadastro" id="btncadastrar">        
+        </fieldset>
+
     
-    <form action="/sim/empresas/cadastrar" id="EmpresasCadastrarForm" method="post" accept-charset="utf-8">
-    
-        <h1 class="boxh1"> Cadastro de Empresa / Cidade </h1>
-        
-        <div class="box">
-        <label>
-            <span> Nome fantasia: * </span>
-        <input name="data[Empresa][nomeFantasia]" id="empresaNomeFantasia" maxlength="200" type="text" size="80" required>
-        </label> 
-        
-        <label>
-        <span> Razão Social: * </span> 
-        <input name="data[Empresa][razaoSocial]" id="empresaRazaoSocial" maxlength="200" type="text" size="80" required>
-        </label>
-                
-        <label>
-        <span> CNPJ: * </span> 
-        <input name="data[Empresa][cnpj]" id="empresaCnpj" maxlength="20" type="text" required >
-        </label> 
-
-        <label>
-        <span> Inscrição Estadual: * </span> 
-        <input name="data[Empresa][inscEstadual]" maxlength="30" type="text" id="empresaInscEstadual" required>
-        </label>
-        
-            <!-- radio 
-        <label>
-        <span> Sexo:  </span> 
-        <input name="data[Comum][sexo]" id="comumSexo" maxlength="1" type="radio" value="F"> F
-        <input name="data[Comum][sexo]" id="comumSexo" maxlength="1" type="radio" value="M"> M
-        </label>
-                
-            -->
-            
-        <label>
-        <span> Max. de cartões:*</span> 
-        <input name="data[Empresa][maxCartoes]" id="empresaMaxCartoes" maxlength="10" type="text" required>
-        </label>
-        
-        <label>
-        <span> Qtd. de VT'S:*</span> 
-        <input name="data[Empresa][qtdVts]" id="empresaQtdVts" maxlength="10" type="text" required>
-        </label>
-            
-        <label>
-        <span> Qtd. de Func.:*</span> 
-        <input name="data[Empresa][qtdFuncionarios]" id="empresaQtdFuncionarios" maxlength="10" type="text" required>
-        </label>
-              
-        <!-- ESTADO SÓ O UF, CAMPO SELECT -->
-        <label>
-        <span> Estado: </span> 
-        <select name="data[Empresa][estado]" id="empresaEstado" maxlength="1" >
-        <option value="PA"> PA </option>
-        </select>
-        </label>
-        
-        <!-- CAMPO SELECT SÓ COM A OPÇÃO "CASTANHAL" -->
-        <label>
-        <span> Cidade: </span> 
-        <select name="data[Empresa][cidade]" id="empresaCidade" maxlength="20">
-        <option value="Castanhal"> Castanhal </option>
-        </select>
-        </label>
-       
-        <label>
-        <span> Endereço: *</span> 
-        <input name="data[Empresa][endereco]" id="empresaEndereco" maxlength="100" type="text" size="80" required>
-        <p class="legenda"> *Ex: Rua Maria Caetana da Mota, 43. </p>
-        </label>
-
-        <label>
-        <span> Bairro: *</span>
-        <input name="data[Empresa][bairro]" id="empresaBairro" maxlength="50" type="text" size="50" required>
-        </label>
-
-        <label>
-        <span> CEP: *</span>
-        <input name="data[Empresa][cep]" id="empresaCep" maxlength="20" type="text" required>
-        </label>
-
-        <label>
-        <span> Telefone: *</span> 
-        <input name="data[Empresa][telefone]" id="empresaTelefone" maxlength="15" type="text" required>
-        </label>
-
-        <label>
-        <span> Celular: </span> 
-        <input name="data[Empresa][celular]" id="empresaCelular" maxlength="15" type="text">
-        </label>
-        
-        <label>
-        <span> Fax: </span> 
-        <input name="data[Empresa][fax]" id="empresaFax" maxlength="15" type="text">
-        </label>
-
-        <label>
-        <span> Site: </span>
-        <input name="data[Empresa][site]" id="empresaSite" maxlength="100" type="text" size="80">
-        </label>
-            
-        
-        <label>
-        <span> Email:* </span>
-        <input name="data[Empresa][email]" id="empresaEmail" maxlength="100" type="text" size="80" required>
-        </label>
-        
-        <label>
-        <p class="legenda" align="right"> * Campos obrigatórios! </p>
-        <input type="submit" value="Salvar cadastro" class="button">
-        <input type="button" value="Voltar" class="button" onclick=""> 
-        </label>
-
-        </div>
-        </form>
-  </body>
-</html>
+</form>
+</div>

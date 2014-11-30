@@ -22,7 +22,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "CASTANHAL"
                 echo "<script>alert('$msg')</script>";
             }
         ?>
-        <p> <a href="http://localhost/sim/comums/cadastrar/Castanhal"> Usuário Comum </a> </p>
+        <p> <a href="http://localhost/sim/comums/cadastrar/SantaIsabel"> Usuário Comum </a> </p>
         <p> <a href="http://localhost/sim/Empresas/cadastrar/Castanhal"> Empresa </a> </p>
         <p> <a href="http://localhost/sim/Estudantes/cadastrar/Castanhal"> Estudante </a> </p>
         <p> <a href="http://localhost/sim/gratuitos/cadastrar/Castanhal"> Gratuidade </a> </p>

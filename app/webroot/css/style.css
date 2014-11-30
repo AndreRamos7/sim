@@ -1,12 +1,12 @@
 body {
-	margin-right:0;		
-        background:#C60;
-   	font-family:Calibri, Arial, Verdana;
-	background-image:url(/sim/app/webroot/img/bg.png);
-	background-repeat:no-repeat;
-	background-attachment:fixed;
-	/*background-size: 100%;*/
-	}
+    margin-right:0;		
+    background:#C60;
+    font-family:Calibri, Arial, Verdana;
+    background-image:url(/sim/app/webroot/img/bg.png);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    /*background-size: 100%;*/
+}
         
 .menuesq {
 	width: 400px;
@@ -48,20 +48,20 @@ body {
 }
 
 legend {
-	padding: 10px;
-	
-	}
+padding: 10px;
 
-        form {
-           margin: 10px; 
-            
-            
-        }
-        input {
-            
-          margin: 10px;  
-            
-        }
+}
+
+form {
+   margin: 10px; 
+
+
+}
+input {
+
+  margin: 10px;  
+
+}
 .field  {
 	margin: 0 auto;
 	width: 70%;
@@ -150,14 +150,14 @@ margin-bottom: 10px;
 	}
 	
 .textocentro{
-	text-align:center;
-	}
+    text-align:center;
+}
 
-        input {
-            border-radius: 3px;
-            
-            
-        }        
+input {
+    border-radius: 3px;
+
+
+}        
         
 .marginleft {
 	margin-left: 50px;
@@ -166,15 +166,14 @@ margin-bottom: 10px;
 
 .alinhardireita {
 	float: right;
-	
-	}
+}
 
 .letrastitulos {
-	font-size:24px;
-	text-shadow: 0.1em 0.1em 0.15em #333;
-	text-align: center;
-	text-color: #003;
-	}
+    font-size:24px;
+    text-shadow: 0.1em 0.1em 0.15em #333;
+    text-align: center;
+    text-color: #003;
+}
 
 p, h1,h2,h3,h4,h5,h6 {
 	margin:0;
@@ -409,21 +408,25 @@ form,input,select,textarea{
 
 div.box {
     margin: auto; 
-    width:830px; 
-   height: 1050px;
+    width:820px; 
+   height: 1700px;
     
     
 } 
 fieldset{
-    width: 700px; 
+    width: 630px; 
     margin: auto;
     
     border: 4px solid #fff;
-    text-align:left;
+   
     border-radius: 10px;
     background: -webkit-gradient(linear, left top, left   bottom, from(#dbdbdb), to(#fff));
     background: -moz-linear-gradient(center top , #ffffff 0%, #ededed 0%, #dbdbdb 0%, #ffffff 100%) repeat scroll 0 0 rgba(0, 0, 0, 0); /* FF3.6+ */
     
+}
+legend{
+    font-size: large;
+    font-weight: bold;
 }
 
 .boxh1 { 
@@ -464,24 +467,16 @@ input#btnvoltar{
 }
 .campos{
     border: 1px solid #dbdbdb;
-    height: 25px;
+    height: 27px;
     border-radius: 5px;
 
 }
 .campogrande{
-    width: 615px;
+    width: 588px;
     
 }
-section.groupfield{
-    width: 600px;
-    margin-top: 17px;
-    height: auto;
+.campopequeno{
+    width: 195px;
+    
 }
 
-.esquerda{
-    float: left;
-}
-.direita{
-    float: right;
-    
-}
