@@ -83,7 +83,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "CASTANHAL"
         <p> - Declaração de frequência; (Comprovação de que o aluno frequenta as aulas normalmente) </p>
         <p> - Uma foto 3x4; (Não é necessário cópia)</p>
     </div>
-       <a href="http://localhost/sim/estudantes/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+       <a href="/sim/estudantes/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeEstudantes" title="Fechar">Fechar</a>
 
 </div>
@@ -103,7 +103,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "CASTANHAL"
         <p> - RG; </p>
         <p> - Comprovante de residência; </p>
     </div>
-    <a href="http://localhost/sim/comums/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+    <a href="/sim/comums/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeComuns" title="Fechar">Fechar</a>
 
 </div>
@@ -121,7 +121,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "CASTANHAL"
         <p>Apresentar os originais e cópias de:</p>
         
     </div>
-       <a href="http://localhost/sim/empresas/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+       <a href="/sim/empresas/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeEmpresas" title="Fechar">Fechar</a>
 
 </div>
@@ -142,7 +142,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "CASTANHAL"
         <p> - RG; </p>
         <p> - Comprovante de residência; </p>
    </div>
-   <a href="http://localhost/sim/gratuitos/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+   <a href="/sim/gratuitos/cadastrar/Castanhal" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeGratuitos" title="Fechar">Fechar</a>
 
 </div>

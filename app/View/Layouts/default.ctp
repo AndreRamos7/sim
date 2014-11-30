@@ -38,20 +38,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     echo $this->fetch('script');
                     echo filter_input(INPUT_SERVER, "DOCUMENT_ROOT");
             ?>
-        <script>
-        $(function() {
-          $( "#datepicker" ).datepicker({
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: "dd/mm/yy",
-             dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
-            dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
-            dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
-            monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
-            monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez']
-          });
-        });
-        </script>
+        
         <script type="text/javascript">
             
         </script>
@@ -68,7 +55,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <script src="/sim/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
         
         <script language="JavaScript" type="text/javascript">
-            $(document).ready(function() {
+           $(document).ready(function() {
                     // Evento de clique do elemento: ul#menu li.parent > a
                     $('ul#menu li.parent > a').click(function() {
                             // Expande ou retrai o elemento ul.sub-menu dentro do elemento pai (ul#menu li.parent)
@@ -96,57 +83,58 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     $(".telefone").mask("(99)9999 9999");
                     $(".fax").mask("(99)9999 9999");
                     
-            });
+                    
+                 
+                    // ## Abrindo ModalEstudantes
+                    $('#botaoAbrirModal1').click( function ( event ){
+                        event.preventDefault();
+                        $('#md-blockEstudantes ').addClass('md-showEstudantes');
+                    });
+
+                    // ## Fechando Modal Estudantes
+                    $('#md-closeEstudantes, #md-overlayEstudantes').click( function ( event ){
+                        event.preventDefault();
+                        $('#md-blockEstudantes').removeClass('md-showEstudantes');
+                    });
+
+                    // ## Abrindo ModalComuns
+                    $('#botaoAbrirModal2').click( function ( event ){
+                        event.preventDefault();
+                        $('#md-blockComuns ').addClass('md-showComuns');
+                    });
+
+                    // ## Fechando Modal Comuns
+                    $('#md-closeComuns, #md-overlayComuns').click( function ( event ){
+                        event.preventDefault();
+                        $('#md-blockComuns').removeClass('md-showComuns');
+                    });
+
+                    // ## Abrindo ModalEmpresas
+                    $('#botaoAbrirModal3').click(function ( event ){
+                        event.preventDefault();
+                        $('#md-blockEmpresas ').addClass('md-showEmpresas');
+                    });
+
+                    // ## Fechando ModalEmpresas
+                    $('#md-closeEmpresas, #md-overlayEmpresas').click(function ( event ){
+                        event.preventDefault();
+                        $('#md-blockEmpresas').removeClass('md-showEmpresas');
+                    });
+
+                    // ## Abrindo ModalGratuitos
+                    $('#botaoAbrirModal4').click(function ( event ){
+                        event.preventDefault();
+                        $('#md-blockGratuitos ').addClass('md-showGratuitos');
+                    });
+
+                    // ## Fechando ModalEmpresas
+                    $('#md-closeGratuitos, #md-overlayGratuitos').click( function ( event ){
+                        event.preventDefault();
+                        $('#md-blockGratuitos').removeClass('md-showGratuitos');
+                    });
+                 });
+           
             
-            $(function (){
-    // ## Abrindo ModalEstudantes
-    $('#botaoAbrirModal1').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockEstudantes ').addClass('md-showEstudantes');
-    });
-      
-    // ## Fechando Modal Estudantes
-    $('#md-closeEstudantes, #md-overlayEstudantes').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockEstudantes').removeClass('md-showEstudantes');
-    });
-    
-    // ## Abrindo ModalComuns
-    $('#botaoAbrirModal2').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockComuns ').addClass('md-showComuns');
-    });
-      
-    // ## Fechando Modal Comuns
-    $('#md-closeComuns, #md-overlayComuns').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockComuns').removeClass('md-showComuns');
-    });
-    
-    // ## Abrindo ModalEmpresas
-    $('#botaoAbrirModal3').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockEmpresas ').addClass('md-showEmpresas');
-    });
-      
-    // ## Fechando ModalEmpresas
-    $('#md-closeEmpresas, #md-overlayEmpresas').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockEmpresas').removeClass('md-showEmpresas');
-    });
-    
-    // ## Abrindo ModalGratuitos
-    $('#botaoAbrirModal4').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockGratuitos ').addClass('md-showGratuitos');
-    });
-      
-    // ## Fechando ModalEmpresas
-    $('#md-closeGratuitos, #md-overlayGratuitos').on('click', function ( event ){
-        event.preventDefault();
-        $('#md-blockGratuitos').removeClass('md-showGratuitos');
-    });
-});
 
         </script>
     </head>
