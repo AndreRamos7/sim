@@ -25,7 +25,7 @@ class EmpresasController extends AppController {
         }else{
             $this->redirect("/Error");
         }
-        if($this->request->data){
+        if ($this->request->is('post')) {
             if ($this->Empresa->save($this->request->data)) {
                 $todos = $this->Empresa->query("SELECT `razaoSocial`, `nomeFantasia`, `cnpj`, "
                         . "`inscEstadual`, `maxCartoes`, `qtdVts`, `qtdFuncionarios`, `subTipo`, "

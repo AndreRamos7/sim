@@ -23,7 +23,7 @@ class EstudantesController extends AppController {
             $this->redirect("/Error");
         }
 
-        if($this->request->data){
+        if ($this->request->is('post')) {
             if ($this->Estudante->save($this->request->data)) {
                 $todos = $this->Estudante->query("SELECT `nome`, `telefone`, `rg`, `emissor`, `dataNascimento`, `sexo`, `nomeMae`, `nomePai`, `endereco`, `bairro`, `cidade`, `cep`, `naturalidade`, `estado`, `nomeEscola`, `cnpj`, `serie`, "
                         . "`grau`, `curso`, `periodo`, `matricula`, `dataIni`, `dataFim` "

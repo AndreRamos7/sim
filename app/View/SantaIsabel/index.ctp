@@ -6,14 +6,6 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Santa Isabel"
 -->
 
 <!-- MENU ESTUDANTES, COMUNS, EMPRESA, GRATUIDADE, COM DIV OCULTA DE DOCUMENTOS NECESSÁRIOS -->
-
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
         
         <h3 align="center"> Bem vindo à Santa Isabel! </h3>
         <!-- MENU -->
@@ -148,11 +140,3 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Santa Isabel"
 </div>
 
 <div id="md-overlayGratuitos"></div>
-        
-        
-        
-        
-        
-        
-    </body>
-</html>

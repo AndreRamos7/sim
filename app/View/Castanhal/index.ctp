@@ -8,12 +8,6 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "CASTANHAL"
 <!-- MENU ESTUDANTES, COMUNS, EMPRESA, GRATUIDADE, COM DIV OCULTA DE DOCUMENTOS NECESSÁRIOS -->
 
 
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
         
         <h3 align="center"> Bem vindo à Castanhal! </h3>
         <!-- MENU -->
@@ -148,11 +142,3 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "CASTANHAL"
 </div>
 
 <div id="md-overlayGratuitos"></div>
-        
-        
-        
-        
-        
-        
-    </body>
-</html>

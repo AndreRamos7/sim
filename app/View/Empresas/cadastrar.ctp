@@ -96,13 +96,13 @@
             <table>
                 <tr>
                     <td colspan="2">
-                        <label for="ComumEmail">* Email: </label>
+                        <label for="ComumEmail">* Email: </label><br>
                         <input name="data[Empresa][email]" id="EmpresaEmail" maxlength="100" type="email" size="80" required class="campos campogrande">
                     </td>
                 </tr>    
                 <tr>
                     <td colspan="2">
-                        <label> Site: </label>
+                        <label> Site: </label><br>
                         <input name="data[Empresa][site]" id="EmpresaSite" maxlength="100" type="text" size="80" class="campos campogrande">
                     </td>
                 </tr>

@@ -24,7 +24,7 @@ class GratuitosController extends AppController {
             die("erro");
         }
         
-        if($this->request->data){
+        if ($this->request->is('post')) {
             if ($this->Gratuito->save($this->request->data)) {
                 $todos = $this->Gratuito->query("SELECT `nome`, `cpf`, `rg`, `emissor`, `subTipoGratuitoID`, `nroAposentadoria`, `sexo`, `dataNasc`, `dataValidade`, `limiteMensal`,"
                         . " `telefone`, `cep`, `cidade`, `bairro`, `endereco`, `celular`, `estado` "

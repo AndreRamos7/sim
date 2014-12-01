@@ -49,8 +49,8 @@
                         </td>
                         <td >
                             <label>* Sexo: </label><br>                    
-                            <label><input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="F"> F </label>
-                            <label><input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="M"> M </label>
+                            <label>M <input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="M"> </label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<label>F <input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="F">  </label>
                         </td>
                      </tr>            
                 </table>
@@ -98,14 +98,14 @@
 
             <fieldset>    
                 <legend>Contatos</legend>
-                <table>
+                <table >
                     <tr>
                         <td>
-                            <label>* Telefone: </label>
+                            <label>* Telefone: </label><br>
                             <input name="data[Gratuito][telefone]" id="GratuitoTelefone" maxlength="15" type="text" required class="campos campopequeno telefone">        
                         </td>            
                         <td>
-                            <label>Celular: </label>
+                            <label>Celular: </label><br>
                             <input name="data[Gratuito][celular]" id="GratuitoCelular" maxlength="15" type="text" class="campos campopequeno celular">        
                         </td>
                     </tr>

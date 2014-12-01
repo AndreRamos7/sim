@@ -36,7 +36,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     echo $this->fetch('meta');
                     echo $this->fetch('css');
                     echo $this->fetch('script');
-                    echo filter_input(INPUT_SERVER, "DOCUMENT_ROOT");
+                   // echo filter_input(INPUT_SERVER, "DOCUMENT_ROOT");
             ?>
         
         <script type="text/javascript">
@@ -71,6 +71,33 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $( "select#selectNivel option:selected" ).each(function() {
                             str = $( this ).text();
                         });
+                        if(str === "Fundamental"){
+                            
+                            $('tr#iniFim input.desreq').attr("required",false);  
+                            $('tr#cursoEMatricula input.desreq').attr("required",false);
+                            $('tr#periodoEGrau input.desreq').attr("required",false);
+                            $('tr#iniFim').hide();
+                            $('tr#cursoEMatricula').hide(); 
+                            $('tr#periodoEGrau').hide(); 
+                            
+                        }else if(str === "Médio"){
+                            $('tr#iniFim input.desreq').attr("required",false);  
+                            $('tr#cursoEMatricula input.desreq').attr("required",false);
+                            $('tr#periodoEGrau input.desreq').attr("required",false);
+                            $('tr#iniFim').hide();
+                            $('tr#cursoEMatricula').hide(); 
+                            $('tr#periodoEGrau').hide(); 
+                            
+                        }else if(str === "Superior"){
+                            $('tr#iniFim input.desreq').attr("required",true);  
+                            $('tr#cursoEMatricula input.desreq').attr("required",true);
+                            $('tr#periodoEGrau input.desreq').attr("required",true);
+                            $('tr#iniFim').show();
+                            $('tr#cursoEMatricula').show(); 
+                            $('tr#periodoEGrau').show(); 
+                            
+                        }
+                        
                         //alert( str );
                     }).change();
                     
@@ -82,6 +109,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     $(".celular").mask("(99)9999 9999");
                     $(".telefone").mask("(99)9999 9999");
                     $(".fax").mask("(99)9999 9999");
+                    $(".ano").mask("9999");
                     
                     
                  

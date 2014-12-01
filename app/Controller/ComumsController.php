@@ -22,7 +22,7 @@ class ComumsController extends AppController {
         }else{
             $this->redirect("/Error");
         }
-        if($this->request->data){
+        if ($this->request->is('post')) {
             if ($this->Comum->save($this->request->data)) {
                 
                 $todosComuns = $this->Comum->query("SELECT "
@@ -35,11 +35,13 @@ class ComumsController extends AppController {
                 $xml->save("$path/sim/app/DATAXML/$cidadeSPC/comuns.xml");                
                 
                 $this->Session->setFlash('Seu cadastro foi realizado com sucesso!!', 'flash_custom');
-
-                $this->redirect("/$cidade");
+                header("location: /sim/$cidade");
+                exit();
+                //$this->redirect("/$cidade");
             }else{
+                //debug($this->Comum->validationErrors);
                 $this->Session->setFlash('Não foi possivel salvar seu cadastro!!', 'flash_custom');                
-                $this->redirect("/castanhal");
+                //$this->redirect("/castanhal");
             }
         }
     }

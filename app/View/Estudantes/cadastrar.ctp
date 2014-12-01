@@ -13,7 +13,7 @@
             ?>
             <fieldset>    
                 <legend>Dados Pessoais</legend>
-                <table>
+                <table >
                     <tr>
                         <td colspan="2">
                             <label>* Nome completo: </label><br>
@@ -26,6 +26,7 @@
                             <input name="data[Estudante][nomeMae]" id="estudanteNomeMae" maxlength="100" type="text" size="80" class="campos campogrande">
                         </td>
                     </tr>
+                    <tr>
                         <td colspan="2">
                             <label>* Nome do Pai: </label><br>
                             <input name="data[Estudante][nomePai]" id="estudanteNomeMae" maxlength="100" type="text" size="80" class="campos campogrande">
@@ -33,31 +34,34 @@
                     </tr>
 
                     <tr>
-                        <td class="esquerda">
+                        <td >
                             <label>*RG: </label><br>
                             <input name="data[Estudante][rg]" id="estudanteRg" maxlength="20" type="text" required class="campos campopequeno rg">
                         </td>            
-                        <td class="direita">
+                        <td >
                             <label>* Orgão Emissor: </label><br>
                             <input name="data[Estudante][emissor]" id="estudanteEmissor" maxlength="10" type="text" required  class="campos campopequeno">
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="esquerda">
+                        <td >
                             <label>* CPF:</label><br>
                             <input name="data[Estudante][cpf]" maxlength="20" type="text" id="estudanteCpf" required class="campos campopequeno cpf">
                         </td>
-                        <td class="direita">
+                        <td >
                             <label>* Sexo: </label><br>                    
-                            <label><input name="data[Estudante][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="F"> F </label>
-                            <label><input name="data[Estudante][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="M"> M </label>
+                            <label>M <input name="data[Estudante][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="M"> </label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<label>F <input name="data[Estudante][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="F"> </label>
                         </td>
                     </tr>
-                    <td class="esquerda">
-                        <label>* Data de Nascimento: </label><br>
-                        <input name="data[Estudante][dataNascimento]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" readonly="">
-                    </td>
+                    <tr>
+                        <td>
+                            <label>* Data de Nascimento: </label><br>
+                            <input name="data[Estudante][dataNascimento]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" readonly="">
+                        </td>
+                        <td></td>
+                    </tr>
                 </table>
             </fieldset>
 
@@ -67,31 +71,28 @@
                 <table>
                     <tr>
                         <td colspan="2">
-                            <label>* Endereço: </label>
+                            <label>* Endereço: </label><br>
                             <input name="data[Estudante][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="estudanteEndereco" maxlength="100" type="text" size="80" required class="campos campogrande">
                         </td>
                     </tr>
-
                     <tr>
-                        <td class="esquerda">
+                        <td >
                             <label>* Bairro: </label><br>
                             <input name="data[Estudante][bairro]" id="estudanteBairo" maxlength="50" type="text" size="30" required class="campos campopequeno">        
                         </td>
-                        <td class="direita">
+                        <td >
                             <label>* CEP: </label><br>
                             <input name="data[Estudante][cep]" id="estudanteCep" maxlength="20" type="text" required class="campos campopequeno cep">
                         </td>
                     </tr>
-
-
                     <tr>
-                        <td  class="esquerda">
+                        <td >
                             <label>* Cidade: </label><br>
                             <select name="data[Estudante][cidade]" id="estudanteCidade" maxlength="20" class="campos campopequeno" >
                                 <option value="<?php echo $cidadeSPC;?>"> <?php echo $cidadeSPC;?> </option>
                             </select>
                         </td>
-                        <td class="direita">
+                        <td >
                             <label>* Estado: </label><br>
                             <select name="data[Estudante][estado]" id="estudanteEstado" maxlength="1"  class="campos campopequeno" >
                                 <option value="PA"> PA </option>
@@ -120,34 +121,34 @@
                                 <input name="data[Estudante][nomeEscola]" id="estudanteNomeEscola" maxlength="200" type="text" size="80" required  class="campos campogrande">
                             </td>
                         </tr>
-                        <tr>
-                            <td class="esquerda">
+                        <tr id="cursoEMatricula">
+                            <td >
                                 <label>* Curso: </label><br>
-                                <input name="data[Estudante][curso]" id="estudanteCurso" maxlength="50" type="text" size="30" required class="campos campopequeno">        
+                                <input name="data[Estudante][curso]" id="estudanteCurso" maxlength="50" type="text" size="30" required class="campos campopequeno desreq">        
                             </td>
-                            <td class="direita">
+                            <td >
                                 <label>* Matricula: </label><br>
-                                <input name="data[Estudante][matricula]" id="estudanteMatricula" maxlength="20" type="text" required class="campos campopequeno">
+                                <input name="data[Estudante][matricula]" id="estudanteMatricula" maxlength="20" type="text" required class="campos campopequeno desreq">
                             </td>
                         </tr>
-                        <tr>
-                            <td class="esquerda">
+                        <tr id="iniFim">
+                            <td >
                                 <label>* Ano Início: </label><br>
-                                <input name="data[Estudante][dataIni]" id="estudanteDataIni" maxlength="50" type="text" size="20" required class="campos  campopequeno">        
+                                <input name="data[Estudante][dataIni]" id="estudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq">        
                             </td>
-                            <td class="direita">
+                            <td >
                                 <label>* Ano Fim: </label><br>
-                                <input name="data[Estudante][dataFim]" id="estudanteDataFim" maxlength="20" type="text" required class="campos campopequeno">
+                                <input name="data[Estudante][dataFim]" id="estudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq">
                             </td>
                         </tr>
-                        <tr>
-                            <td class="esquerda">
+                        <tr id="periodoEGrau">
+                            <td >
                                 <label>* Período: </label><br>
-                                <input name="data[Estudante][periodo]" id="estudantePeriodo" maxlength="50" type="text" size="20" required class="campos campopequeno">        
+                                <input name="data[Estudante][periodo]" id="estudantePeriodo" placeholder=" Ex: 6º semestre" maxlength="50" type="text" size="20" required class="campos campopequeno desreq">        
                             </td>
-                            <td class="direita">
+                            <td>
                                 <label>* Grau: </label><br>
-                                <input name="data[Estudante][grau]" id="estudantegrau" maxlength="20" type="text" required class="campos campopequeno">
+                                <input name="data[Estudante][grau]" id="estudantegrau" maxlength="20" type="text" required class="campos campopequeno desreq">
                             </td>
                         </tr>
                     </table>
@@ -158,13 +159,13 @@
                 <table >
                     <tr>
                         <td colspan="2">
-                            <label for="ComumEmail">* Email: </label>
+                            <label for="ComumEmail">* Email: </label><br>
                             <input name="data[Estudante][email]" id="ComumEmail" maxlength="100" type="email" size="80" required class="campos campogrande">
                         </td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <label> Site: </label>
+                            <label> Site: </label><br>
                             <input name="data[Estudante][site]" id="estudanteSite" maxlength="100" type="text" size="80" class="campos campogrande">
                         </td>
                     </tr>

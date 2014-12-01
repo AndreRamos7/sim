@@ -5,9 +5,8 @@ class Comum extends AppModel{
     public $validate = array(
     
         'email' => array(
-            'rule' => 'email',
-            'message' => 'Enter a valid email',
-            'allowEmpty' => true
+            'rule' => array('minLength', 8),
+            'message' => 'Enter a valid email'            
         )
     );
     */

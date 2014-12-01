@@ -7,14 +7,6 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
 
 <!-- MENU ESTUDANTES, COMUNS, EMPRESA, GRATUIDADE, COM DIV OCULTA DE DOCUMENTOS NECESSÁRIOS -->
 
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        
         <h3 align="center"> Bem vindo à Ananindeua! </h3>
         <!-- MENU -->
         
@@ -149,10 +141,3 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
 
 <div id="md-overlayGratuitos"></div>
         
-        
-        
-        
-        
-        
-    </body>
-</html>

@@ -878,12 +878,16 @@ form,input,select,textarea{
 div.box {
     margin: auto; 
     width:830px; 
-   height: 1050px;
+   height: auto;
     
     
 } 
+
+fieldset table{
+     width:630px; 
+}
 fieldset{
-    width: 700px; 
+    width: 650px; 
     margin: auto;
     
     border: 4px solid #fff;
@@ -940,6 +944,16 @@ input#btnvoltar{
     width: 615px;
     
 }
+
+.campopequeno{
+    width: 260px;
+    
+}
+.campoinvalido{
+    color: red;
+    
+}
+
 section.groupfield{
     width: 600px;
     margin-top: 17px;
