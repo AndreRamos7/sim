@@ -2,7 +2,7 @@
     $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
 ?>
 <div class="box">
-    <form action="/sim/Gratuitos/cadastrar/<?php echo $cidade;?>" id="GratuitoCadastrarForm" method="post" accept-charset="utf-8">
+    <form action="/Gratuitos/cadastrar/<?php echo $cidade;?>" id="GratuitoCadastrarForm" method="post" accept-charset="utf-8">
         <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
         <h1 class="boxh1"> Cadastro de Gratuidades /  <?php echo $cidadeSPC;?> </h1>
             <?php 

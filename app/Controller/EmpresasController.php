@@ -34,7 +34,7 @@ class EmpresasController extends AppController {
                 
                 $paraGravar = array("CadastroSim$cidade" => array("Empresa" => $todos));
                 $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
-                $xml->save("$path/sim/app/DATAXML/$cidadeSPC/Empresas.xml");                
+                $xml->save("$path/app/DATAXML/$cidadeSPC/Empresas.xml");                
                 $this->Session->setFlash('Seu cadastro foi realizado com sucesso!!', 'flash_custom');
                 //$this->set('mensagem', "Salvo com sucesso!!");
                 $this->redirect("/$cidade");

@@ -2,7 +2,7 @@
     $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
 ?>
 <div class="box">
-<form action="/sim/comums/cadastrar/<?php echo $cidade;?>" id="ComumCadastrarForm" method="post" accept-charset="utf-8">
+<form action="/comums/cadastrar/<?php echo $cidade;?>" id="ComumCadastrarForm" method="post" accept-charset="utf-8">
     <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
     <h1 class="boxh1"> Cadastro de Usuário Comum /  <?php echo $cidadeSPC;?> </h1>
         <?php 

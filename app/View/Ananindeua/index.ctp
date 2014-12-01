@@ -75,7 +75,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
         <p> - Declaração de frequência; (Comprovação de que o aluno frequenta as aulas normalmente) </p>
         <p> - Uma foto 3x4; (Não é necessário cópia)</p>
     </div>
-       <a href="/sim/estudantes/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+       <a href="/estudantes/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeEstudantes" title="Fechar">Fechar</a>
 
 </div>
@@ -95,7 +95,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
         <p> - RG; </p>
         <p> - Comprovante de residência; </p>
     </div>
-    <a href="/sim/comums/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+    <a href="/comums/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeComuns" title="Fechar">Fechar</a>
 
 </div>
@@ -113,7 +113,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
         <p>Apresentar os originais e cópias de:</p>
         
     </div>
-       <a href="/sim/empresas/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+       <a href="/empresas/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeEmpresas" title="Fechar">Fechar</a>
 
 </div>
@@ -134,7 +134,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
         <p> - RG; </p>
         <p> - Comprovante de residência; </p>
    </div>
-   <a href="/sim/gratuitos/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
+   <a href="/gratuitos/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
     <a href="javascript:;" id="md-closeGratuitos" title="Fechar">Fechar</a>
 
 </div>

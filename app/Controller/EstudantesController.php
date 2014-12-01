@@ -31,7 +31,7 @@ class EstudantesController extends AppController {
 
                 $paraGravar = array('CadastroSimCastanhal' => array("Estudante" => $todos));
                 $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
-                $xml->save("$path/sim/app/DATAXML/$cidadeSPC/Estudantes.xml");                
+                $xml->save("$path/app/DATAXML/$cidadeSPC/Estudantes.xml");                
                 $this->Session->setFlash('Seu cadastro foi realizado com sucesso!!', 'flash_custom');
                 //$this->set('mensagem', "Salvo com sucesso!!");
                 $this->redirect("/$cidade");

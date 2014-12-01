@@ -32,10 +32,10 @@ class ComumsController extends AppController {
 
                 $paraGravar = array("CadastroSim$cidade" => array("Comuns" => $todosComuns));
                 $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
-                $xml->save("$path/sim/app/DATAXML/$cidadeSPC/comuns.xml");                
+                $xml->save("$path/app/DATAXML/$cidadeSPC/comuns.xml");                
                 
                 $this->Session->setFlash('Seu cadastro foi realizado com sucesso!!', 'flash_custom');
-                header("location: /sim/$cidade");
+                header("location: /$cidade");
                 exit();
                 //$this->redirect("/$cidade");
             }else{

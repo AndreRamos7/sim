@@ -43,16 +43,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             
         </script>
 
-        <link rel="shortcut icon" type="image/x-icon" href="/sim/favicon.ico">
-        <link href="/sim/css/style.css" type="text/css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+        <link href="/css/style.css" type="text/css" rel="stylesheet">
         
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
         
-        <script src="/sim/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-        <script src="/sim/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
-        <script src="/sim/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
+        <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script src="/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
+        <script src="/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
         
         <script language="JavaScript" type="text/javascript">
            $(document).ready(function() {
@@ -171,11 +171,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
        <header> </header>
         <nav> 
             <ul class="menuv">
-                    <li><a href="/sim"> <p class="textocentro"> <img class="img" src="/sim/app/webroot/img/ico/icnhouse.png"> </p> Página inicial</a></li>
-                    <li><a href="http://www.contasuper.com.br/"> <p class="textocentro"> <img class="img" src="/sim/app/webroot/img/ico/icncard.png"> </p> Crédito Master Card </a></li>
-                    <li><a href="http://00244.transdatasmart.com.br:24401/TDMaxwebcommerce/default.aspx"> <p class="textocentro"> <img class="img" src="/sim/app/webroot/img/ico/icnvale.png"> </p> Vale Transporte</a></li>
-                    <li><a href="javascript:;"> <p class="textocentro"> <img class="img" src="/sim/app/webroot/img/ico/contatoico.png"> </p> Fale conosco!</a></li>
-                    <li><a href="javascript:;"> <p class="textocentro"> <img class="img" src="/sim/app/webroot/img/ico/icnsim.png"> </p> Como funciona?</a></li>               
+                    <li><a href="/"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icnhouse.png"> </p> Página inicial</a></li>
+                    <li><a href="http://www.contasuper.com.br/"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icncard.png"> </p> Crédito Master Card </a></li>
+                    <li><a href="http://00244.transdatasmart.com.br:24401/TDMaxwebcommerce/default.aspx"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icnvale.png"> </p> Vale Transporte</a></li>
+                    <li><a href="javascript:;"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/contatoico.png"> </p> Fale conosco!</a></li>
+                    <li><a href="javascript:;"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icnsim.png"> </p> Como funciona?</a></li>               
             </ul>
         </nav>
         <div id="content">
@@ -183,7 +183,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </div>
         <footer>
               <div id="logosim" > 
-                <p class="marginleft"><img src="/sim/app/webroot/img/ico/icoSim.png"> </p>
+                <p class="marginleft"><img src="/app/webroot/img/ico/icoSim.png"> </p>
                 <p class="marginleft legenda"> Desenvolvido por | <a href="mailto:biasilvabsi11@gmail.com" text-decoration="none"> Bianca Silva </a> | <a href="mailto:andre-rammos@hotmail.com" text-decoration="none"> André Ramos </a></p> 
               </div>
 
@@ -196,9 +196,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
               <div id="redesocial">
                 <p> Redes Sociais </p> 
-                <a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img class="imgicon" src="/sim/app/webroot/img/ico/icnface.png" alt='Facebook'></a>
-                <a href="https://twitter.com/agorasim_" ><img class="imgicon" src="/sim/app/webroot/img/ico/icntwit.png" alt='twitter'></a>
-                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img class="imgicon" src="/sim/app/webroot/img/ico/icnyoutube.png" alt='youtube'></a>
+                <a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img class="imgicon" src="/app/webroot/img/ico/icnface.png" alt='Facebook'></a>
+                <a href="https://twitter.com/agorasim_" ><img class="imgicon" src="/app/webroot/img/ico/icntwit.png" alt='twitter'></a>
+                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img class="imgicon" src="/app/webroot/img/ico/icnyoutube.png" alt='youtube'></a>
               </div>
 
        </footer>
