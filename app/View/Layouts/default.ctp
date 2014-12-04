@@ -40,7 +40,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             ?>
         
         <script type="text/javascript">
-            
+            //location.replace();
         </script>
 
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
@@ -159,7 +159,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     $('#md-closeGratuitos, #md-overlayGratuitos').click( function ( event ){
                         event.preventDefault();
                         $('#md-blockGratuitos').removeClass('md-showGratuitos');
+                        
                     });
+                    
                  });
            
             
@@ -202,5 +204,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
               </div>
 
        </footer>
+        <?php 
+            /*$msg = $this->Session->flash();
+            if(isset($msg) and $msg != ""){
+                echo "<script>alert('$msg')</script>";
+            }*/
+        ?>
     </body>
 </html>

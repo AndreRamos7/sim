@@ -29,3 +29,4 @@ php -q "%lib%cake.php" -working "%CD% " %*
 echo.
 
 exit /B %ERRORLEVEL%
+pause

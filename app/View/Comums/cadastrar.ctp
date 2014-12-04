@@ -4,13 +4,7 @@
 <div class="box">
 <form action="/comums/cadastrar/<?php echo $cidade;?>" id="ComumCadastrarForm" method="post" accept-charset="utf-8">
     <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
-    <h1 class="boxh1"> Cadastro de Usuário Comum /  <?php echo $cidadeSPC;?> </h1>
-        <?php 
-           $msg = $this->Session->flash();
-            if(isset($msg) and $msg != ""){
-                echo "<script>alert('$msg')</script>";
-            }
-        ?>
+    <h1 class="boxh1"> Cadastro de Usuário Comum /  <?php echo $cidadeSPC;?> </h1>        
         <fieldset>    
             <legend>Dados Pessoais</legend>
             <table border='0'>
@@ -96,7 +90,9 @@
                 <tr >
                     <td colspan="2">                        
                         <label for="ComumEmail">* Email: </label><br>
-                        <?php echo $this->Form->input('Cliente.nome',array('label' => false,'size'=>80, 'maxlength' => 100, "class" => "campos campogrande",'error' => array('class' => 'campo-invalido'))); ?>                        
+                        <?php echo $this->Form->input('Cliente.nome',array('label' => false,'size'=>80, 'maxlength' => 100, "class" => "campos campogrande",'error' => array('class' => 'campo-invalido'))); 
+                        //<input name="data[Comum][email]" id="ComumEmail" maxlength="100" type="text" size="80" class="campos campogrande">
+                        ?>                        
                     </td>
                 </tr>
                 <tr>
@@ -136,4 +132,10 @@
 
     
 </form>
-  </div>
+    <?php 
+        $msg = $this->Session->flash();
+         if(isset($msg) and $msg != ""){
+             echo "<script>alert('$msg')</script>";
+         }
+     ?>
+</div>
