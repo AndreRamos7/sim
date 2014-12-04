@@ -63,6 +63,24 @@ class ComumsController extends AppController {
         }
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public function teste() {
         $todosComuns = $this->Comum->query("SELECT "
                             . "`protocolo`, `nome`, `emissor`, `rg`, `cpf`, `sexo`, `email`, `cep`, `estado`, `cidade`"

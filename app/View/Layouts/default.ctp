@@ -56,116 +56,136 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         
         <script language="JavaScript" type="text/javascript">
            $(document).ready(function() {
-                    // Evento de clique do elemento: ul#menu li.parent > a
-                    $('ul#menu li.parent > a').click(function() {
-                            // Expande ou retrai o elemento ul.sub-menu dentro do elemento pai (ul#menu li.parent)
-                            $('ul.sub-menu', $(this).parent()).slideToggle('fast', function() {
-                                    // Depois de expandir ou retrair, troca a classe 'aberto' do <a> clicado       
-                                    $(this).parent().toggleClass('aberto');
-                            });
-                            return false;
-                    });
-                    
-                    $( "select#selectNivel" ).change(function () {
-                        var str = "";
-                        $( "select#selectNivel option:selected" ).each(function() {
-                            str = $( this ).text();
+                // Evento de clique do elemento: ul#menu li.parent > a
+                $('ul#menu li.parent > a').click(function() {
+                        // Expande ou retrai o elemento ul.sub-menu dentro do elemento pai (ul#menu li.parent)
+                        $('ul.sub-menu', $(this).parent()).slideToggle('fast', function() {
+                                // Depois de expandir ou retrair, troca a classe 'aberto' do <a> clicado       
+                                $(this).parent().toggleClass('aberto');
                         });
-                        if(str === "Fundamental"){
-                            
-                            $('tr#iniFim input.desreq').attr("required",false);  
-                            $('tr#cursoEMatricula input.desreq').attr("required",false);
-                            $('tr#periodoEGrau input.desreq').attr("required",false);
-                            $('tr#iniFim').hide();
-                            $('tr#cursoEMatricula').hide(); 
-                            $('tr#periodoEGrau').hide(); 
-                            
-                        }else if(str === "Médio"){
-                            $('tr#iniFim input.desreq').attr("required",false);  
-                            $('tr#cursoEMatricula input.desreq').attr("required",false);
-                            $('tr#periodoEGrau input.desreq').attr("required",false);
-                            $('tr#iniFim').hide();
-                            $('tr#cursoEMatricula').hide(); 
-                            $('tr#periodoEGrau').hide(); 
-                            
-                        }else if(str === "Superior"){
-                            $('tr#iniFim input.desreq').attr("required",true);  
-                            $('tr#cursoEMatricula input.desreq').attr("required",true);
-                            $('tr#periodoEGrau input.desreq').attr("required",true);
-                            $('tr#iniFim').show();
-                            $('tr#cursoEMatricula').show(); 
-                            $('tr#periodoEGrau').show(); 
-                            
-                        }
+                        return false;
+                });
+
+                $( "select#selectNivel" ).change(function () {
+                    var str = "";
+                    $( "select#selectNivel option:selected" ).each(function() {
+                        str = $( this ).text();
+                    });
+                    if(str === "Fundamental"){
+
+                        $('tr#iniFim input.desreq').attr("required",false);  
+                        $('tr#cursoEMatricula input.desreq').attr("required",false);
+                        $('tr#periodoESerie input.desreq').attr("required",false);
                         
-                        //alert( str );
-                    }).change();
-                    
-                    $(".cpf").mask("999.999.999-99");
-                    $(".rg").mask("999999-9");
-                    $(".data").mask("99/99/9999");
-                    $(".cnpj").mask("99.999.999/9999-99");
-                    $(".cep").mask("99999-999");
-                    $(".celular").mask("(99)9999 9999");
-                    $(".telefone").mask("(99)9999 9999");
-                    $(".fax").mask("(99)9999 9999");
-                    $(".ano").mask("9999");
-                    
-                    
-                 
-                    // ## Abrindo ModalEstudantes
-                    $('#botaoAbrirModal1').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEstudantes ').addClass('md-showEstudantes');
-                    });
-
-                    // ## Fechando Modal Estudantes
-                    $('#md-closeEstudantes, #md-overlayEstudantes').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEstudantes').removeClass('md-showEstudantes');
-                    });
-
-                    // ## Abrindo ModalComuns
-                    $('#botaoAbrirModal2').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockComuns ').addClass('md-showComuns');
-                    });
-
-                    // ## Fechando Modal Comuns
-                    $('#md-closeComuns, #md-overlayComuns').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockComuns').removeClass('md-showComuns');
-                    });
-
-                    // ## Abrindo ModalEmpresas
-                    $('#botaoAbrirModal3').click(function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEmpresas ').addClass('md-showEmpresas');
-                    });
-
-                    // ## Fechando ModalEmpresas
-                    $('#md-closeEmpresas, #md-overlayEmpresas').click(function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEmpresas').removeClass('md-showEmpresas');
-                    });
-
-                    // ## Abrindo ModalGratuitos
-                    $('#botaoAbrirModal4').click(function ( event ){
-                        event.preventDefault();
-                        $('#md-blockGratuitos ').addClass('md-showGratuitos');
-                    });
-
-                    // ## Fechando ModalEmpresas
-                    $('#md-closeGratuitos, #md-overlayGratuitos').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockGratuitos').removeClass('md-showGratuitos');
                         
-                    });
-                    
-                 });
-           
-            
+                        
+                        $('tr#iniFim').hide();
+                        $('tr#cursoEMatricula').hide(); 
+                        $('tr#periodoESerie').show(); 
+                        $('tr#periodoESerie label#EstudanteSerie').show();
+                        $('tr#periodoESerie label#EstudantePeriodo').hide();
+                        
+                        $('tr#periodoESerie input#EstudanteSerie').attr("required",true);
 
+                    }else if(str === "Médio"){
+                        $('tr#iniFim input.desreq').attr("required",false);  
+                        $('tr#cursoEMatricula input.desreq').attr("required",false);
+                        $('tr#periodoESerie input.desreq').attr("required",false);
+                        
+                        $('tr#periodoESerie input#EstudantePeriodo').attr("required",false);
+                        
+                        $('tr#iniFim').hide();
+                        $('tr#cursoEMatricula').hide(); 
+                        $('tr#periodoESerie').show(); 
+                        $('tr#periodoESerie label#EstudanteSerie').show();
+                        $('tr#periodoESerie label#EstudantePeriodo').hide();
+
+                    }else if(str === "Superior"){
+                        $('tr#periodoESerie input#EstudanteSerie').attr("required",false);
+                        
+                        $('tr#iniFim input.desreq').attr("required",true);  
+                        $('tr#cursoEMatricula input.desreq').attr("required",true);
+                        $('tr#periodoESerie input.desreq').attr("required",true);
+                        
+                        //$('tr#periodoESerie label#EstudantePeriodo').hide();
+                        $('tr#periodoESerie label#EstudanteSerie').hide();
+                        $('tr#iniFim').show();
+                        $('tr#cursoEMatricula').show(); 
+                        $('tr#periodoESerie').show(); 
+
+                    }
+
+                    //alert( str );
+                }).change();
+
+                $(".cpf").mask("999.999.999-99");
+                $(".rg").mask("999999-9");
+                $(".data").mask("99/99/9999");
+                $(".cnpj").mask("99.999.999/9999-99");
+                $(".cep").mask("99999-999");
+                $(".celular").mask("(99)9999 9999");
+                $(".telefone").mask("(99)9999 9999");
+                $(".fax").mask("(99)9999 9999");
+                $(".ano").mask("9999");
+
+
+
+                // ## Abrindo ModalEstudantes
+                $('#botaoAbrirModal1').click( function ( event ){
+                    event.preventDefault();
+                    $('#md-blockEstudantes ').addClass('md-showEstudantes');
+                });
+
+                // ## Fechando Modal Estudantes
+                $('#md-closeEstudantes, #md-overlayEstudantes').click( function ( event ){
+                    event.preventDefault();
+                    $('#md-blockEstudantes').removeClass('md-showEstudantes');
+                });
+
+                // ## Abrindo ModalComuns
+                $('#botaoAbrirModal2').click( function ( event ){
+                    event.preventDefault();
+                    $('#md-blockComuns ').addClass('md-showComuns');
+                });
+
+                // ## Fechando Modal Comuns
+                $('#md-closeComuns, #md-overlayComuns').click( function ( event ){
+                    event.preventDefault();
+                    $('#md-blockComuns').removeClass('md-showComuns');
+                });
+
+                // ## Abrindo ModalEmpresas
+                $('#botaoAbrirModal3').click(function ( event ){
+                    event.preventDefault();
+                    $('#md-blockEmpresas ').addClass('md-showEmpresas');
+                });
+
+                // ## Fechando ModalEmpresas
+                $('#md-closeEmpresas, #md-overlayEmpresas').click(function ( event ){
+                    event.preventDefault();
+                    $('#md-blockEmpresas').removeClass('md-showEmpresas');
+                });
+
+                // ## Abrindo ModalGratuitos
+                $('#botaoAbrirModal4').click(function ( event ){
+                    event.preventDefault();
+                    $('#md-blockGratuitos ').addClass('md-showGratuitos');
+                });
+
+                // ## Fechando ModalEmpresas
+                $('#md-closeGratuitos, #md-overlayGratuitos').click( function ( event ){
+                    event.preventDefault();
+                    $('#md-blockGratuitos').removeClass('md-showGratuitos');
+
+                });
+                
+                $('#ComumCadastrarForm').submit(function(event){
+                    var nome = $('#ComumNome').val();
+                    var idade = $('#ComumNomeMae').val();
+                    //alert(nome + ' ' + idade);
+                });
+
+             });
         </script>
     </head>
     <body>
@@ -205,10 +225,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
        </footer>
         <?php 
-            /*$msg = $this->Session->flash();
-            if(isset($msg) and $msg != ""){
-                echo "<script>alert('$msg')</script>";
-            }*/
-        ?>
+            $msg = $this->Session->flash();
+             if(isset($msg) and $msg != ""){
+                 echo "<script>alert('$msg')</script>";
+                 $msg = "";
+             }
+         ?>
     </body>
 </html>

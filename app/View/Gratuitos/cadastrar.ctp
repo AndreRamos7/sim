@@ -5,12 +5,7 @@
     <form action="/Gratuitos/cadastrar/<?php echo $cidade;?>" id="GratuitoCadastrarForm" method="post" accept-charset="utf-8">
         <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
         <h1 class="boxh1"> Cadastro de Gratuidades /  <?php echo $cidadeSPC;?> </h1>
-            <?php 
-                $msg = $this->Session->flash();
-                 if(isset($msg) and $msg != ""){
-                     echo "<script>alert('$msg')</script>";
-                 }
-             ?>
+           
             <fieldset>    
                 <legend>Dados Pessoais</legend>
                 <table>
@@ -45,12 +40,12 @@
                     <tr>                        
                         <td >
                             <label>* Nº Aposentadoria: </label><br>   
-                            <input name="data[Gratuito][nroAposentadoria]" id="EstudanteNroAposentadoria" maxlength="10" type="text" required  class="campos campopequeno">
+                            <input name="data[Gratuito][nroAposentadoria]" id="GratuitoNroAposentadoria" maxlength="10" type="text" required  class="campos campopequeno">
                         </td>
                         <td >
                             <label>* Sexo: </label><br>                    
-                            <label>M <input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="M"> </label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<label>F <input name="data[Gratuito][sexo]" id="estudanteSexo" maxlength="1" type="radio" value="F">  </label>
+                            <label>M <input name="data[Gratuito][sexo]" id="GratuitoSexo" maxlength="1" type="radio" value="M"> </label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;<label>F <input name="data[Gratuito][sexo]" id="GratuitoSexo" maxlength="1" type="radio" value="F">  </label>
                         </td>
                      </tr>            
                 </table>

@@ -5,12 +5,7 @@
 <form action="/Empresas/cadastrar/<?php echo $cidade;?>" id="EmpresaCadastrarForm" method="post" accept-charset="utf-8">
     <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
     <h1 class="boxh1"> Cadastro de Empresas /  <?php echo $cidadeSPC;?> </h1>
-        <?php 
-           $msg = $this->Session->flash();
-            if(isset($msg) and $msg != ""){
-                echo "<script>alert('$msg')</script>";
-            }
-        ?>
+       
         <fieldset>    
             <legend>Dados da Empresa</legend>
             <table>

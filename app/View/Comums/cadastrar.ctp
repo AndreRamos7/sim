@@ -90,9 +90,9 @@
                 <tr >
                     <td colspan="2">                        
                         <label for="ComumEmail">* Email: </label><br>
-                        <?php echo $this->Form->input('Cliente.nome',array('label' => false,'size'=>80, 'maxlength' => 100, "class" => "campos campogrande",'error' => array('class' => 'campo-invalido'))); 
-                        //<input name="data[Comum][email]" id="ComumEmail" maxlength="100" type="text" size="80" class="campos campogrande">
-                        ?>                        
+                        
+                        <input name="data[Comum][email]" id="ComumEmail" maxlength="100" type="text" size="80" class="campos campogrande">
+                        
                     </td>
                 </tr>
                 <tr>
@@ -132,10 +132,5 @@
 
     
 </form>
-    <?php 
-        $msg = $this->Session->flash();
-         if(isset($msg) and $msg != ""){
-             echo "<script>alert('$msg')</script>";
-         }
-     ?>
+    
 </div>
