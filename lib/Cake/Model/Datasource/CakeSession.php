@@ -501,7 +501,7 @@ class CakeSession {
 		if (!isset($sessionConfig['ini']['session.cookie_httponly'])) {
 			$sessionConfig['ini']['session.cookie_httponly'] = 1;
 		}
-
+/* ==================================================================================================================
 		if (empty($_SESSION)) {
 			if (!empty($sessionConfig['ini']) && is_array($sessionConfig['ini'])) {
 				foreach ($sessionConfig['ini'] as $setting => $value) {
@@ -511,6 +511,7 @@ class CakeSession {
 				}
 			}
 		}
+ * ======================================================================================================= */
 		if (!empty($sessionConfig['handler']) && !isset($sessionConfig['handler']['engine'])) {
 			call_user_func_array('session_set_save_handler', $sessionConfig['handler']);
 		}

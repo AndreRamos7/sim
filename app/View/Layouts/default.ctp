@@ -230,6 +230,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                  echo "<script>alert('$msg')</script>";
                  $msg = "";
              }
+             
          ?>
     </body>
 </html>
