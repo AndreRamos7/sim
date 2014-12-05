@@ -1,136 +1,115 @@
 <?php
     $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
 ?>
-<div class="box">
-<form action="/Empresas/cadastrar/<?php echo $cidade;?>" id="EmpresaCadastrarForm" method="post" accept-charset="utf-8">
+
+<section class='gray'>
+		<div class='container'>
+        
+        <p align="center"> <img src="/img/ico/empresaico.png"> </p>
+			
+				<h2 align="center"> Cadastro de usuários do tipo Empresas / <?php echo $cidadeSPC;?></h2>
+                
+				<p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
+			</div>
+
+	</section>
+
+
+	<div class='clear'></div>
+
+
+<div class="container">
+		<div class="sixteen columns form">
+     <div style= "overflow-y:auto; height:900px; margin-bottom: 30px; align: center; ">
+      <form action="/Empresas/cadastrar/<?php echo $cidade;?>" id="EmpresaCadastrarForm" class="register" method="post" accept-charset="utf-8">
     <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
-    <h1 class="boxh1"> Cadastro de Empresas /  <?php echo $cidadeSPC;?> </h1>
-        <?php 
+              <?php 
            $msg = $this->Session->flash();
             if(isset($msg) and $msg != ""){
                 echo "<script>alert('$msg')</script>";
             }
         ?>
-        <fieldset>    
-            <legend>Dados da Empresa</legend>
-            <table>
-                <tr >
-                    <td colspan="2">
-                        <label>* Nome fantasia: </label>
-                        <input name="data[Empresa][nomeFantasia]" id="EmpresaNomeFantasia" maxlength="200" type="text" size="80" required  class="campos campogrande">
-                    </td> 
-                </tr>
-                <tr>
-                    <td  colspan="2">
-                        <label> Razão Social: </label>
-                        <input name="data[Empresa][razaoSocial]" id="EmpresaRazaoSocial" maxlength="100" type="text" size="" class="campos campogrande">
-                    </td>
-                </tr>
 
-                <tr >
-                    <td >
-                        <label>* Quant. VT's: </label><br>
-                        <input name="data[Empresa][qtdVts]" id="EmpresaQtdVts" maxlength="20" type="text" required class="campos campopequeno">
-                    </td>            
-                    <td >
-                        <label>* Quantidade de Funcionários: </label><br>
-                        <input name="data[Empresa][qtdFuncionarios]" id="EmpresaQtdFuncionarios" maxlength="10" type="text" required  class="campos campopequeno">
-                    </td>
-                </tr>
 
-                <tr >
-                    <td >
-                        <label>* CNPJ:</label><br>
+
+       <fieldset class="row1">    
+            <legend> Dados Pessoais </legend>
+            <p> <label for="EmpresaNomeFantasia">* Nome fantasia: </label>
+                        <input name="data[Empresa][nomeFantasia]" id="EmpresaNomeFantasia" maxlength="200" type="text" size="80" required  class="long">
+            </p>
+            
+            <p> <label> Razão Social: </label>
+                        <input name="data[Empresa][razaoSocial]" id="EmpresaRazaoSocial" maxlength="100" type="text" size="" class="long">
+            </p>
+            
+            <p> <label>* CNPJ:</label>
                         <input name="data[Empresa][cnpj]" maxlength="20" type="text" id="EmpresaCnpj" required class="campos campopequeno cnpj">
-                    </td>
-                    <td >
-                        <label for="EmpresaInscEstadual"> Inscrição Estadual: </label><br>
+            </p>
+                    
+            <p> <label for="EmpresaInscEstadual"> Inscrição Estadual: </label>
                         <input name="data[Empresa][inscEstadual]" id="EmpresaInscEstadual" maxlength="14" type="text" class="campos campopequeno"> 
-                    </td>
-                </tr>
-            </table>
+            </p>
+                      
         </fieldset>
         
         
-        <fieldset>    
+    <fieldset class="row1">    
             <legend>Endereço</legend>
-            <table>
-                <tr>
-                     <td  colspan="2">
-                        <label>* Endereço: </label><br>
-                        <input name="data[Empresa][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="EmpresaEndereco" maxlength="100" type="text" size="80" required class="campos campogrande">
-                    </td>
-                </tr>
-
-                <tr >
-                    <td >
-                        <label>* Bairro: </label><br>
+            <p> <label>* Endereço: </label>
+                        <input name="data[Empresa][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="EmpresaEndereco" maxlength="100" type="text" size="80" required class="long">
+            </p>
+                
+            <p> <label>* Bairro: </label>
                         <input name="data[Empresa][bairro]" id="EmpresaBairro" maxlength="50" type="text" size="30" required class="campos campopequeno">        
-                    </td>
-                    <td>
-                        <label>* CEP: </label><br>
+            </p>
+                
+            <p> <label>* CEP: </label>
                         <input name="data[Empresa][cep]" id="EmpresaCep" maxlength="20" type="text" required class="campos campopequeno cep">
-                    </td>
-                </tr>
+            </p>
 
-
-                <tr>
-                    <td >
-                        <label>* Cidade: </label><br>
+            <p> <label>* Cidade: </label>
                         <select name="data[Empresa][cidade]" id="EmpresaCidade" maxlength="20" class="campos  campopequeno" >                
                             <option value="<?php echo $cidadeSPC;?>"><?php echo $cidadeSPC;?></option>
                         </select>
-                    </td>
-                    <td >
-                        <label>* Estado: </label><br>
+            <p> <label>* Estado: </label>
                         <select name="data[Empresa][estado]" id="EmpresaEstado" maxlength="1"  class="campos  campopequeno" >
                             <option value="PA"> PA </option>
                         </select>
-                    </td>
-                </tr>
-            </table>
-        </fieldset>
+                    </fieldset>
         
-        <fieldset>    
+    <fieldset class="row1">    
             <legend>Contatos</legend>
-            <table>
-                <tr>
-                    <td colspan="2">
-                        <label for="ComumEmail">* Email: </label><br>
-                        <input name="data[Empresa][email]" id="EmpresaEmail" maxlength="100" type="email" size="80" required class="campos campogrande">
-                    </td>
-                </tr>    
-                <tr>
-                    <td colspan="2">
-                        <label> Site: </label><br>
-                        <input name="data[Empresa][site]" id="EmpresaSite" maxlength="100" type="text" size="80" class="campos campogrande">
-                    </td>
-                </tr>
+            <p> <label for="ComumEmail">* Email: </label>
+                        <input name="data[Empresa][email]" id="EmpresaEmail" maxlength="100" type="email" size="80" required class="long">
+            </p>
+                    
+            <p> <label> Site: </label>
+                        <input name="data[Empresa][site]" id="EmpresaSite" maxlength="100" type="text" size="80" class="long">
+            </p>
 
-                <tr>
-                    <td>
-                        <label>* Telefone: </label><br>
+            <p> <label>* Telefone: </label>
                         <input name="data[Empresa][telefone]" id="EmpresaTelefone" maxlength="15" type="text" required class="campos campopequeno telefone">        
-                    </td>            
-                    <td>
-                        <label> Celular: </label><br>
+            </p>            
+                    
+            <p> <label> Celular: </label>
                         <input name="data[Empresa][celular]" id="EmpresaCelular" maxlength="15" type="text" class="campos campopequeno celular">        
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label> Fax: </label><br>
+            </p>
+            <p> <label> Fax: </label>
                         <input name="data[Empresa][fax]" id="EmpresaFax" maxlength="15" type="text" class="campos campopequeno fax">        
-                    </td>
-                </tr>
-            </table>
-        </fieldset>
-        <fieldset>
-            <h5>* Campos obrigatórios</h5>
-            <input type="button" value="Voltar" id="btnvoltar" onclick="history.back();"> 
-            <input type="submit" value="Salvar cadastro" id="btncadastrar">        
+            </p>
+                
+           </fieldset>
+    
+        <fieldset class="buttons">
+        <p style= "float:right; font-size:16px;"> * Campos obrigatórios</p>
+        <p style=" float:right;"> 
+        <button class="button" value="Voltar" id="btnvoltar" onclick="history.back();"> Voltar </button>  
+        <button class="button" type="submit" value="Salvar cadastro" id="btncadastrar"> Salvar cadastro! </button> </p>	       
+     
         </fieldset>
 
     
 </form>
+</div>
+                </div>
 </div>

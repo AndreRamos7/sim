@@ -1,14 +1,21 @@
 body {margin:0; padding: 0; font-family: "Open Sans", Arial, sans-serif;}
 body {background-image:url(../img/bg.png); background-attachment:fixed; color: #585858;}
 
-
+.heightauto{
+    height: auto;
+    
+    
+}
 
 /*
 * Paragraf
 */
 p {font-size: 80%; font-weight: 300; color: #333; line-height: 30px;}
 
-
+.textright {
+    
+    text-align: right;
+}
 
 /*
 * Link
@@ -47,7 +54,7 @@ ul li {margin-bottom: 5px;}
 /*
 * Header 
 */
-header {width: 100%; height: 550px; float: left; clear: both; margin: 0; padding: 0; background: url(../img/banner.png) no-repeat center scroll; position: relative; z-index: 1;} 
+header {width: 100%; height: 550px; float: left; clear: both; margin:0; padding-top: 40px; margin-bottom: 0; background: url(../img/banner.png) no-repeat center scroll; position: relative; z-index: 1;} 
 header nav {width: 100%; float: left; margin: 0; padding: 25px 0 20px; background: #003366; position: relative; z-index: 1; height: 10px; 
 	 box-shadow: 0 1px 2px 0 rgba(0,0,0,.3);
 	-moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,.3);
@@ -79,7 +86,7 @@ header h4 {font-weight: normal; margin-bottom: 10px;}
 
 ul.mainMenu {margin: 0; padding: 0; float: right;}
 ul.mainMenu li {display: inline; float: left; margin: 2px 10px;}
-ul.mainMenu li a {font-size: 16px; color: #fff; text-decoration: none;}
+ul.mainMenu li a {font-size: 18px; color: #fff; text-decoration: none;}
 ul.mainMenu li a:hover {color: #FF6A00;
 	-webkit-transition: color .12s ease-in-out;
     -moz-transition: color .12s ease-in-out;
@@ -99,8 +106,8 @@ ul.mainMenu li a:hover {color: #FF6A00;
 */
 .orange {width: 100%; float: left; clear: both; background: #ff6a00; padding: 35px 0; color: #fff; text-align: center; position: relative;z-index: 1; line-height: 20px;}
 .orange h2 {width: 100%; margin: 20px 0 20px; text-align: center; text-shadow: none; font-size: 28px;}
-.orange p {width: 800px; margin: 0 auto 20px; color: #fff; text-align: center; font-size: 20px;}
-.orange h1 {width: 100%; margin: 10px; text-indent: justify; color:#fff; font-size: 16px;}
+.orange p {width: 800px; margin: 0 auto 20px; color: #fff; text-align: center; font-size: 28px;}
+.orange h1 {width: 100%; margin: 10px; text-indent: justify; color:#fff; font-size: 18px;}
 .orange a.dalej {display: block; width: 185px; background: #df4a00; color: #fff; margin: 0 auto 20px; padding: 10px 10px; font-size: 12px; text-transform: uppercase;
 	border-radius: 30px;
 	-moz-border-radius: 30px;
@@ -122,7 +129,7 @@ ul.mainMenu li a:hover {color: #FF6A00;
 * Form, input, label, textarea
 */
 .form h3, .form p {text-align: center;}
-form {width: 500px; margin: 30px auto; text-align: center;}
+form {width: 500px; margin: 30px auto; text-align: center; height: auto;}
 input, label, textarea {width: 500px; float: left; margin: 0; padding: 0;}
 label {font-size: 12px; text-transform: uppercase; font-weight: 300; margin-bottom: 7px;}
 input {margin-bottom: 20px; padding: 7px 0; text-align: center;}
@@ -391,7 +398,7 @@ form,input,select,textarea{
 form.register{
     width:800px;
     margin: 20px auto 0px auto;
-    height:900px;
+    height:1000px;
     background-color:#fff;
     padding:5px;
     -moz-border-radius:20px;

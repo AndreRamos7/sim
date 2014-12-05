@@ -47,7 +47,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             ?>
         
         <script type="text/javascript">
-            
+            //location.replace();
         </script>
 
         <link rel="shortcut icon" type="image/x-icon" href="/img/ico/favicon.ico">
@@ -73,47 +73,26 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         
         <script language="JavaScript" type="text/javascript">
            $(document).ready(function() {
-                    // Evento de clique do elemento: ul#menu li.parent > a
-                    $('ul#menu li.parent > a').click(function() {
-                            // Expande ou retrai o elemento ul.sub-menu dentro do elemento pai (ul#menu li.parent)
-                            $('ul.sub-menu', $(this).parent()).slideToggle('fast', function() {
-                                    // Depois de expandir ou retrair, troca a classe 'aberto' do <a> clicado       
-                                    $(this).parent().toggleClass('aberto');
-                            });
-                            return false;
-                    });
-                    
-                    $( "select#selectNivel" ).change(function () {
-                        var str = "";
-                        $( "select#selectNivel option:selected" ).each(function() {
-                            str = $( this ).text();
+                // Evento de clique do elemento: ul#menu li.parent > a
+                $('ul#menu li.parent > a').click(function() {
+                        // Expande ou retrai o elemento ul.sub-menu dentro do elemento pai (ul#menu li.parent)
+                        $('ul.sub-menu', $(this).parent()).slideToggle('fast', function() {
+                                // Depois de expandir ou retrair, troca a classe 'aberto' do <a> clicado       
+                                $(this).parent().toggleClass('aberto');
                         });
-                        if(str === "Fundamental"){
-                            
-                            $('tr#iniFim input.desreq').attr("required",false);  
-                            $('tr#cursoEMatricula input.desreq').attr("required",false);
-                            $('tr#periodoEGrau input.desreq').attr("required",false);
-                            $('tr#iniFim').hide();
-                            $('tr#cursoEMatricula').hide(); 
-                            $('tr#periodoEGrau').hide(); 
-                            
-                        }else if(str === "Médio"){
-                            $('tr#iniFim input.desreq').attr("required",false);  
-                            $('tr#cursoEMatricula input.desreq').attr("required",false);
-                            $('tr#periodoEGrau input.desreq').attr("required",false);
-                            $('tr#iniFim').hide();
-                            $('tr#cursoEMatricula').hide(); 
-                            $('tr#periodoEGrau').hide(); 
-                            
-                        }else if(str === "Superior"){
-                            $('tr#iniFim input.desreq').attr("required",true);  
-                            $('tr#cursoEMatricula input.desreq').attr("required",true);
-                            $('tr#periodoEGrau input.desreq').attr("required",true);
-                            $('tr#iniFim').show();
-                            $('tr#cursoEMatricula').show(); 
-                            $('tr#periodoEGrau').show(); 
-                            
-                        }
+                        return false;
+                });
+
+                $( "select#selectNivel" ).change(function () {
+                    var str = "";
+                    $( "select#selectNivel option:selected" ).each(function() {
+                        str = $( this ).text();
+                    });
+                    if(str === "Fundamental"){
+
+                        $('tr#iniFim input.desreq').attr("required",false);  
+                        $('tr#cursoEMatricula input.desreq').attr("required",false);
+                        $('tr#periodoESerie input.desreq').attr("required",false);
                         
                         //alert( str );
                     }).change();
@@ -128,6 +107,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     $(".fax").mask("(99)9999 9999");
                     $(".ano").mask("9999");
                     
+                    /*$('html, #orange').animate({ scrollTop: 795px }, 'slow');
+                    $(window).scroll(function()
+                        {
+                        var topo = $('#topo').height(); // altura do topo
+                        var rodape = $('#rodape').height(); // altura do rodape
+                        var scrollTop = $(window).scrollTop(); // qto foi rolado a barra
+                        var tamPagina = $(document).height(); // altura da página
+
+                        if(scrollTop > topo){
+                          $('#orange').css({'position' : 'absolute', 'margin-top' : scrollTop - (topo-5)});
+                        }else{
+                          $('footer').css({'position' : 'relative', 'margin-top' : 0});
+                        }               
+                        });
+
+                    */
+                    
             });
             
             
@@ -141,47 +137,19 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             
 				<div class="sixteen columns">
 					<ul class="mainMenu">
-						<li><a href="#" title="Home">Página Inicial</a></li>
-						<li><a href='#' title='Contato'>Fale Conosco!</a></li>
-						<li><a href='#' title='ComoFunciona'>Como Funciona?</a></li>
-						<li><a href='#' title='Duvidas'>Dúvidas Frequentes</a></li>
+						<li><a href="/" title="Home">Página Inicial</a></li>
+						<li><a href='/info/contato' title='Contato'>Fale Conosco!</a></li>
+						<li><a href='/info' title='ComoFunciona'>Como Funciona?</a></li>
+						<li><a href='/info/duvidas' title='Duvidas'>Dúvidas Frequentes</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-		
-			
-      
+	      
     </header>
         
-        <div class="container">
-
-		<div class="one-third column">
-                    <a href="http://www.contasuper.com.br"><img src="/img/ico/icncard.png">
-                        <h4 style="font-size: 28px;"> Crédito Master Card</h4>
-                        <p> Conheça as vantagens do crédito MasterCard!</p> </a>
-		</div>
-
-
-		<div class="one-third column">
-			<a href="http://00244.transdatasmart.com.br:24401/TDMaxwebcommerce/default.aspx"><img src="/img/ico/icnvale.png">
-			<h4 style="font-size: 28px;"> Vale Transporte </h4>
-			<p> Adquira seus VT's através do nosso sistema online! (Somente para empresas)</p> </a>
-		</div>
-
-
-
-		<div class="one-third column">
-			<a href=""><img src="/img/ico/icnsim.png">
-			<h4 style="font-size: 28px;">Como funciona?</h4>
-			<p> Alguma dúvida? Tire todas as suas dúvidas aqui!</p> </a>
-		</div>
-		
-	</div>
-        
-        <div class="clear"></div>
-        
+               
         <div id="content">
             <?php echo $this->fetch('content'); ?>        
         </div> 

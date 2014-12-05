@@ -5,7 +5,7 @@
 			<h2> Seja bem-vindo ao SIM Castanhal! </h2>
 			<h1> Logo abaixo você pode escolher a opção que melhor se encaixa no seu perfil de usuário e fazer o seu pré-cadastramento online! <br />
             Após concluir o seu pré-cadastramento, as informações necessárias para o término do seu cadastro serão mostradas na tela! <br />
-            Se você precisar de ajuda pode entrar em contato conosco através do nosso chat online, email ou telefone.</h1>
+            Se você precisar de ajuda pode entrar em contato conosco através do nosso email ou telefone.</h1>
 			<a href='#' class='dalej'> Mais informações </a>
 	</div>
 

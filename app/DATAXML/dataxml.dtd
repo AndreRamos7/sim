@@ -1,0 +1,21 @@
+<!DOCTYPE comuns
+[
+<!ELEMENT comuns (protocolo,nome,emissor, rg,cpf,sexo,email,cep,estado,cidade,bairro,endereco,site,celular,fax,nomeMae,telefone)>
+<!ELEMENT protocolo (#PCDATA)>
+<!ELEMENT nome (#PCDATA)>
+<!ELEMENT emissor (#PCDATA)>
+<!ELEMENT rg (#PCDATA)>
+<!ELEMENT cpf (#PCDATA)>
+<!ELEMENT sexo (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT cep (#PCDATA)>
+<!ELEMENT estado (#PCDATA)>
+<!ELEMENT cidade (#PCDATA)>
+<!ELEMENT bairro (#PCDATA)>
+<!ELEMENT endereco (#PCDATA)>
+<!ELEMENT site (#PCDATA)>
+<!ELEMENT celular (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+<!ELEMENT nomeMae (#PCDATA)>
+<!ELEMENT telefone (#PCDATA)>
+]>
