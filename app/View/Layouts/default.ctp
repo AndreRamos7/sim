@@ -29,11 +29,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <?php
                     echo $this->Html->meta('icon');
 
-                    echo $this->Html->css('style');
-                    echo $this->Html->script('jquery-1.10.2.min');
+                    echo $this->Html->css('base');
+                    echo $this->Html->css('layout');
+                    echo $this->Html->css('reset');
+                    echo $this->Html->css('skeleton');
                     
+                    echo $this->Html->script('jquery-1.10.2.min');
+                                      
 
                     echo $this->fetch('meta');
+                    echo $this->fetch('css');
+                    echo $this->fetch('css');
+                    echo $this->fetch('css');
                     echo $this->fetch('css');
                     echo $this->fetch('script');
                    // echo filter_input(INPUT_SERVER, "DOCUMENT_ROOT");
@@ -43,13 +50,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             
         </script>
 
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-        <link href="/css/style.css" type="text/css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/ico/favicon.ico">
         
+        <!-- Mobile Specific Metas
+        ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- PT Sans -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+	<!-- Crete Roung -->
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+                
         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
         
+         
         <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
         <script src="/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
@@ -111,96 +128,117 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     $(".fax").mask("(99)9999 9999");
                     $(".ano").mask("9999");
                     
-                    
-                 
-                    // ## Abrindo ModalEstudantes
-                    $('#botaoAbrirModal1').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEstudantes ').addClass('md-showEstudantes');
-                    });
-
-                    // ## Fechando Modal Estudantes
-                    $('#md-closeEstudantes, #md-overlayEstudantes').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEstudantes').removeClass('md-showEstudantes');
-                    });
-
-                    // ## Abrindo ModalComuns
-                    $('#botaoAbrirModal2').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockComuns ').addClass('md-showComuns');
-                    });
-
-                    // ## Fechando Modal Comuns
-                    $('#md-closeComuns, #md-overlayComuns').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockComuns').removeClass('md-showComuns');
-                    });
-
-                    // ## Abrindo ModalEmpresas
-                    $('#botaoAbrirModal3').click(function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEmpresas ').addClass('md-showEmpresas');
-                    });
-
-                    // ## Fechando ModalEmpresas
-                    $('#md-closeEmpresas, #md-overlayEmpresas').click(function ( event ){
-                        event.preventDefault();
-                        $('#md-blockEmpresas').removeClass('md-showEmpresas');
-                    });
-
-                    // ## Abrindo ModalGratuitos
-                    $('#botaoAbrirModal4').click(function ( event ){
-                        event.preventDefault();
-                        $('#md-blockGratuitos ').addClass('md-showGratuitos');
-                    });
-
-                    // ## Fechando ModalEmpresas
-                    $('#md-closeGratuitos, #md-overlayGratuitos').click( function ( event ){
-                        event.preventDefault();
-                        $('#md-blockGratuitos').removeClass('md-showGratuitos');
-                    });
-                 });
-           
+            });
             
-
+            
         </script>
     </head>
     <body>
        
-       <header> </header>
-        <nav> 
-            <ul class="menuv">
-                    <li><a href="/"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icnhouse.png"> </p> Página inicial</a></li>
-                    <li><a href="http://www.contasuper.com.br/"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icncard.png"> </p> Crédito Master Card </a></li>
-                    <li><a href="http://00244.transdatasmart.com.br:24401/TDMaxwebcommerce/default.aspx"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icnvale.png"> </p> Vale Transporte</a></li>
-                    <li><a href="javascript:;"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/contatoico.png"> </p> Fale conosco!</a></li>
-                    <li><a href="javascript:;"> <p class="textocentro"> <img class="img" src="/app/webroot/img/ico/icnsim.png"> </p> Como funciona?</a></li>               
-            </ul>
-        </nav>
+       <header>
+       <nav>
+                        <div class="container">
+            
+				<div class="sixteen columns">
+					<ul class="mainMenu">
+						<li><a href="#" title="Home">Página Inicial</a></li>
+						<li><a href='#' title='Contato'>Fale Conosco!</a></li>
+						<li><a href='#' title='ComoFunciona'>Como Funciona?</a></li>
+						<li><a href='#' title='Duvidas'>Dúvidas Frequentes</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		
+			
+      
+    </header>
+        
+        <div class="container">
+
+		<div class="one-third column">
+                    <a href="http://www.contasuper.com.br"><img src="/img/ico/icncard.png">
+                        <h4 style="font-size: 28px;"> Crédito Master Card</h4>
+                        <p> Conheça as vantagens do crédito MasterCard!</p> </a>
+		</div>
+
+
+		<div class="one-third column">
+			<a href="http://00244.transdatasmart.com.br:24401/TDMaxwebcommerce/default.aspx"><img src="/img/ico/icnvale.png">
+			<h4 style="font-size: 28px;"> Vale Transporte </h4>
+			<p> Adquira seus VT's através do nosso sistema online! (Somente para empresas)</p> </a>
+		</div>
+
+
+
+		<div class="one-third column">
+			<a href=""><img src="/img/ico/icnsim.png">
+			<h4 style="font-size: 28px;">Como funciona?</h4>
+			<p> Alguma dúvida? Tire todas as suas dúvidas aqui!</p> </a>
+		</div>
+		
+	</div>
+        
+        <div class="clear"></div>
+        
         <div id="content">
             <?php echo $this->fetch('content'); ?>        
+        </div> 
+        
+            <footer>
+		<div class="container">
+			
+			<div class="six columns">
+                            <p></p> <br/>
+                                 <p align="center"> SIM | Copyright ‎© 2014 <p>
+                                <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:">André Ramos</a></p>
+			</div>
+
+			<div class="four columns social">
+                            <p></p> <br />
+				<h5 align="center"> Redes sociais </h5>
+                                <p align="center">
+                                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img src='/img/ico/you_tube_1.png'></a>
+				<a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img src='/img/ico/facebook.png'></a>
+                                <a href="https://twitter.com/agorasim_"><img src='/img/ico/twitter.png'></a> </p>
+				</div>
+
+			<div class="six columns">
+                            <p></p><br />
+				<h5 align="center"> Entre em contato conosco! </h5>
+				 <p align="center"> Mande-nos um email: 
+					<a align="center" href='mailto:contato@sistemasim.com.br'>contato@sistemasim.com.br</a></p>
+                                 
+                        
+                        </div>
+
+
+		<a id="top" href='#'>&uarr;</a>	
+                
+                
+	<script type="text/javascript">
+		var toper = $('a#top');
+
+
+		$(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                toper.fadeIn( 200 );
+            } else {
+                toper.fadeOut( 200 );
+            }
+        });
+
+         toper.click(function(){
+        	$('html, body').animate({scrollTop:0}, 500);	        	
+        	return false;
+    	}); 
+	</script>
+        
+                
         </div>
-        <footer>
-              <div id="logosim" > 
-                <p class="marginleft"><img src="/app/webroot/img/ico/icoSim.png"> </p>
-                <p class="marginleft legenda"> Desenvolvido por | <a href="mailto:biasilvabsi11@gmail.com" text-decoration="none"> Bianca Silva </a> | <a href="mailto:andre-rammos@hotmail.com" text-decoration="none"> André Ramos </a></p> 
-              </div>
-
-              <div id="contatos" >
-                <p class="textocentro"> Entre em contato conosco! </p>
-                <p class="textocentro"> Email: contato@sistemasim.com.br </p>
-                <p class="textocentro"> Telefone (Castanhal): (91) 3721-6210 </p>
-                <p class="textocentro"> Endereço (Castanhal): </p>    
-              </div>
-
-              <div id="redesocial">
-                <p> Redes Sociais </p> 
-                <a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img class="imgicon" src="/app/webroot/img/ico/icnface.png" alt='Facebook'></a>
-                <a href="https://twitter.com/agorasim_" ><img class="imgicon" src="/app/webroot/img/ico/icntwit.png" alt='twitter'></a>
-                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img class="imgicon" src="/app/webroot/img/ico/icnyoutube.png" alt='youtube'></a>
-              </div>
-
-       </footer>
+	</footer>
+           
+           
     </body>
 </html>

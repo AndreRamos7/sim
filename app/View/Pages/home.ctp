@@ -1,22 +1,73 @@
-<div id="desktop">
-    <ul id="menu">                                 
-        <li class="header">  <img src="img/BandeiraPara.png" class="imgminiatura"> Escolha a sua cidade: </li>                    
-        <li class="parent"><a title="" href="#">Castanhal</a>
-            <ul class="sub-menu" >                                   
-                <li><a href="/castanhal"><img src="img/castanhalPA.jpg" class="imgminiatura2"> Acessar!</a> </li>  
-            </ul>
-        </li>
-        <li class="parent"><a title="" href="#">Ananindeua</a>
-            <ul class="sub-menu">                                   
-                <li><a href="/ananindeua"> <img src="img/ananindeuaPA.jpg" class="imgminiatura"> Acessar!</a></li> 
-            </ul>
-        </li>
-        <li class="parent"><a title="" href="#">Santa Isabel</a>
-            <ul class="sub-menu">                                   
-                <li><a href="/santaIsabel"> <img src="img/santaIsabelPA.jpg" class="imgminiatura"> Em breve! </a></li>
-            </ul>
-        </li>
-    </ul>
-</div>
-                  
-                                  
+    <div class= "orange">
+
+		<div class= "container">
+			<h2> Faça seu cadastro online!! </h2>
+			<p> É só escolher a sua cidade no menu abaixo! <p> 
+			<a href="#" class="dalej"> Precisa de ajuda? </a>
+		</div>
+
+	</div>
+
+<div class="clear"></div>    
+<div class="container">
+	
+    
+   
+    <ul class="ca-menu">
+    <li>
+        <a href="/castanhal" id="botaoAbrirCastanhal" title="Castanhal PA">
+            <span class="ca-icon"><img src="img/castanhal.jpg"></span>
+            <div class="ca-content">
+                <h2 class="ca-main"> Castanhal </h2>
+            </div>
+        </a>
+    </li>
+    
+     <li>
+        <a href="/ananindeua" id="botaoAbrirAnanindeua" title="Ananindeua PA">
+            <span class="ca-icon"><img src="img/ananindeuaPA.jpg"></span>
+            <div class="ca-content">
+                <h2 class="ca-main">Ananindeua</h2>
+                
+            </div>
+        </a>
+    </li>
+    
+    <br />
+    
+    <li>
+        <a href="/Santaisabel" id="botaoAbrirSantaIsabel" title="Santa Isabel">
+            <span class="ca-icon"><img src="img/santaIsabelPA.jpg"></span>
+            <div class="ca-content">
+                <h2 class="ca-main">Santa Isabel</h2>
+                
+            </div>
+        </a>
+    </li>
+    
+     <li>
+        <a href="/Marituba" id="botaoAbrirMarituba" title="Marituba">
+            <span class="ca-icon"><img src="img/marituba.jpg"></span>
+            <div class="ca-content">
+                <h2 class="ca-main">Marituba</h2>
+                
+            </div>
+        </a>
+    </li>
+    <li>
+        <a href="/Benevides" id="botaoAbrirBenevides" title="Benevides">
+            <span class="ca-icon"><img src="img/benevides.JPG"></span>
+            <div class="ca-content">
+                <h2 class="ca-main">Benevides</h2>
+                
+            </div>
+        </a>
+    </li>
+    
+</ul>
+    
+    
+    </div>
+    
+    
+    <div class="clear"> </div>

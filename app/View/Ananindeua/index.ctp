@@ -1,24 +1,30 @@
 <!DOCTYPE html>
+<div class='orange'>
 
-<!--
-POR CONVENÇÃO ESSA PÁGINA INDEX TEM QUE FICAR DENTRO DA PASTA Ananindeua
-ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
--->
+	<div class='container'>
+			<h3> Seja bem-vindo ao SIM Ananindeua! </h3>
+			<p> Logo abaixo você pode escolher a opção que melhor se encaixa no seu perfil de usuário e fazer o seu pré-cadastramento online! <br />
+            Após concluir o seu pré-cadastramento, as informações necessárias para o término do seu cadastro serão mostradas na tela! <br />
+            Se você precisar de ajuda pode entrar em contato conosco através do nosso chat online, email ou telefone.</p>
+			<a href='#' class='dalej'> Mais informações </a>
+	</div>
 
-<!-- MENU ESTUDANTES, COMUNS, EMPRESA, GRATUIDADE, COM DIV OCULTA DE DOCUMENTOS NECESSÁRIOS -->
+</div>
 
-        <h3 align="center"> Bem vindo à Ananindeua! </h3>
-        <!-- MENU -->
-        
         <?php 
             $msg = $this->Session->flash();
             if(isset($msg) and $msg != ""){
                 echo "<script>alert('$msg')</script>";
         }
           ?>
-        <ul class="ca-menu">
+      
+<div class="clear"></div>
+    <div class="container">
+	
+    
+    <ul class="ca-menu">
     <li>
-        <a href="javascript:;" id="botaoAbrirModal2" title="AbrirComuns">
+        <a href="/comums/cadastrar/Ananindeua" id="botaoAbrirComuns" title="AbrirComuns">
             <span class="ca-icon"><img src="img/ico/userico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main"> Comuns </h2>
@@ -28,7 +34,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
     </li>
     
      <li>
-        <a href="javascript:;" id="botaoAbrirModal1" title="AbrirEstudantes">
+        <a href="/estudantes/cadastrar/Ananindeua" id="botaoAbrirModal1" title="AbrirEstudantes">
             <span class="ca-icon"><img src="img/ico/estudanteico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Estudantes</h2>
@@ -37,8 +43,10 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
         </a>
     </li>
     
+    <br />
+    
     <li>
-        <a href="javascript:;" id="botaoAbrirModal3" title="AbrirEmpresas">
+        <a href="/empresas/cadastrar/Ananindeua" id="botaoAbrirModal3" title="AbrirEmpresas">
             <span class="ca-icon"><img src="img/ico/empresaico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Empresas</h2>
@@ -48,7 +56,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
     </li>
     
      <li>
-        <a href="javascript:;" id="botaoAbrirModal4" title="AbrirGratuitos">
+        <a href="/gratuitos/cadastrar/Ananindeua" id="botaoAbrirModal4" title="AbrirGratuitos">
             <span class="ca-icon"><img src="img/ico/gratuitoico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Gratuidade</h2>
@@ -57,87 +65,7 @@ ESSA É A PÁGINA PRINCIPAL DE QUEM ENTRA EM "Ananindeua"
         </a>
     </li>
 </ul>
-            
-<!-- JANELA MODAL DE USUÁRIOS ESTUDANTES -->
-
-<div id="md-blockEstudantes">
-        
-    <h3 id="md-titleEstudantes">
-        Documentos necessários para estudantes
-    </h3>
-
-    <div id="md-contentEstudantes">
-        <p> Apresentar os originais e cópias de:</p>
-        <p> - CPF; </p>
-        <p> - RG; </p>
-        <p> - Comprovante de Residência; </p>
-        <p> - Declaração de matrícula; </p>
-        <p> - Declaração de frequência; (Comprovação de que o aluno frequenta as aulas normalmente) </p>
-        <p> - Uma foto 3x4; (Não é necessário cópia)</p>
-    </div>
-       <a href="/estudantes/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
-    <a href="javascript:;" id="md-closeEstudantes" title="Fechar">Fechar</a>
-
-</div>
-
-<div id="md-overlayEstudantes"></div>
-
-<!-- JANELA MODAL DE USUÁRIOS COMUNS -->
-
-   <div id="md-blockComuns">
-    <h3 id="md-titleComuns">
-        Documentos necessários para usuários Comuns:
-    </h3>
-
-    <div id="md-contentComuns">
-        <p> Apresentar os originais e cópias de: </p>
-        <p> - CPF; </p>
-        <p> - RG; </p>
-        <p> - Comprovante de residência; </p>
-    </div>
-    <a href="/comums/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
-    <a href="javascript:;" id="md-closeComuns" title="Fechar">Fechar</a>
-
-</div>
-
-<div id="md-overlayComuns"></div>
     
-<!-- JANELA MODAL DE USUÁRIOS EMPRESAS -->
-
-<div id="md-blockEmpresas">
-    <h3 id="md-titleEmpresas">
-        Documentos necessários para Empresas:
-    </h3>
-
-    <div id="md-contentEmpresas">
-        <p>Apresentar os originais e cópias de:</p>
-        
+    
     </div>
-       <a href="/empresas/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
-    <a href="javascript:;" id="md-closeEmpresas" title="Fechar">Fechar</a>
-
-</div>
-
-<div id="md-overlayEmpresas"></div>
-
-
-<!-- JANELA MODAL DE USUÁRIOS GRATUITOS --> 
-
-<div id="md-blockGratuitos">
-    <h3 id="md-titleGratuitos">
-        Documentos necessários para Gratuidade:
-    </h3>
-
-    <div id="md-contentGratuitos">
-        <p> Apresentar os originais e cópias de: </p>
-        <p> - CPF; </p>
-        <p> - RG; </p>
-        <p> - Comprovante de residência; </p>
-   </div>
-   <a href="/gratuitos/cadastrar/Ananindeua" id="md-cadastra"> Cadastre-se agora! </a> </p>   
-    <a href="javascript:;" id="md-closeGratuitos" title="Fechar">Fechar</a>
-
-</div>
-
-<div id="md-overlayGratuitos"></div>
-        
+          
