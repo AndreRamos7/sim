@@ -19,7 +19,7 @@ class ComumsController extends AppController {
                 
                 $newId = $this->Comum->id;
                 $cidade = $this->request->data['Comum']['cidade'];
-                $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
+                $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
                 $protocolo = rand(11111, 99999) . "-$newId";//echo "Protocolo: $protocolo";
                 //echo $cidadeSPC;
                 if($this->Comum->saveField('protocolo', $protocolo)){
@@ -29,12 +29,13 @@ class ComumsController extends AppController {
                             . "`protocolo`, `nome`, `emissor`, `rg`, `cpf`, `sexo`, `email`, `cep`, `estado`, `cidade`"
                             . ", `bairro`, `endereco`, `site`, `celular`, `fax`, `nomeMae`, `telefone` "
                             . "FROM `comums` WHERE cidade = '$cidade'");                    
-                    $paraGravar = array("CadastroSim$cidadeSPC" => array("comum" => $todosComuns));
+                    $paraGravar = array("CadastroSim$cidadeSemEspaco" => array("comum" => $todosComuns));
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/comuns.xml"); 
                     
-                    $dados["result"] = "Usuário cadastrado com sucesso";
+                    $dados["result"] = "Usuário comum cadastrado com sucesso.";
                     $dados["protocolo"] = $protocolo;
+                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
                     $this->set('dados', $dados);
                    
                     $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG e comprovante de residência. Necessário também uma foto 3x4.  ", "flash_custom");

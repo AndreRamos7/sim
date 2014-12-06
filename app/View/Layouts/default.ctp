@@ -114,6 +114,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             
             
         </script>
+        <script type="text/javascript">
+            function imprimirComprovante(){
+               if (!window.print){
+                  alert("Este navegador não suporta impressão!")
+                  return
+               }
+               window.print()
+            }
+
+        </script>
     </head>
     <body>
        
@@ -146,7 +156,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<div class="six columns">
                             <p></p> <br/>
                                  <p align="center"> SIM | Copyright ‎© 2014 <p>
-                                <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:">André Ramos</a></p>
+                                <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:andre-rammos@hotmail.com">André Ramos</a></p>
 			</div>
 
 			<div class="four columns social">
@@ -166,14 +176,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                                  
                         
                         </div>
-
-
 		<a id="top" href='#'>&uarr;</a>	
-                
-                
-	
-        
-                
         </div>
 	</footer>
            

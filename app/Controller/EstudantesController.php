@@ -11,7 +11,7 @@ class EstudantesController extends AppController {
             if ($this->Estudante->save($this->request->data)) {
                 
                 $cidade =  $this->request->data['Estudante']['cidade'];
-                $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
+                $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
                 
                 $newId = $this->Estudante->id;
                 $protocolo = rand(11111, 99999) . "-$newId";
@@ -19,12 +19,12 @@ class EstudantesController extends AppController {
                     
                     $todos = $this->Estudante->query("SELECT `nome`, `telefone`, `rg`, `emissor`, `dataNascimento`, `sexo`, `nomeMae`, `nomePai`, `endereco`, `bairro`, `cidade`, `cep`, `naturalidade`, `estado`, `nomeEscola`, `cnpj`, `serie`, "
                             . "`grau`, `curso`, `periodo`, `matricula`, `dataIni`, `dataFim` "
-                            . "FROM `estudantes` WHERE cidade = '$cidadeSPC'");
-                    $paraGravar = array("CadastroSim$cidadeSPC" => array("Estudante" => $todos));
+                            . "FROM `estudantes` WHERE cidade = '$cidade'");
+                    $paraGravar = array("CadastroSim$cidadeSemEspaco" => array("Estudante" => $todos));
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/Estudantes.xml"); 
                     
-                    $dados["result"] = "Empresa cadastrada com sucesso!!";
+                    $dados["result"] = "Estudante cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
                     $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
                     

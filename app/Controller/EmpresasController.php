@@ -12,7 +12,7 @@ class EmpresasController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Empresa->save($this->request->data)) {
                 $cidade =  $this->request->data['Empresa']['cidade'];
-                $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
+                $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
                 
                 $newId = $this->Empresa->id;
                 $protocolo = rand(11111, 99999) . "-$newId";
@@ -24,7 +24,7 @@ class EmpresasController extends AppController {
                             . "`inscEstadual`, `maxCartoes`, `qtdVts`, `qtdFuncionarios`, `subTipo`, "
                             . "`perfilCompra`, `estado`, `cidade`, `endereco`, `bairro`, `cep`, `site`, "
                             . "`telefone`, `celular`, `fax`, `email` FROM `empresas` WHERE cidade = '$cidade'");
-                    $paraGravar = array("CadastroSim$cidadeSPC" => array("Empresa" => $todos));
+                    $paraGravar = array("CadastroSim$cidadeSemEspaco" => array("Empresa" => $todos));
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/Empresas.xml");                
                     //$this->Session->setFlash('Seu cadastro foi realizado com sucesso!!', 'flash_custom');

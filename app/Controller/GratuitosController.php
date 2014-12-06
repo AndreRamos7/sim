@@ -12,7 +12,7 @@ class GratuitosController extends AppController {
 
                 
                 $cidade =  $this->request->data['Gratuito']['cidade'];
-                $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
+                $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
                 
                 $newId = $this->Gratuito->id;
                 $protocolo = rand(11111, 99999) . "-$newId";
@@ -21,12 +21,12 @@ class GratuitosController extends AppController {
                     //código para gerar arquivo XML
                     $todos = $this->Gratuito->query("SELECT `nome`, `cpf`, `rg`, `emissor`, `subTipoGratuitoID`, `nroAposentadoria`, `sexo`, `dataNasc`, `dataValidade`, `limiteMensal`,"
                             . " `telefone`, `cep`, `cidade`, `bairro`, `endereco`, `celular`, `estado` "
-                            . "FROM `gratuitos` WHERE `cidade` = '$cidadeSPC'");
-                    $paraGravar = array("CadastroSim$cidadeSPC" => array("Gratuito" => $todos));
+                            . "FROM `gratuitos` WHERE `cidade` = '$cidade'");
+                    $paraGravar = array("CadastroSim$cidadeSemEspaco" => array("Gratuito" => $todos));
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/Gratuitos.xml");                
                     
-                    $dados["result"] = "Empresa cadastrada com sucesso!!";
+                    $dados["result"] = "Usuário gratuito cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
                     $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
                     

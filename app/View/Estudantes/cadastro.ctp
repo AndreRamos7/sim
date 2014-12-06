@@ -21,7 +21,7 @@
             <?php 
                 $msg = $this->Session->flash();
                  if(isset($msg) and $msg != ""){
-                     echo "<script>alert('$msg')</script>";
+                    //echo "<script>alert('$msg')</script>";
                  }
             ?>
             <fieldset class="row1">    
@@ -52,8 +52,8 @@
                 </p>
                 <p>
                     <label >* Sexo: </label>
-                    <label for="sexo1" class="sexo">M </label><input name="data[Estudante][sexo]" id="sexo1"  type="radio" value="M">
-                    <label for="sexo2" class="sexo"> F  </label><input name="data[Estudante][sexo]" id="sexo2"  type="radio" value="F"> 
+                    <label for="sexo1" class="sexo">M </label><input name="data[Estudante][sexo]" id="sexo1"  type="radio" value="M" required>
+                    <label for="sexo2" class="sexo"> F  </label><input name="data[Estudante][sexo]" id="sexo2"  type="radio" value="F" required> 
                 </p>
                 <p> 
                     <label>* Data de Nascimento: </label><br>
@@ -119,12 +119,12 @@
 
                 <p class="superior">  
                     <label for="EstudanteDataIni">* Ano Início:</label>  
-                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq">
+                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq ano">
                 </p>
 
                 <p class="superior">
                     <label for="EstudanteDataFim">* Ano Fim: </label>
-                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq">
+                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq ano">
                 </p>
 
                 <p class="superior"> 

@@ -663,5 +663,22 @@ p.agreement label{
 
 
 
-
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  section#printable, #printable * {
+    visibility: visible;
+  }
+  
+  section#printable, #printable button#btnPrint {
+    visibility: hidden;
+  }
+  
+  section#printable {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+}
 
