@@ -49,7 +49,7 @@
                     </p>
                 <p>
                         <label for="">* CPF:</label>
-                        <input name="data[Comum][cpf]" maxlength="20" type="text" id="ComumCpf" required class=" cpf">
+                        <input name="data[Comum][cpf]" maxlength="20" type="text" id="ComumCpf" required class="cpf">
                    </p>
                     <p>
                         <label >* Sexo: </label>

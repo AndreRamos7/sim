@@ -73,15 +73,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         
         <script language="JavaScript" type="text/javascript">
            $(document).ready(function() {
-                // Evento de clique do elemento: ul#menu li.parent > a
-                $('ul#menu li.parent > a').click(function() {
-                        // Expande ou retrai o elemento ul.sub-menu dentro do elemento pai (ul#menu li.parent)
-                        $('ul.sub-menu', $(this).parent()).slideToggle('fast', function() {
-                                // Depois de expandir ou retrair, troca a classe 'aberto' do <a> clicado       
-                                $(this).parent().toggleClass('aberto');
-                        });
-                        return false;
-                });
+
+                $("fieldset p input.cpf").mask("999.999.999-99");
+                $("fieldset p input.rg").mask("999999-9");
+                $("fieldset p input.data").mask("99/99/9999");
+                $("fieldset p input.cnpj").mask("99.999.999/9999-99");
+                $("fieldset p input.cep").mask("99999-999");
+                $("fieldset p input.celular").mask("(99)9999 9999");
+                $("fieldset p input.telefone").mask("(99)9999 9999");
+                $("fieldset p input.fax").mask("(99)9999 9999");
+                $("fieldset p input.ano").mask("9999");
 
                 $( "select#selectNivel" ).change(function () {
                     var str = "";
@@ -89,40 +90,25 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         str = $( this ).text();
                     });
                     if(str === "Fundamental"){
-
-                        $('tr#iniFim input.desreq').attr("required",false);  
-                        $('tr#cursoEMatricula input.desreq').attr("required",false);
-                        $('tr#periodoESerie input.desreq').attr("required",false);
                         
-                        //alert( str );
-                    }).change();
-                    
-                    $("input.cpf").mask("999.999.999-99");
-                    $("input.rg").mask("999999-9");
-                    $("input.data").mask("99/99/9999");
-                    $("input.cnpj").mask("99.999.999/9999-99");
-                    $("input.cep").mask("99999-999");
-                    $("input.celular").mask("(99)9999 9999");
-                    $("input.telefone").mask("(99)9999 9999");
-                    $("input.fax").mask("(99)9999 9999");
-                    $("input.ano").mask("9999");
-                    
-                    /*$('html, #orange').animate({ scrollTop: 795px }, 'slow');
-                    $(window).scroll(function()
-                        {
-                        var topo = $('#topo').height(); // altura do topo
-                        var rodape = $('#rodape').height(); // altura do rodape
-                        var scrollTop = $(window).scrollTop(); // qto foi rolado a barra
-                        var tamPagina = $(document).height(); // altura da página
-
-                        if(scrollTop > topo){
-                          $('#orange').css({'position' : 'absolute', 'margin-top' : scrollTop - (topo-5)});
-                        }else{
-                          $('footer').css({'position' : 'relative', 'margin-top' : 0});
-                        }               
-                        });
-
-                    */
+                        $('p.superior input.desreq').attr("required",false);
+                        
+                        $('p.fundamental').show();
+                        $('p.superior').hide();
+                        
+                    }else if(str === "Médio"){
+                        $('p.superior input.desreq').attr("required",false);
+                        
+                        $('p.fundamental').show();
+                        $('p.superior').hide();
+                    }else if(str === "Superior"){
+                        $('p.superior input.desreq').attr("required",true);
+                        
+                        $('p.fundamental').hide();
+                        $('p.superior').show();
+                    }
+                   // alert( str );
+                }).change();
                     
             });
             
@@ -185,23 +171,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<a id="top" href='#'>&uarr;</a>	
                 
                 
-	<script type="text/javascript">
-		var toper = $('a#top');
-
-
-		$(window).scroll(function(){
-            if ($(this).scrollTop() > 100) {
-                toper.fadeIn( 200 );
-            } else {
-                toper.fadeOut( 200 );
-            }
-        });
-
-         toper.click(function(){
-        	$('html, body').animate({scrollTop:0}, 500);	        	
-        	return false;
-    	}); 
-	</script>
+	
         
                 
         </div>
