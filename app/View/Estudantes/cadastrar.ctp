@@ -63,21 +63,9 @@
 
     <fieldset class="row1">    
                 <legend>Endereço</legend>
-                <p> <label>* Endereço: </label>
-                            <input name="data[Estudante][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="EstudanteEndereco" maxlength="100" type="text" size="80" required class="long">
-                </p>                    
-                <p> <label>* Bairro: </label>
-                            <input name="data[Estudante][bairro]" id="EstudanteBairo" maxlength="50" type="text" size="30" required class="campos campopequeno">        
-                </p>
-                <p> <label>* CEP: </label>
-                            <input name="data[Estudante][cep]" id="EstudanteCep" maxlength="20" type="text" required class="campos campopequeno cep">
-                </p>
-                <p> <label>* Cidade: </label>
                             <select name="data[Estudante][cidade]" id="EstudanteCidade" maxlength="20" class="campos campopequeno" >
                                 <option value="<?php echo $cidadeSPC;?>"> <?php echo $cidadeSPC;?> </option>
                             </select>
-                </p>
-                <p> <label>* Estado: </label>
                             <select name="data[Estudante][estado]" id="EstudanteEstado" maxlength="1"  class="campos campopequeno" >
                                 <option value="PA"> PA </option>
                             </select>
@@ -86,68 +74,9 @@
 
     <fieldset class="row1">    
                     <legend>Dados Escolares</legend>
-                    
-                    <p><label>* Nível de Escolaridade: </label> 
-                                    <select id="selectNivel"  class="campos campopequeno" name="data[Estudante][grau]">
-                                        <option value="1">Fundamental</option>
-                                        <option value="2">Médio</option>
-                                        <option value="3">Superior</option>                                    
-                                    </select>
-                                
-                    </p>                        
-                        
-                    <p> <label>* Nome da Instituição: </label>
-                                    <input name="data[Estudante][nomeEscola]" id="EstudanteNomeEscola" maxlength="200" type="text" size="80" required  class="long">
-                      
-                    </p>
-                    
-                    <p> <label id="EstudanteCurso">* Curso: </label> 
-                                    <input name="data[Estudante][curso]" id="EstudanteCurso" maxlength="50" type="text" size="30" required class="campos campopequeno desreq">
-                             
-                    </p>
-                            
-                    <p> <label id="EstudanteMatricula" >* Matricula: </label> 
-                                    <input name="data[Estudante][matricula]" id="EstudanteMatricula" maxlength="20" type="text" required class="campos campopequeno desreq">
-                              
-                    </p>
-                    
-                    <p>  <label id="EstudanteDataIni">* Ano Início:</label>  
-                                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq">
-                    </p>
-                    
-                    <p>
-                        <label id="EstudanteDataFim">* Ano Fim: </label>
-                                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq">
-                                
-                    </p>
-                    
-                    <p> <label id="EstudantePeriodo">* Período: </label> 
-                                    <input name="data[Estudante][periodo]" id="EstudantePeriodo" placeholder=" Ex: 6º semestre" maxlength="50" type="text" size="20" required class="campos campopequeno desreq">
-                      
-                    </p>
-                    
-                    <p> <label for="EstudanteSerie" id="EstudanteSerie">* Série: </label>
-                                    <input name="data[Estudante][serie]" id="EstudanteSerie" maxlength="20" type="text" required class="campos campopequeno desreq">
-                    </p>
-                    </fieldset>
 
             <fieldset class="row1">    
                 <legend>Contatos</legend>
-                <p> <label for="ComumEmail">* Email: </label>
-                            <input name="data[Estudante][email]" id="ComumEmail" maxlength="100" type="email" size="80" required class="long">
-                </p>
-                <p> <label> Site: </label>
-                            <input name="data[Estudante][site]" id="EstudanteSite" maxlength="100" type="text" size="80" class="long">
-                </p>
-                <p> <label>* Telefone: </label>
-                            <input name="data[Estudante][telefone]" id="EstudanteTelefone" maxlength="15" type="text" required class="campos  campopequeno telefone">        
-                </p>
-                <p> <label>* Celular: </label>
-                            <input name="data[Estudante][celular]" id="EstudanteCelular" maxlength="15" type="text" class="campos campopequeno celular">        
-                </p>
-                <p> <label> Fax: </label>
-                    <input name="data[Estudante][fax]" id="EstudanteFax" maxlength="15" type="text" class="campos campopequeno fax">        
-                </p>    
             </fieldset>
 
 
@@ -163,3 +92,13 @@
     </form>
 </div>
                 </div> </div>
+                <p> <label>* Endereço: </label>
+                            <input name="data[Estudante][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="EstudanteEndereco" maxlength="100" type="text" size="80" required class="long">
+                </p>                    
+                <p> <label>* Bairro: </label>
+                            <input name="data[Estudante][bairro]" id="EstudanteBairo" maxlength="50" type="text" size="30" required class="campos campopequeno">        
+                </p>
+                <p> <label>* CEP: </label>
+                            <input name="data[Estudante][cep]" id="EstudanteCep" maxlength="20" type="text" required class="campos campopequeno cep">
+                </p>
+                <p> <label>* Cidade: </label>
