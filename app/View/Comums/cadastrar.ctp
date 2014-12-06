@@ -49,12 +49,12 @@
                     </p>
                 <p>
                         <label for="">* CPF:</label>
-                        <input name="data[Comum][cpf]" maxlength="20" type="text" id="ComumCpf" required class="campos campopequeno cpf">
+                        <input name="data[Comum][cpf]" maxlength="20" type="text" id="ComumCpf" required class=" cpf">
                    </p>
                     <p>
                         <label for="">* Sexo: </label>
-                        <label> M <input name="data[Comum][sexo]" id="ComumSexo" maxlength="1" type="radio" value="M"> </label>
-                        <label > F <input name="data[Comum][sexo]" id="ComumSexo" maxlength="1" type="radio" value="F"> </label>
+                        <label >M<input name="data[Comum][sexo]" id="ComumSexo"  type="radio" value="M"> </label>
+                        <label> F <input name="data[Comum][sexo]" id="ComumSexo"  type="radio" value="F"> </label>
                     </p>
                
             

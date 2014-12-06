@@ -97,15 +97,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         //alert( str );
                     }).change();
                     
-                    $(".cpf").mask("999.999.999-99");
-                    $(".rg").mask("999999-9");
-                    $(".data").mask("99/99/9999");
-                    $(".cnpj").mask("99.999.999/9999-99");
-                    $(".cep").mask("99999-999");
-                    $(".celular").mask("(99)9999 9999");
-                    $(".telefone").mask("(99)9999 9999");
-                    $(".fax").mask("(99)9999 9999");
-                    $(".ano").mask("9999");
+                    $("input.cpf").mask("999.999.999-99");
+                    $("input.rg").mask("999999-9");
+                    $("input.data").mask("99/99/9999");
+                    $("input.cnpj").mask("99.999.999/9999-99");
+                    $("input.cep").mask("99999-999");
+                    $("input.celular").mask("(99)9999 9999");
+                    $("input.telefone").mask("(99)9999 9999");
+                    $("input.fax").mask("(99)9999 9999");
+                    $("input.ano").mask("9999");
                     
                     /*$('html, #orange').animate({ scrollTop: 795px }, 'slow');
                     $(window).scroll(function()
