@@ -132,8 +132,8 @@ input, textarea {border: 1px solid #ddd; outline: none;}
 input:focus, textarea:focus {border-color: #b6b6b6;}
 textarea {width: 480px; padding: 7px 10px;}
 input.error, textarea.error {border-color: #cc4847;}
-
-
+input{ text-transform: uppercase;}
+form.register fieldset.row1 label.sexo{width: 33px;}
 
 input[type='submit'] {width: 502px; padding: 12px 0; font-size: 16px; border: none; background: #eee; color: #aaa; cursor: pointer;}
 input[type='submit']:hover {background: #1EBA6B; color: #fff;}
@@ -423,6 +423,7 @@ form p{
     margin:0;
     color:#000;
     padding:5px;
+    height: auto;
 }
 form.register fieldset.row1
 {

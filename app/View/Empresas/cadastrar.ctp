@@ -3,19 +3,19 @@
 ?>
 
 <section class='gray'>
-		<div class='container'>
-        
+    <div class='container'>
+
         <p align="center"> <img src="/img/ico/empresaico.png"> </p>
-			
-				<h2 align="center"> Cadastro de usuários do tipo Empresas / <?php echo $cidadeSPC;?></h2>
-                
-				<p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
-			</div>
 
-	</section>
+        <h2 align="center"> Cadastro de usuários do tipo Empresas / <?php echo $cidadeSPC;?></h2>
+
+        <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
+    </div>
+
+</section>
 
 
-	<div class='clear'></div>
+<div class='clear'></div>
 
 
 <div class="container">
@@ -111,5 +111,9 @@
     
 </form>
 </div>
+    <script>
+            $("html, body").animate({scrollTop:$("section.gray").offset().top }, 'slow'); //animação obrigatoria em todos os conteudos
+            
+        </script>
 </div>
         

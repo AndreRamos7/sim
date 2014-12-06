@@ -52,10 +52,11 @@
                 <p> <label>* CPF:</label>
                         <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" required class="campos campopequeno cpf">
                 </p>
-                <p> <label>* Sexo: </label>                    
-                            <label>M <input name="data[Estudante][sexo]" id="EstudanteSexo" maxlength="1" type="radio" value="M"> </label>
-                            <label>F <input name="data[Estudante][sexo]" id="EstudanteSexo" maxlength="1" type="radio" value="F"> </label>
-                </p>
+                <p>
+                        <label >* Sexo: </label>
+                        <label for="sexo1" class="sexo">M </label><input name="data[Estudante][sexo]" id="sexo1"  type="radio" value="M">
+                        <label for="sexo2" class="sexo"> F  </label><input name="data[Estudante][sexo]" id="sexo2"  type="radio" value="F"> 
+                    </p>
                 <p> <label>* Data de Nascimento: </label><br>
                             <input name="data[Estudante][dataNascimento]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" readonly="">
                 </p>
@@ -164,4 +165,8 @@
     </form>
                     </div>
 </div>
+    <script>
+        $("html, body").animate({scrollTop:$("section.gray").offset().top }, 'slow'); //animação obrigatoria em todos os conteudos
+
+    </script>
                 </div> 

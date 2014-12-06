@@ -50,9 +50,10 @@
         <p> <label>* Nº Aposentadoria: </label>   
                             <input name="data[Gratuito][nroAposentadoria]" id="GratuitoNroAposentadoria" maxlength="10" type="text" required  class="campos campopequeno">
         </p>
-        <p> <label>* Sexo: </label>                    
-                            <label>M <input name="data[Gratuito][sexo]" id="GratuitoSexo" maxlength="1" type="radio" value="M"> </label>
-                            &nbsp;&nbsp;&nbsp;&nbsp;<label>F <input name="data[Gratuito][sexo]" id="GratuitoSexo" maxlength="1" type="radio" value="F">  </label>
+        <p>
+            <label >* Sexo: </label>
+            <label for="sexo1" class="sexo">M </label><input name="data[Gratuito][sexo]" id="sexo1"  type="radio" value="M">
+            <label for="sexo2" class="sexo"> F  </label><input name="data[Gratuito][sexo]" id="sexo2"  type="radio" value="F"> 
         </p>
             </fieldset>
 
@@ -104,5 +105,9 @@
 
     </form>
 </div>
+    <script>
+            $("html, body").animate({scrollTop:$("section.gray").offset().top }, 'slow'); //animação obrigatoria em todos os conteudos
+            
+        </script>
                 </div>
 

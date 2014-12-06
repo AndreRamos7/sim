@@ -2,26 +2,26 @@
     $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
 ?>
 
- <section class='gray'>
-		<div class='container'>
-        
+    <section class='gray'>
+        <div class='container'>
+
         <p align="center"> <img src="/img/ico/userico.png"> </p>
-			
-				<h2 align="center"> Cadastro de usuários do tipo Comum / <?php echo $cidadeSPC;?></h2>
-                
-				<p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
-			</div>
 
-	</section>
+        <h2 align="center"> Cadastro de usuários do tipo Comum / <?php echo $cidadeSPC;?></h2>
+
+        <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
+        </div>
+
+    </section>
 
 
-	<div class='clear'></div>
+    <div class='clear'></div>
 
 
 
 
     <div class="container">
-		<div class="sixteen columns form">
+            <div class="sixteen columns form">
      
       <form action="/comums/cadastrar/<?php echo $cidade;?>" id="ComumCadastrarForm" class="register" method="post" accept-charset="utf-8">
     <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
@@ -52,9 +52,9 @@
                         <input name="data[Comum][cpf]" maxlength="20" type="text" id="ComumCpf" required class=" cpf">
                    </p>
                     <p>
-                        <label for="">* Sexo: </label>
-                        <label >M<input name="data[Comum][sexo]" id="ComumSexo"  type="radio" value="M"> </label>
-                        <label> F <input name="data[Comum][sexo]" id="ComumSexo"  type="radio" value="F"> </label>
+                        <label >* Sexo: </label>
+                        <label for="sexo1" class="sexo">M </label><input name="data[Comum][sexo]" id="sexo1"  type="radio" value="M">
+                        <label for="sexo2" class="sexo"> F  </label><input name="data[Comum][sexo]" id="sexo2"  type="radio" value="F"> 
                     </p>
                
             
@@ -126,6 +126,10 @@
     </fieldset>
 	</form>
      </div>
+        <script>
+            $("html, body").animate({scrollTop:$("section.gray").offset().top }, 'slow'); //animação obrigatoria em todos os conteudos
+            
+        </script>
 		</div>
 	
 
