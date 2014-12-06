@@ -1,15 +1,10 @@
 body {margin:0; padding: 0; font-family: "Open Sans", Arial, sans-serif;}
 body {background-image:url(../img/bg.png); background-attachment:fixed; color: #585858;}
 
-.heightauto{
-    height: auto;
-    
-    
-}
-
 /*
 * Paragraf
 */
+
 p {font-size: 80%; font-weight: 300; color: #333; line-height: 30px;}
 
 .textright {
@@ -205,7 +200,7 @@ a.green:hover {background: #36ae7e}
 /*
 * Footer
 */
-footer {width: 100%; height: 140px; float: left; margin: 20px; padding: 30px; background: #003366; margin-top: 10px;}
+footer {width: 100%; min-height: 140px; float: left; margin: 20px; padding: 30px; background: #003366; margin-top: 10px;}
 footer h5 {color: #ccc; margin-top: 10px; line-height: 10px; }
 footer p {color: #aaa; line-height: 15px; font-size: 14px; margin-bottom: 7px; margin-top: 10px;}
 footer a {color: #ddd; margin-top: 10px;}
@@ -406,6 +401,22 @@ form.register{
     margin-bottom: 40px;
     
 }
+
+#boxForm {
+    width:810px;
+    margin: 20px auto 0px auto;
+    height:1470px;
+    background-color:#fff;
+    padding:5px;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    margin-bottom: 70px;
+    
+}
+
+
+
+
 form p{
     font-size: 10pt;
     clear:both;

@@ -22,7 +22,7 @@
 
     <div class="container">
 		<div class="sixteen columns form">
-     <div style= "overflow-y:auto; height:900px; margin-bottom: 30px; align: center; ">
+     
       <form action="/comums/cadastrar/<?php echo $cidade;?>" id="ComumCadastrarForm" class="register" method="post" accept-charset="utf-8">
     <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
               <?php 
@@ -127,5 +127,5 @@
 	</form>
      </div>
 		</div>
-	</div>
+	
 

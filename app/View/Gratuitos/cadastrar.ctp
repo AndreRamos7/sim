@@ -20,7 +20,7 @@
 
 <div class="container heightauto">
 		<div class="sixteen columns form heightauto">
-     <div style= "overflow-y:auto; height:900px; margin-bottom: 30px; align: center; ">
+     
       <form action="/Gratuitos/cadastrar/<?php echo $cidade;?>" id="GratuitoCadastrarForm" class="register heightauto" method="post" accept-charset="utf-8">
     <div style="display:none;"><input type="hidden" value="POST" name="_method"></div>
               <?php 
@@ -105,4 +105,4 @@
     </form>
 </div>
                 </div>
-</div>
+
