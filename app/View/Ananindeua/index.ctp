@@ -24,7 +24,7 @@
     
     <ul class="ca-menu">
     <li>
-        <a href="/comums/cadastrar/Ananindeua" id="botaoAbrirComuns" title="AbrirComuns">
+        <a href="/comums/cadastro/Ananindeua" id="botaoAbrirComuns" title="AbrirComuns">
             <span class="ca-icon"><img src="img/ico/userico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main"> Comuns </h2>
@@ -34,7 +34,7 @@
     </li>
     
      <li>
-        <a href="/estudantes/cadastrar/Ananindeua" id="botaoAbrirModal1" title="AbrirEstudantes">
+        <a href="/estudantes/cadastro/Ananindeua" id="botaoAbrirModal1" title="AbrirEstudantes">
             <span class="ca-icon"><img src="img/ico/estudanteico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Estudantes</h2>
@@ -46,7 +46,7 @@
     <br />
     
     <li>
-        <a href="/empresas/cadastrar/Ananindeua" id="botaoAbrirModal3" title="AbrirEmpresas">
+        <a href="/empresas/cadastro/Ananindeua" id="botaoAbrirModal3" title="AbrirEmpresas">
             <span class="ca-icon"><img src="img/ico/empresaico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Empresas</h2>
@@ -56,7 +56,7 @@
     </li>
     
      <li>
-        <a href="/gratuitos/cadastrar/Ananindeua" id="botaoAbrirModal4" title="AbrirGratuitos">
+        <a href="/gratuitos/cadastro/Ananindeua" id="botaoAbrirModal4" title="AbrirGratuitos">
             <span class="ca-icon"><img src="img/ico/gratuitoico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Gratuidade</h2>

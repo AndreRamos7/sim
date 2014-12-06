@@ -27,7 +27,7 @@
     
     <ul class="ca-menu">
     <li>
-        <a href="/comums/cadastrar/Castanhal" id="botaoAbrirComuns" title="AbrirComuns">
+        <a href="/comums/cadastro/Castanhal" id="botaoAbrirComuns" title="AbrirComuns">
             <span class="ca-icon"><img src="img/ico/userico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main"> Comuns </h2>
@@ -37,7 +37,7 @@
     </li>
     
      <li>
-        <a href="/estudantes/cadastrar/Castanhal" id="botaoAbrirModal1" title="AbrirEstudantes">
+        <a href="/estudantes/cadastro/Castanhal" id="botaoAbrirModal1" title="AbrirEstudantes">
             <span class="ca-icon"><img src="img/ico/estudanteico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Estudantes</h2>
@@ -49,7 +49,7 @@
     <br />
     
     <li>
-        <a href="/empresas/cadastrar/Castanhal" id="botaoAbrirModal3" title="AbrirEmpresas">
+        <a href="/empresas/cadastro/Castanhal" id="botaoAbrirModal3" title="AbrirEmpresas">
             <span class="ca-icon"><img src="img/ico/empresaico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Empresas</h2>
@@ -59,7 +59,7 @@
     </li>
     
      <li>
-        <a href="/gratuitos/cadastrar/Castanhal" id="botaoAbrirModal4" title="AbrirGratuitos">
+        <a href="/gratuitos/cadastro/Castanhal" id="botaoAbrirModal4" title="AbrirGratuitos">
             <span class="ca-icon"><img src="img/ico/gratuitoico.png"></span>
             <div class="ca-content">
                 <h2 class="ca-main">Gratuidade</h2>

@@ -6,14 +6,51 @@ class EstudantesController extends AppController {
     public function cadastrar() { 
        // $this->set('title', 'Adicionar usuário'); 
         $path = filter_input(INPUT_SERVER, "DOCUMENT_ROOT");
-        $numArgs = func_num_args();
-        $cidades = array("Castanhal", "Ananindeua", "SantaIsabel");
         
-        if ($numArgs > 0) {
-            $cidade = func_get_arg(0); 
-            //echo "Cidade: $cidade";
-            if($cidade == "Castanhal" or $cidade == "Ananindeua" or $cidade == "SantaIsabel"){                 
+        if ($this->request->is('post')) {
+            if ($this->Estudante->save($this->request->data)) {
+                
+                $cidade =  $this->request->data['Estudante']['cidade'];
                 $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
+                
+                $newId = $this->Estudante->id;
+                $protocolo = rand(11111, 99999) . "-$newId";
+                if($this->Estudante->saveField('protocolo', $protocolo)){
+                    
+                    $todos = $this->Estudante->query("SELECT `nome`, `telefone`, `rg`, `emissor`, `dataNascimento`, `sexo`, `nomeMae`, `nomePai`, `endereco`, `bairro`, `cidade`, `cep`, `naturalidade`, `estado`, `nomeEscola`, `cnpj`, `serie`, "
+                            . "`grau`, `curso`, `periodo`, `matricula`, `dataIni`, `dataFim` "
+                            . "FROM `estudantes` WHERE cidade = '$cidadeSPC'");
+                    $paraGravar = array("CadastroSim$cidadeSPC" => array("Estudante" => $todos));
+                    $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
+                    $xml->save("$path/app/DATAXML/$cidade/Estudantes.xml"); 
+                    
+                    $dados["result"] = "Empresa cadastrada com sucesso!!";
+                    $dados["protocolo"] = $protocolo;
+                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
+                    
+                    $this->set('dados', $dados);                              
+                    $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG, comprovante de residência, comprovante de matrícula, declaração de frequencia (para atestar a frequência do aluno nas aulas). Necessário também uma foto 3x4.  ", "flash_custom");
+                    
+                }else{
+                    $dados["result"] = "Não foi possível cadastrar você!!";                    
+                    $this->set('dados', $dados);   
+                    $this->Session->setFlash('Erro! Protocolo de cadastro não pode ser gerado!', 'flash_custom');
+                }
+            }else{
+                $dados["result"] = "Não foi possível cadastrar você!!";                    
+                $this->set('dados', $dados);   
+                $this->Session->setFlash('Não foi possivel salvar seu cadastro!!', 'flash_custom');                                
+            }
+        }
+
+        
+    }
+    
+    public function cadastro() {
+        $numArgs = func_num_args();        
+        if ($numArgs > 0) {
+            $cidade = func_get_arg(0);         
+            if($cidade == "Castanhal" or $cidade == "Ananindeua" or $cidade == "SantaIsabel"){         
                 $this->set('cidade', $cidade);            
             }else{
                 $this->redirect("/Error");
@@ -21,37 +58,5 @@ class EstudantesController extends AppController {
         }else{
             $this->redirect("/Error");
         }
-
-        if ($this->request->is('post')) {
-            if ($this->Estudante->save($this->request->data)) {
-                
-                //código para gerar protocolo de cadastro
-                $newId = $this->Estudante->id;
-                $protocolo = rand(11111, 99999) . "-$newId";//echo "Protocolo: $protocolo";
-                if($this->Estudante->saveField('protocolo', $protocolo)){
-                    
-                    $todos = $this->Estudante->query("SELECT `nome`, `telefone`, `rg`, `emissor`, `dataNascimento`, `sexo`, `nomeMae`, `nomePai`, `endereco`, `bairro`, `cidade`, `cep`, `naturalidade`, `estado`, `nomeEscola`, `cnpj`, `serie`, "
-                            . "`grau`, `curso`, `periodo`, `matricula`, `dataIni`, `dataFim` "
-                            . "FROM `estudantes` WHERE cidade = '$cidadeSPC'");
-                    $paraGravar = array('CadastroSimCastanhal' => array("Estudante" => $todos));
-                    $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
-                    $xml->save("$path/app/DATAXML/$cidadeSPC/Estudantes.xml"); 
-                    
-                    $this->set('protocolo', $protocolo);
-                    
-                    $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG, comprovante de residência, comprovante de matrícula, declaração de frequencia (para atestar a frequência do aluno nas aulas).
-. Necessário também uma foto 3x4.  ", "flash_custom");
-                    header("location: /$cidadeSPC");
-                    exit();
-                }else{
-                    $this->Session->setFlash('Erro! Protocolo de cadastro não pode ser gerado!', 'flash_custom');
-                }
-            }else{
-                $this->Session->setFlash('Não foi possivel salvar seu cadastro!!', 'flash_custom');                
-                $this->redirect("/$cidadeSPC");
-            }
-        }
-
-        
     }
 }
