@@ -16,6 +16,8 @@ class EmpresasController extends AppController {
                 
                 $newId = $this->Empresa->id;
                 $protocolo = rand(11111, 99999) . "-$newId";
+                $nomeUsuario =  $this->Empresa->field("nomeFantasia",array("id =" => $newId));
+                $modified =  $this->Empresa->field("modified",array("id =" => $newId));
                 
                 if($this->Empresa->saveField('protocolo', $protocolo)){
 
@@ -27,8 +29,10 @@ class EmpresasController extends AppController {
                     $paraGravar = array("CadastroSim$cidadeSemEspaco" => array("Empresa" => $todos));
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/Empresas.xml");                
-                    //$this->Session->setFlash('Seu cadastro foi realizado com sucesso!!', 'flash_custom');
                     
+                    //dados enviados para VIEW
+                    $dados["dateTime"] = $modified;
+                    $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Empresa cadastrada com sucesso!!";
                     $dados["protocolo"] = $protocolo;
                     $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";

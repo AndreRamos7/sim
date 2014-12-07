@@ -4,14 +4,17 @@
          //echo ("erro em mensagem.ctp");
      }
     ?> 
-<section class='gray'>
+<section class='gray' id="printable">
     <div class='container'>
         <h2 align="center"> <?php echo $dados['result'];?> </h2>
+        <p> Nome da Empresa: <?php echo $dados['nomeUsuario'];?> </p>
         <p align="center"> N° Protocolo => <?php echo $dados['protocolo'];?> </p>
+        <p align="center"> Data de cadastro: <b><?php echo $dados['dateTime'];?></b> </p>
         <p align="center"> <?php echo $msg;?> </p>
         <p align="center"> <?php echo $dados['chamado'];?> </p>
         <p>            
-            <button class="button" value="Voltar" id="btnPrint" onclick="imprimirComprovante();"> Imprimir </button>              
+            <button class="button" id="btnPrint" onclick="imprimirComprovante();"> Imprimir </button>              
+            <button class="button" onclick="history.back();"> Voltar </button>                         
         </p>
     </div>
 </section>

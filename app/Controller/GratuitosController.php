@@ -9,13 +9,13 @@ class GratuitosController extends AppController {
         
         if ($this->request->is('post')) {
             if ($this->Gratuito->save($this->request->data)) {
-
-                
                 $cidade =  $this->request->data['Gratuito']['cidade'];
                 $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
                 
                 $newId = $this->Gratuito->id;
                 $protocolo = rand(11111, 99999) . "-$newId";
+                $nomeUsuario =  $this->Gratuito->field("nome",array("id =" => $newId));
+                $modified =  $this->Gratuito->field("modified",array("id =" => $newId));
                 
                 if($this->Gratuito->saveField('protocolo', $protocolo)){
                     //código para gerar arquivo XML
@@ -26,6 +26,9 @@ class GratuitosController extends AppController {
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/Gratuitos.xml");                
                     
+                    //dados enviados para VIEW
+                    $dados["dateTime"] = $modified;
+                    $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Usuário gratuito cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
                     $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";

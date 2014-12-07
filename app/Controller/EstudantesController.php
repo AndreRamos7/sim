@@ -13,8 +13,11 @@ class EstudantesController extends AppController {
                 $cidade =  $this->request->data['Estudante']['cidade'];
                 $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
                 
+                
                 $newId = $this->Estudante->id;
                 $protocolo = rand(11111, 99999) . "-$newId";
+                $nomeUsuario =  $this->Estudante->field("nome",array("id =" => $newId));
+                $modified =  $this->Estudante->field("modified",array("id =" => $newId));;
                 if($this->Estudante->saveField('protocolo', $protocolo)){
                     
                     $todos = $this->Estudante->query("SELECT `nome`, `telefone`, `rg`, `emissor`, `dataNascimento`, `sexo`, `nomeMae`, `nomePai`, `endereco`, `bairro`, `cidade`, `cep`, `naturalidade`, `estado`, `nomeEscola`, `cnpj`, `serie`, "
@@ -24,6 +27,9 @@ class EstudantesController extends AppController {
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/Estudantes.xml"); 
                     
+                    //dados enviados para VIEW
+                    $dados["dateTime"] = $modified;
+                    $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Estudante cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
                     $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";

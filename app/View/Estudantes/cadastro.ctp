@@ -31,16 +31,16 @@
                     <input name="data[Estudante][nome]" id="EstudanteNome" maxlength="200" type="text" size="80" required  class="long">
                 </p>
                 <p> 
-                    <label>* Nome da Mãe: </label>
+                    <label> Nome da Mãe: </label>
                     <input name="data[Estudante][nomeMae]" id="EstudanteNomeMae" maxlength="100" type="text" size="80" class="long">
                 </p>
                 <p> 
-                    <label>* Nome do Pai: </label>
+                    <label> Nome do Pai: </label>
                     <input name="data[Estudante][nomePai]" id="EstudanteNomeMae" maxlength="100" type="text" size="80" class="long">
                 </p>
                 <p> 
                     <label>*RG: </label>
-                    <input name="data[Estudante][rg]" id="EstudanteRg" maxlength="20" type="text" required class="campos campopequeno rg">
+                    <input name="data[Estudante][rg]" id="EstudanteRg" maxlength="20" type="text" required class="campos campopequeno rg"  autocomplete="off" >
                 </p>
                 <p> 
                     <label>* Orgão Emissor: </label>
@@ -48,7 +48,7 @@
                 </p>
                 <p> 
                     <label>* CPF:</label>
-                    <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" required class="campos campopequeno cpf">
+                    <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" required class="campos campopequeno cpf"  autocomplete="off">
                 </p>
                 <p>
                     <label >* Sexo: </label>
@@ -57,7 +57,7 @@
                 </p>
                 <p> 
                     <label>* Data de Nascimento: </label><br>
-                    <input name="data[Estudante][dataNascimento]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" readonly="">
+                    <input name="data[Estudante][dataNascimento]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" autocomplete="off" >
                 </p>
             </fieldset>
 
@@ -74,7 +74,7 @@
                 </p>
                 <p> 
                     <label>* CEP: </label>
-                    <input name="data[Estudante][cep]" id="EstudanteCep" maxlength="20" type="text" required class="campos campopequeno cep">
+                    <input name="data[Estudante][cep]" id="EstudanteCep" maxlength="20" type="text" required class="campos campopequeno cep"  autocomplete="off">
                 </p>
                 <p> 
                     <label>* Cidade: </label>
@@ -134,27 +134,33 @@
 
                 <p class="fundamental medio"> 
                     <label for="EstudanteSerie" id="EstudanteSerie">* Série: </label>
-                    <input name="data[Estudante][serie]" id="EstudanteSerie" maxlength="20" type="text" required class="campos campopequeno desreq">
+                    <input name="data[Estudante][serie]" id="EstudanteSerie" maxlength="2" type="text" required class="campos campopequeno desreq">
                 </p>
             </fieldset>
 
             <fieldset class="row1">    
                 <legend>Contatos</legend>
                 <p> <label for="ComumEmail">* Email: </label>
-                            <input name="data[Estudante][email]" id="ComumEmail" maxlength="100" type="email" size="80" required class="long">
+                    <input name="data[Estudante][email]" id="ComumEmail" maxlength="100" type="email" size="80" required class="long">
                 </p>
+                <!--
                 <p> <label> Site: </label>
-                            <input name="data[Estudante][site]" id="EstudanteSite" maxlength="100" type="text" size="80" class="long">
+                    <input name="data[Estudante][site]" id="EstudanteSite" maxlength="100" type="text" size="80" class="long">
                 </p>
+                -->
                 <p> <label>* Telefone: </label>
-                            <input name="data[Estudante][telefone]" id="EstudanteTelefone" maxlength="15" type="text" required class="campos  campopequeno telefone">        
+                    <input name="data[Estudante][telefone]" id="EstudanteTelefone" maxlength="15" type="text" required class="campos  campopequeno telefone" autocomplete="off" >        
                 </p>
-                <p> <label>* Celular: </label>
-                            <input name="data[Estudante][celular]" id="EstudanteCelular" maxlength="15" type="text" class="campos campopequeno celular">        
+                <p> 
+                    <label> Celular: </label>
+                    <input name="data[Estudante][celular]" id="EstudanteCelular" maxlength="15" type="text" class="campos campopequeno celular"  autocomplete="off">        
                 </p>
-                <p> <label> Fax: </label>
-                    <input name="data[Estudante][fax]" id="EstudanteFax" maxlength="15" type="text" class="campos campopequeno fax">        
-                </p>    
+                <!--
+                <p> 
+                    <label> Fax: </label>
+                    <input name="data[Estudante][fax]" id="EstudanteFax" maxlength="15" type="text" class="campos campopequeno fax" autocomplete="off">        
+                </p>
+                -->
             </fieldset>
             <fieldset class="buttons">
                 <p style= "float:right; font-size:16px;"> * Campos obrigatórios</p>

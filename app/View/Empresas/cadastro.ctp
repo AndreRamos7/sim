@@ -31,16 +31,16 @@
                     <input name="data[Empresa][nomeFantasia]" id="EmpresaNomeFantasia" maxlength="200" type="text" size="80" required  class="long">
                 </p>
                 <p> 
-                    <label> Razão Social: </label>
-                    <input name="data[Empresa][razaoSocial]" id="EmpresaRazaoSocial" maxlength="100" type="text" size="" class="long">
+                    <label>* Razão Social: </label>
+                    <input name="data[Empresa][razaoSocial]" id="EmpresaRazaoSocial" maxlength="100" required type="text" size="" class="long">
                 </p>
                 <p> 
                     <label>* CNPJ:</label>
-                    <input name="data[Empresa][cnpj]" maxlength="20" type="text" id="EmpresaCnpj" required class="campos campopequeno cnpj">
+                    <input name="data[Empresa][cnpj]" maxlength="20" type="text" id="EmpresaCnpj" required class="campos campopequeno cnpj" autocomplete="off" >
                 </p>
                 <p> 
                     <label for="EmpresaInscEstadual"> Inscrição Estadual: </label>
-                    <input name="data[Empresa][inscEstadual]" id="EmpresaInscEstadual" maxlength="14" type="text" class="campos campopequeno"> 
+                    <input name="data[Empresa][inscEstadual]" id="EmpresaInscEstadual" maxlength="14" type="text" class="campos campopequeno"  autocomplete="off"> 
                 </p>
             </fieldset>
 
@@ -58,7 +58,7 @@
                     </p>
                     <p> 
                         <label>* CEP: </label>
-                        <input name="data[Empresa][cep]" id="EmpresaCep" maxlength="20" type="text" required class="campos campopequeno cep">
+                        <input name="data[Empresa][cep]" id="EmpresaCep" maxlength="20" type="text" required class="campos campopequeno cep"  autocomplete="off">
                     </p>
                     <p> 
                         <label>* Cidade: </label>
@@ -88,25 +88,25 @@
 
                 <p> 
                     <label>* Telefone: </label>
-                    <input name="data[Empresa][telefone]" id="EmpresaTelefone" maxlength="15" type="text" required class="campos campopequeno telefone">        
+                    <input name="data[Empresa][telefone]" id="EmpresaTelefone" maxlength="15" type="text" required class="campos campopequeno telefone"  autocomplete="off" >        
                 </p>            
 
                 <p> 
                     <label> Celular: </label>
-                    <input name="data[Empresa][celular]" id="EmpresaCelular" maxlength="15" type="text" class="campos campopequeno celular">        
+                    <input name="data[Empresa][celular]" id="EmpresaCelular" maxlength="15" type="text" class="campos campopequeno celular" autocomplete="off" >        
                 </p>
                 <p> 
                     <label> Fax: </label>
-                    <input name="data[Empresa][fax]" id="EmpresaFax" maxlength="15" type="text" class="campos campopequeno fax">        
+                    <input name="data[Empresa][fax]" id="EmpresaFax" maxlength="15" type="text" class="campos campopequeno fax"  autocomplete="off">        
                 </p>
             </fieldset>
 
             <fieldset class="buttons">
-            <p style= "float:right; font-size:16px;"> * Campos obrigatórios</p>
-            <p style=" float:right;"> 
-            <button class="button" value="Voltar" id="btnvoltar" onclick="history.back();"> Voltar </button>  
-            <button class="button" type="submit" value="Salvar cadastro" id="btncadastrar"> Salvar cadastro! </button> </p>	       
-
+                <p style= "float:right; font-size:16px;"> * Campos obrigatórios</p>
+                <p style=" float:right;"> 
+                    <button class="button" value="Voltar" id="btnvoltar" onclick="history.back();"> Voltar </button>  
+                    <button class="button" type="submit" value="Salvar cadastro" id="btncadastrar"> Salvar cadastro! </button> 
+                </p>	       
             </fieldset>
         </form>
     </div>

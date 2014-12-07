@@ -33,7 +33,7 @@
                     </p>
                     <p>
                         <label for="">*RG: </label>
-                        <input name="data[Comum][rg]" id="ComumRg" maxlength="20" type="text" required class="campos campopequeno rg">
+                        <input name="data[Comum][rg]" id="ComumRg" maxlength="20" type="text" required class="campos campopequeno rg" autocomplete="off">
                     </p>
                     <p>
                         <label for="">* Orgão Emissor: </label>
@@ -41,12 +41,12 @@
                     </p>
                     <p>
                         <label for="">* CPF:</label>
-                        <input name="data[Comum][cpf]" maxlength="20" type="text" id="ComumCpf" required class="cpf">
+                        <input name="data[Comum][cpf]" maxlength="20" type="text" id="ComumCpf" required class="cpf"  autocomplete="off">
                     </p>
                     <p>
                         <label >* Sexo: </label>
-                        <label for="sexo1" class="sexo">M </label><input name="data[Comum][sexo]" id="sexo1"  type="radio" value="M">
-                        <label for="sexo2" class="sexo"> F  </label><input name="data[Comum][sexo]" id="sexo2"  type="radio" value="F"> 
+                        <label for="sexo1" class="sexo">M </label><input name="data[Comum][sexo]" id="sexo1"  type="radio" value="M" required >
+                        <label for="sexo2" class="sexo"> F  </label><input name="data[Comum][sexo]" id="sexo2"  type="radio" value="F" required > 
                     </p>
             </fieldset>
 
@@ -64,7 +64,7 @@
                     </p>
                     <p>
                         <label for="">* CEP: </label>
-                        <input name="data[Comum][cep]" id="ComumCep" maxlength="20" type="text" required class="campos  campopequeno cep">
+                        <input name="data[Comum][cep]" id="ComumCep" maxlength="20" type="text" required class="campos  campopequeno cep"  autocomplete="off">
                     </p>
                     <p>
                         <label  for="">* Cidade: </label>
@@ -83,7 +83,7 @@
             <fieldset class="row1">    
                 <legend>Contatos</legend>
                 <p>  
-                    <label for="ComumEmail">* Email: </label>
+                    <label for="ComumEmail"> Email: </label>
                     <input name="data[Comum][email]" id="ComumSite" maxlength="100" type="email" size="80" class="long">
                 </p>
 
@@ -93,13 +93,14 @@
                 </p>
                 <p>
                     <label for="">* Telefone: </label>
-                    <input name="data[Comum][telefone]" id="ComumTelefone" maxlength="15" type="text" required class="">        
+                    <input name="data[Comum][telefone]" id="ComumTelefone" maxlength="15" type="text" required class="telefone"  autocomplete="off">        
                 </p>            
                 <p>
                     <label for=""> Celular: </label>
-                    <input name="data[Comum][celular]" id="ComumCelular" maxlength="15" type="text" class="">        <p>
+                    <input name="data[Comum][celular]" id="ComumCelular" maxlength="15" type="text" class="celular"  autocomplete="off">
+                <p>
                    <label for=""> Fax: </label>
-                    <input name="data[Comum][fax]" id="ComumFax" maxlength="15" type="text" class="">        
+                    <input name="data[Comum][fax]" id="ComumFax" maxlength="15" type="text" class="fax"  autocomplete="off">        
                 </p>
             </fieldset>
             <fieldset class="buttons">

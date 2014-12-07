@@ -671,7 +671,7 @@ p.agreement label{
     visibility: visible;
   }
   
-  section#printable, #printable button#btnPrint {
+  section#printable, #printable button {
     visibility: hidden;
   }
   

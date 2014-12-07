@@ -103,6 +103,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $('p.superior').hide();
                     }else if(str === "Superior"){
                         $('p.superior input.desreq').attr("required",true);
+                        $('p.fundamental input.desreq,p.medio input.desreq').attr("required",false);
                         
                         $('p.fundamental').hide();
                         $('p.superior').show();

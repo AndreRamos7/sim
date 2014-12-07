@@ -14,14 +14,14 @@ class ComumsController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Comum->save($this->request->data)) {
                 
-                //código para gerar protocolo de cadastro
-                
+                $cidade = $this->request->data['Comum']['cidade'];
+                $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade; 
                 
                 $newId = $this->Comum->id;
-                $cidade = $this->request->data['Comum']['cidade'];
-                $cidadeSemEspaco = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
                 $protocolo = rand(11111, 99999) . "-$newId";//echo "Protocolo: $protocolo";
-                //echo $cidadeSPC;
+                $nomeUsuario =  $this->Comum->field("nome",array("id =" => $newId));
+                $modified =  $this->Comum->field("modified",array("id =" => $newId));
+                
                 if($this->Comum->saveField('protocolo', $protocolo)){
 
                     //código para gerar arquivo XML
@@ -33,6 +33,9 @@ class ComumsController extends AppController {
                     $xml = Xml::build($paraGravar, array('return' => 'domdocument'));                
                     $xml->save("$path/app/DATAXML/$cidade/comuns.xml"); 
                     
+                    //dados enviados para VIEW
+                    $dados["dateTime"] = $modified;
+                    $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Usuário comum cadastrado com sucesso.";
                     $dados["protocolo"] = $protocolo;
                     $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
