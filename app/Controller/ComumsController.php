@@ -66,10 +66,10 @@ class ComumsController extends AppController {
             if($cidade == "Castanhal" or $cidade == "Ananindeua" or $cidade == "SantaIsabel"){         
                 $this->set('cidade', $cidade);            
             }else{
-                $this->redirect("/Error");
+                $this->redirect("/Error",404);
             }
         }else{
-            $this->redirect("/Error");
+            $this->redirect("/Error",404);
         }
     }
 }

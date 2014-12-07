@@ -6,7 +6,7 @@
     <div class='container'>
         <p align="center"> <img src="/img/ico/gratuitoico.png"> </p>
         <h2 align="center"> Cadastro de usuários do tipo Gratuito / <?php echo $cidadeSPC;?></h2>
-        <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
+        <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastro online. </p>
     </div>
 </section>
 
