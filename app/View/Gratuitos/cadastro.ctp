@@ -63,7 +63,7 @@
         <legend>Endereço</legend>
         <p> 
             <label>* Endereço: </label>
-            <input name="data[Gratuito][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="GratuitoEndereco" maxlength="100" type="text" size="80" required class="long">
+            <input name="data[Gratuito][endereco]" placeholder="Ex: Rua São João, S/N" id="GratuitoEndereco" maxlength="100" type="text" size="80" required class="long">
         </p>
         <p> 
             <label>* Bairro: </label>

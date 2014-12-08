@@ -73,8 +73,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         
         <script language="JavaScript" type="text/javascript">
            $(document).ready(function() {
-
-                $("fieldset p input.cpf").mask("999.999.999-99");
+                
+                $("fieldset p input.cpf").mask("99999999999");
                 $("fieldset p input.rg").mask("999999-9");
                 $("fieldset p input.data").mask("99/99/9999");
                 $("fieldset p input.cnpj").mask("99.999.999/9999-99");
@@ -82,27 +82,30 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 $("fieldset p input.celular").mask("(99)9999 9999");
                 $("fieldset p input.telefone").mask("(99)9999 9999");
                 $("fieldset p input.fax").mask("(99)9999 9999");
-                $("fieldset p input.ano").mask("9999");
-
+                $("fieldset p input.mesano").mask("99/9999");
+                //$("fieldset p input.endereco").mask("aaaaaaa, Nº 999999");
+                
                 $( "select#selectNivel" ).change(function () {
                     var str = "";
                     $( "select#selectNivel option:selected" ).each(function() {
                         str = $( this ).text();
                     });
-                    if(str === "Fundamental"){
-                        
+                    if(str === "Fundamental"){                        
                         $('p.superior input.desreq').attr("required",false);
+                        $('p input#EstudanteCpf.desreq').attr("required",false);
                         
                         $('p.fundamental').show();
                         $('p.superior').hide();
                         
                     }else if(str === "Médio"){
                         $('p.superior input.desreq').attr("required",false);
-                        
+                        $('p input#EstudanteCpf.desreq').attr("required",false);
+						
                         $('p.fundamental').show();
                         $('p.superior').hide();
                     }else if(str === "Superior"){
                         $('p.superior input.desreq').attr("required",true);
+                        $('p input#EstudanteCpf.desreq').attr("required",true);
                         $('p.fundamental input.desreq,p.medio input.desreq').attr("required",false);
                         
                         $('p.fundamental').hide();
@@ -110,6 +113,32 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     }
                    // alert( str );
                 }).change();
+                
+                $("form#GratuitoCadastrarForm").submit(function(event){
+                    var inputCPF = $("form#EmpresaCadastrarForm fieldset p input.cpf");
+                    var txtCPF = inputCPF.val();
+                    if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
+                        event.preventDefault();
+                        alert("CPF incorreto!!");
+                    }
+                });
+                
+                $("form#ComumCadastrarForm").submit(function(event){
+                    var inputCPF = $("form#EmpresaCadastrarForm fieldset p input.cpf");
+                    var txtCPF = inputCPF.val();
+                    if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
+                        event.preventDefault();
+                        alert("CPF incorreto!!");
+                    }
+                });
+                $("form#EstudanteCadastrarForm").submit(function(event){
+                    var inputCPF = $("form#EstudanteCadastrarForm fieldset p input.cpf");
+                    var txtCPF = inputCPF.val();
+                    if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
+                        event.preventDefault();
+                        alert("CPF incorreto!!");
+                    }
+                });
                     
             });
             
@@ -118,69 +147,103 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <script type="text/javascript">
             function imprimirComprovante(){
                if (!window.print){
-                  alert("Este navegador não suporta impressão!")
-                  return
+                  alert("Este navegador não suporta impressão!");
+                  return;
                }
-               window.print()
+               window.print();
             }
-
+            //Verifica se CPF é válido
+            function testaCPF(strCPF) {
+                var Soma;
+                var Resto;
+                Soma = 0;   
+                //strCPF  = RetiraCaracteresInvalidos(strCPF,11);
+                if (strCPF === "00000000000")
+                    return false;
+                for (i=1; i<=9; i++)
+                    Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i); 
+                Resto = (Soma * 10) % 11;
+                if ((Resto === 10) || (Resto === 11)) 
+                    Resto = 0;
+                if (Resto !== parseInt(strCPF.substring(9, 10)) )
+                    return false;
+                    Soma = 0;
+                for (i = 1; i <= 10; i++)
+                   Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+                Resto = (Soma * 10) % 11;
+                if ((Resto === 10) || (Resto === 11)) 
+                    Resto = 0;
+                if (Resto !== parseInt(strCPF.substring(10, 11) ) )
+                    return false;
+                return true;
+            }
         </script>
     </head>
     <body>
        
-       <header>
+    <header>
        <nav>
-                        <div class="container">
-            
-				<div class="sixteen columns">
-					<ul class="mainMenu">
-						<li><a href="/" title="Home">Página Inicial</a></li>
-						<li><a href='/info/contato' title='Contato'>Fale Conosco!</a></li>
-						<li><a href='/info' title='ComoFunciona'>Como Funciona?</a></li>
-						<li><a href='/info/duvidas' title='Duvidas'>Dúvidas Frequentes</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+            <div class="container">
+                <div class="sixteen columns">
+                    <ul class="mainMenu">
+                        <li><a href="/" title="Home">Página Inicial</a></li>
+                        <li><a href='/info/contato' title='Contato'>Fale Conosco!</a></li>
+                        <li><a href='/info' title='ComoFunciona'>Como Funciona?</a></li>
+                        <li><a href='/info/duvidas' title='Duvidas'>Dúvidas Frequentes</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
 	      
     </header>
         
-               
-        <div id="content">
-            <?php echo $this->fetch('content'); ?>        
-        </div> 
+
+    <div id="content">
+        <?php echo $this->fetch('content'); ?>        
+    </div> 
         
-            <footer>
-		<div class="container">
-			
-			<div class="six columns">
-                            <p></p> <br/>
-                                 <p align="center"> SIM | Copyright ‎© 2014 <p>
-                                <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:andre-rammos@hotmail.com">André Ramos</a></p>
-			</div>
+    <footer>
+        <div class="container">
 
-			<div class="four columns social">
-                            <p></p> <br />
-				<h5 align="center"> Redes sociais </h5>
-                                <p align="center">
-                                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img src='/img/ico/you_tube_1.png'></a>
-				<a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img src='/img/ico/facebook.png'></a>
-                                <a href="https://twitter.com/agorasim_"><img src='/img/ico/twitter.png'></a> </p>
-				</div>
+            <div class="six columns">
+               <p></p> <br/>
+               <p align="center"> SIM | Copyright ‎© 2014 <p>
+               <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:andre-rammos@hotmail.com">André Ramos</a></p>
+            </div>
 
-			<div class="six columns">
-                            <p></p><br />
-				<h5 align="center"> Entre em contato conosco! </h5>
-				 <p align="center"> Mande-nos um email: 
-					<a align="center" href='mailto:contato@sistemasim.com.br'>contato@sistemasim.com.br</a></p>
-                                 
-                        
-                        </div>
-		<a id="top" href='#'>&uarr;</a>	
+            <div class="four columns social">
+                <p></p> <br />
+                <h5 align="center"> Redes sociais </h5>
+                <p align="center">
+                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img src='/img/ico/you_tube_1.png'></a>
+                <a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img src='/img/ico/facebook.png'></a>
+                <a href="https://twitter.com/agorasim_"><img src='/img/ico/twitter.png'></a> </p>
+            </div>
+
+            <div class="six columns">
+                <p></p><br />
+                <h5 align="center"> Entre em contato conosco! </h5>
+                <p align="center"> Mande-nos um email: 
+                <a align="center" href='mailto:contato@sistemasim.com.br'>contato@sistemasim.com.br</a></p>
+            </div>
+            <a id="top" href='#'>&uarr;</a>	
         </div>
-	</footer>
-           
+    </footer>
+    <script type="text/javascript">
+        var toper = $('a#top');
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                toper.fadeIn( 200 );
+            } else {
+                toper.fadeOut( 200 );
+            }
+        });
+        toper.click(function(){
+        	$('html, body').animate({scrollTop:0}, 500);	        	
+        	return false;
+    	}); 
+    </script>       
            
     </body>
 </html>

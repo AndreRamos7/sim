@@ -19,7 +19,7 @@ class GratuitosController extends AppController {
                 
                 if($this->Gratuito->saveField('protocolo', $protocolo)){
                     //código para gerar arquivo XML
-                    $todos = $this->Gratuito->query("SELECT `nome`, `cpf`, `rg`, `emissor`, `subTipoGratuitoID`, `nroAposentadoria`, `sexo`, `dataNasc`, `dataValidade`, `limiteMensal`,"
+                    $todos = $this->Gratuito->query("SELECT `protocolo`, `nome`, `cpf`, `rg`, `emissor`, `subTipoGratuitoID`, `nroAposentadoria`, `sexo`, `dataNasc`, `dataValidade`, `limiteMensal`,"
                             . " `telefone`, `cep`, `cidade`, `bairro`, `endereco`, `celular`, `estado` "
                             . "FROM `gratuitos` WHERE `cidade` = '$cidade'");
                     $paraGravar = array("CadastroSim$cidadeSemEspaco" => array("Gratuito" => $todos));

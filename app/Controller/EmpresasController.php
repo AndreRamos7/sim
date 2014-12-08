@@ -22,7 +22,7 @@ class EmpresasController extends AppController {
                 if($this->Empresa->saveField('protocolo', $protocolo)){
 
                     //código para gerar arquivo XML
-                    $todos = $this->Empresa->query("SELECT `razaoSocial`, `nomeFantasia`, `cnpj`, "
+                    $todos = $this->Empresa->query("SELECT `protocolo`, `razaoSocial`, `nomeFantasia`, `cnpj`, "
                             . "`inscEstadual`, `maxCartoes`, `qtdVts`, `qtdFuncionarios`, `subTipo`, "
                             . "`perfilCompra`, `estado`, `cidade`, `endereco`, `bairro`, `cep`, `site`, "
                             . "`telefone`, `celular`, `fax`, `email` FROM `empresas` WHERE cidade = '$cidade'");

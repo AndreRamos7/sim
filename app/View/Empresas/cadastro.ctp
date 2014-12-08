@@ -25,7 +25,7 @@
 
 
            <fieldset class="row1">    
-                <legend> Dados Pessoais </legend>
+                <legend> Dados da Empresa </legend>
                 <p> 
                     <label for="EmpresaNomeFantasia">* Nome fantasia: </label>
                     <input name="data[Empresa][nomeFantasia]" id="EmpresaNomeFantasia" maxlength="200" type="text" size="80" required  class="long">
@@ -49,7 +49,7 @@
                     <legend>Endereço</legend>
                     <p> 
                         <label>* Endereço: </label>
-                        <input name="data[Empresa][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="EmpresaEndereco" maxlength="100" type="text" size="80" required class="long">
+                        <input name="data[Empresa][endereco]" placeholder="Ex: Rua São João, S/N" id="EmpresaEndereco" maxlength="100" type="text" size="80" required class="long">
                     </p>
 
                     <p> 

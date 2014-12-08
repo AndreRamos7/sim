@@ -46,9 +46,9 @@
                     <label>* Orgão Emissor: </label>
                     <input name="data[Estudante][emissor]" id="EstudanteEmissor" maxlength="10" type="text" required  class="campos campopequeno">
                 </p>
-                <p> 
-                    <label>* CPF:</label>
-                    <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" required class="campos campopequeno cpf"  autocomplete="off">
+                <p title="Obrigatório para estudantes de nível superior."> 
+                    <label> CPF:</label>
+                    <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" class="campos campopequeno cpf desreq"  autocomplete="off">
                 </p>
                 <p>
                     <label >* Sexo: </label>
@@ -66,7 +66,7 @@
                 <legend>Endereço</legend>
                 <p> 
                     <label>* Endereço: </label>
-                    <input name="data[Estudante][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="EstudanteEndereco" maxlength="100" type="text" size="80" required class="long">
+                    <input name="data[Estudante][endereco]" placeholder="Ex: Rua São João, S/N" id="EstudanteEndereco" maxlength="100" type="text" size="80" required class="long endereco">
                 </p>                    
                 <p> 
                     <label>* Bairro: </label>
@@ -118,13 +118,13 @@
                 </p>
 
                 <p class="superior">  
-                    <label for="EstudanteDataIni">* Ano Início:</label>  
-                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq ano">
+                    <label for="EstudanteDataIni">* Início:</label>  
+                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
                 </p>
 
                 <p class="superior">
-                    <label for="EstudanteDataFim">* Ano Fim: </label>
-                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq ano">
+                    <label for="EstudanteDataFim">* Fim: </label>
+                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
                 </p>
 
                 <p class="superior"> 
@@ -133,7 +133,7 @@
                 </p>
 
                 <p class="fundamental medio"> 
-                    <label for="EstudanteSerie" id="EstudanteSerie">* Série: </label>
+                    <label for="EstudanteSerie" id="EstudanteSerie">* Série/Ano: </label>
                     <input name="data[Estudante][serie]" id="EstudanteSerie" maxlength="2" type="text" required class="campos campopequeno desreq">
                 </p>
             </fieldset>

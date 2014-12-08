@@ -55,7 +55,7 @@
                 <legend>Endereço</legend>
 
                     <p> <label for="">* Endereço: </label>
-                        <input name="data[Comum][endereco]" placeholder="Ex: Rua Barão do Rio Branco, nº 643" id="ComumEndereco" maxlength="100" type="text" size="80" required class="long">
+                        <input name="data[Comum][endereco]" placeholder="Ex: Rua São João, S/N" id="ComumEndereco" maxlength="100" type="text" size="80" required class="long">
                     </p>
 
                     <p>

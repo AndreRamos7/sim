@@ -20,7 +20,7 @@ class EstudantesController extends AppController {
                 $modified =  $this->Estudante->field("modified",array("id =" => $newId));;
                 if($this->Estudante->saveField('protocolo', $protocolo)){
                     
-                    $todos = $this->Estudante->query("SELECT `nome`, `telefone`, `rg`, `emissor`, `dataNascimento`, `sexo`, `nomeMae`, `nomePai`, `endereco`, `bairro`, `cidade`, `cep`, `naturalidade`, `estado`, `nomeEscola`, `cnpj`, `serie`, "
+                    $todos = $this->Estudante->query("SELECT `protocolo`, `nome`, `telefone`, `rg`, `emissor`, `dataNascimento`, `sexo`, `nomeMae`, `nomePai`, `endereco`, `bairro`, `cidade`, `cep`, `naturalidade`, `estado`, `nomeEscola`, `cnpj`, `serie`, "
                             . "`grau`, `curso`, `periodo`, `matricula`, `dataIni`, `dataFim` "
                             . "FROM `estudantes` WHERE cidade = '$cidade'");
                     $paraGravar = array("CadastroSim$cidadeSemEspaco" => array("Estudante" => $todos));
