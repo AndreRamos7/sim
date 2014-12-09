@@ -48,8 +48,8 @@
             <input name="data[Gratuito][dataNasc]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data"  autocomplete="off">
         </p>
         <p> 
-            <label>* Nº Aposentadoria: </label>   
-            <input name="data[Gratuito][nroAposentadoria]" id="GratuitoNroAposentadoria" maxlength="10" type="text" required  class="campos campopequeno">
+            <label>Nº Aposentadoria: </label>   
+            <input name="data[Gratuito][nroAposentadoria]" id="GratuitoNroAposentadoria" maxlength="10" type="text" class="campos campopequeno">
         </p>
         <p>
             <label >* Sexo: </label>

@@ -70,7 +70,44 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
         <script src="/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
-        
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+        <script>
+            var myCenter=new google.maps.LatLng(-1.295338, -47.929356);
+            var marker;
+
+            function initialize(){
+                var mapProp = {
+                  center:myCenter,
+                  zoom:17,
+                  maxZoom: 20,
+                  minZoom:10,
+                  mapTypeId:google.maps.MapTypeId.ROADMAP
+                  };
+
+                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                var marker=new google.maps.Marker({
+                  position:myCenter,
+                  animation:google.maps.Animation.BOUNCE,
+                  title:"SIM"
+                });
+                
+                marker.setMap(map);
+                google.maps.event.addListener(map ,'mouseout',function() {
+                    map.setZoom(17);
+                    map.setCenter(marker.getPosition());
+                });
+                google.maps.event.addListener(map ,'mouseover',function() {
+                    map.setZoom(17);
+                    map.setCenter(marker.getPosition());
+                });
+           
+            }
+            
+            google.maps.event.addDomListener(window, 'load', initialize);
+            
+        </script>
         <script language="JavaScript" type="text/javascript">
            $(document).ready(function() {
                 
@@ -119,7 +156,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     var txtCPF = inputCPF.val();
                     if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
                         event.preventDefault();
-                        alert("CPF incorreto!!");
+                        alert("CPF inválido!!");
                     }
                 });
                 
@@ -128,7 +165,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     var txtCPF = inputCPF.val();
                     if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
                         event.preventDefault();
-                        alert("CPF incorreto!!");
+                        alert("CPF inválido!!");
                     }
                 });
                 $("form#EstudanteCadastrarForm").submit(function(event){
@@ -136,7 +173,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     var txtCPF = inputCPF.val();
                     if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
                         event.preventDefault();
-                        alert("CPF incorreto!!");
+                        alert("CPF inválido!!");
                     }
                 });
                     

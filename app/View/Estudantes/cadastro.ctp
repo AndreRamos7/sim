@@ -47,7 +47,7 @@
                     <input name="data[Estudante][emissor]" id="EstudanteEmissor" maxlength="10" type="text" required  class="campos campopequeno">
                 </p>
                 <p title="Obrigatório para estudantes de nível superior."> 
-                    <label> CPF:</label>
+                    <label>** CPF:</label>
                     <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" class="campos campopequeno cpf desreq"  autocomplete="off">
                 </p>
                 <p>
@@ -163,7 +163,7 @@
                 -->
             </fieldset>
             <fieldset class="buttons">
-                <p style= "float:right; font-size:16px;"> * Campos obrigatórios</p>
+                <p style= "float:right; font-size:16px;">** Obrigatório para nível superior.<br>* Campos obrigatórios</p>
                 <p style=" float:right;"> 
                 <button class="button" value="Voltar" id="btnvoltar" onclick="history.back();"> Voltar </button>  
                 <button class="button" type="submit" value="Salvar cadastro" id="btncadastrar"> Salvar cadastro! </button> </p>	 

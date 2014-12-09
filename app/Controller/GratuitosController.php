@@ -31,7 +31,7 @@ class GratuitosController extends AppController {
                     $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Usuário gratuito cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
-                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
+                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado em até 7 dias ou seu cadastro será invalidado.";
                     
                     $this->set('dados', $dados);                                  
                     $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG e comprovante de residência. Necessário também uma foto 3x4.", "flash_custom");

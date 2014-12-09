@@ -35,10 +35,15 @@ class EmpresasController extends AppController {
                     $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Empresa cadastrada com sucesso!!";
                     $dados["protocolo"] = $protocolo;
-                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
+                    $dados["chamado"] = "Favor comparecer ao escritório do SIM "
+                            . "portando documentações solicitadas e o n° de "
+                            . "protocolo gerado em até 7 dias ou seu cadastro "
+                            . "será invalidado.";
                     
                     $this->set('dados', $dados);                   
-                    $this->Session->setFlash(" Documentos necessários (Cópia e Original): Cartão CNPJ, Inscrição Estadual e/ou Inscrição Municpal (Se houver). ", "flash_custom");
+                    $this->Session->setFlash(" Documentos necessários (Cópia e Original): "
+                            . "Cartão CNPJ, Inscrição Estadual e/ou Inscrição Municipal"
+                            . " (Se houver). ", "flash_custom");
                     
                 }else{
                     $dados["result"] = "Não foi possível cadastrar você!!";                    

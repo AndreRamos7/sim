@@ -32,7 +32,7 @@ class EstudantesController extends AppController {
                     $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Estudante cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
-                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado!";
+                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado em até 7 dias ou seu cadastro será invalidado.";
                     
                     $this->set('dados', $dados);                              
                     $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG, comprovante de residência, comprovante de matrícula, declaração de frequencia (para atestar a frequência do aluno nas aulas). Necessário também uma foto 3x4.  ", "flash_custom");
