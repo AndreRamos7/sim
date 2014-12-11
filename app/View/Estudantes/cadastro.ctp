@@ -39,7 +39,7 @@
                     <input name="data[Estudante][nomePai]" id="EstudanteNomeMae" maxlength="100" type="text" size="80" class="long">
                 </p>
                 <p> 
-                    <label>*RG: </label>
+                    <label>** RG: </label>
                     <input name="data[Estudante][rg]" id="EstudanteRg" maxlength="20" type="text" required class="campos campopequeno rg"  autocomplete="off" >
                 </p>
                 <p> 
@@ -58,6 +58,10 @@
                 <p> 
                     <label>* Data de Nascimento: </label><br>
                     <input name="data[Estudante][dataNascimento]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" autocomplete="off" >
+                </p>
+                <p> 
+                    <label> Naturalidade: </label>
+                    <input name="data[Estudante][naturalidade]" id="EstudanteNaturalidade" maxlength="30" type="text" >
                 </p>
             </fieldset>
 
@@ -140,8 +144,8 @@
 
             <fieldset class="row1">    
                 <legend>Contatos</legend>
-                <p> <label for="ComumEmail">* Email: </label>
-                    <input name="data[Estudante][email]" id="ComumEmail" maxlength="100" type="email" size="80" required class="long">
+                <p> <label for="ComumEmail"> Email: </label>
+                    <input name="data[Estudante][email]" id="ComumEmail" maxlength="100" type="email" size="80" class="long">
                 </p>
                 <!--
                 <p> <label> Site: </label>

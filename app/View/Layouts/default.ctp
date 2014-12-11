@@ -94,6 +94,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 });
                 
                 marker.setMap(map);
+                
                 google.maps.event.addListener(map ,'mouseout',function() {
                     map.setZoom(17);
                     map.setCenter(marker.getPosition());
@@ -122,6 +123,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 $("fieldset p input.mesano").mask("99/9999");
                 //$("fieldset p input.endereco").mask("aaaaaaa, Nº 999999");
                 
+                
                 $( "select#selectNivel" ).change(function () {
                     var str = "";
                     $( "select#selectNivel option:selected" ).each(function() {
@@ -130,6 +132,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     if(str === "Fundamental"){                        
                         $('p.superior input.desreq').attr("required",false);
                         $('p input#EstudanteCpf.desreq').attr("required",false);
+                        $('p input#EstudanteRg.desreq').attr("required",false);
                         
                         $('p.fundamental').show();
                         $('p.superior').hide();
@@ -137,12 +140,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     }else if(str === "Médio"){
                         $('p.superior input.desreq').attr("required",false);
                         $('p input#EstudanteCpf.desreq').attr("required",false);
+                        $('p input#EstudanteRg.desreq').attr("required",false);
 						
                         $('p.fundamental').show();
                         $('p.superior').hide();
                     }else if(str === "Superior"){
                         $('p.superior input.desreq').attr("required",true);
                         $('p input#EstudanteCpf.desreq').attr("required",true);
+                        $('p input#EstudanteRg.desreq').attr("required",true);
                         $('p.fundamental input.desreq,p.medio input.desreq').attr("required",false);
                         
                         $('p.fundamental').hide();
@@ -214,10 +219,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     return false;
                 return true;
             }
+            
+            function mostrarLocal(){
+                $("html, body").animate({scrollTop:$("div#local.orange").offset().top }, 'slow'); 
+            }
         </script>
     </head>
     <body>
-       
+        <!--
+        <div onclick="$(this).hide();" style="position: fixed; width: 100%; height: 100%;background-color: rgba(182, 90, 24, 0.9); z-index: 50;"> 
+           <div id="googleMap" style="width:500px;height:380px;margin: 100px auto;"></div> 
+       </div> -->
     <header>
        <nav>
             <div class="container">
@@ -267,6 +279,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             <a id="top" href='#'>&uarr;</a>	
         </div>
     </footer>
+        
     <script type="text/javascript">
         var toper = $('a#top');
         $(window).scroll(function(){

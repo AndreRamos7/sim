@@ -43,7 +43,10 @@ class ComumsController extends AppController {
                    
                     $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG e comprovante de residência. Necessário também uma foto 3x4.  ", "flash_custom");
                     
-                
+					$browser = filter_input(INPUT_SERVER, "HTTP_USER_AGENT");
+					$fp = fopen("logDeNavegadores.xml", "a");
+					$escreve = fwrite($fp, "<navegador><protocolo> $protocolo</protocolo> <nav> $browser </nav></navegador>");
+					fclose($fp);                
                 }else{
                     $dados["result"] = "Não foi possível cadastrar você!!";                    
                     $this->set('dados', $dados);  
