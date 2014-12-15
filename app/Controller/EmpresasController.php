@@ -35,10 +35,7 @@ class EmpresasController extends AppController {
                     $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Empresa cadastrada com sucesso!!";
                     $dados["protocolo"] = $protocolo;
-                    $dados["chamado"] = "Favor comparecer ao escritório do SIM "
-                            . "portando documentações solicitadas e o n° de "
-                            . "protocolo gerado em até 7 dias ou seu cadastro "
-                            . "será invalidado.";
+                    $dados["chamado"] = " Entre em contato através do número (91)3721-6210 ou aguarde nosso contato! ";
                     
                     $this->set('dados', $dados);                   
                     $this->Session->setFlash(" Documentos necessários (Cópia e Original): "

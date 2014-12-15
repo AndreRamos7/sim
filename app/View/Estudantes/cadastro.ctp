@@ -6,7 +6,7 @@
     <div class='container'>
         <p align="center"> <img src="/img/ico/estudanteico.png"> </p>			
         <h2 align="center"> Cadastro de usuários do tipo Estudantes / <?php echo $cidadeSPC;?></h2>
-        <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastro online. </p>
+        <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
     </div>
 </section>
 
@@ -102,11 +102,16 @@
                     <select id="selectNivel"  class="campos campopequeno" name="data[Estudante][grau]">
                         <option value="1">Fundamental</option>
                         <option value="2">Médio</option>
-                        <option value="3">Superior</option>                                    
+                        <option value="3">Superior</option>
+                        <option value="4">Técnico</option>
+                        <option value="5">Pré-vestibular</option>
+                        
                     </select>
                 </p>                        
-
-                <p > 
+                
+                <p class="tecnico">  Válido somente para cursos com no mínimo 20 meses de duração </p>
+                
+                <p> 
                     <label>* Nome da Instituição: </label>
                     <input name="data[Estudante][nomeEscola]" id="EstudanteNomeEscola" maxlength="200" type="text" size="80" required  class="long">
                 </p>
@@ -117,7 +122,7 @@
                 </p>
 
                 <p class="superior"> 
-                    <label for="EstudanteMatricula" >* Matricula: </label> 
+                    <label for="EstudanteMatricula" >* Matrícula: </label> 
                     <input name="data[Estudante][matricula]" id="EstudanteMatricula" maxlength="20" type="text" required class="campos campopequeno desreq">
                 </p>
 
@@ -130,7 +135,17 @@
                     <label for="EstudanteDataFim">* Fim: </label>
                     <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
                 </p>
+                
+                <p class="tecnico">  
+                    <label for="EstudanteDataIni">* Início:</label>  
+                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
+                </p>
 
+                <p class="tecnico">
+                    <label for="EstudanteDataFim">* Fim: </label>
+                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
+                </p>
+                
                 <p class="superior"> 
                     <label for="EstudantePeriodo">* Período: </label> 
                     <input name="data[Estudante][periodo]" id="EstudantePeriodo" placeholder=" Ex: 6º semestre" maxlength="50" type="text" size="20" required class="campos campopequeno desreq">
