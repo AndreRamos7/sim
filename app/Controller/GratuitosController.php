@@ -31,10 +31,10 @@ class GratuitosController extends AppController {
                     $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Usuário gratuito cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
-                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado em até 7 dias ou seu cadastro será invalidado.";
+                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado dentro do prazo de 48 horas até 7 dias ou seu cadastro será invalidado.";
                     
                     $this->set('dados', $dados);                                  
-                    $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG e comprovante de residência. Necessário também uma foto 3x4.", "flash_custom");
+                    $this->Session->setFlash("Documentos necessários (Cópia e Original): CPF, RG e comprovante de residência. Caso o usuário seja portador de deficiência, favor apresentar encaminhamento da ADMC (Associação de Deficientes do Município de Castanhal)", "flash_custom");
 					
 					$browser = filter_input(INPUT_SERVER, "HTTP_USER_AGENT");
 					$fp = fopen("logDeNavegadores.xml", "a");

@@ -615,11 +615,11 @@ p.agreement label{
 
 
 /* -------------------
-*  RESPOSIVE ELEMENTS
+*  RESPONSIVE ELEMENTS
 *  ------------------- */
 @media only screen and (max-width: 767px) and (min-width: 480px) {
 
-	header h2 {display: none;}
+	header {display: none;}
 	header .slogan {padding-top: 40px;}
 
 	nav .container .logo {margin-bottom: 20px; text-align: center;}

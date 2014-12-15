@@ -134,6 +134,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $('p input#EstudanteCpf.desreq').attr("required",false);
                         $('p input#EstudanteRg.desreq').attr("required",false);
                         
+                        $('p.tecnico').hide();
                         $('p.fundamental').show();
                         $('p.superior').hide();
                         
@@ -141,7 +142,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $('p.superior input.desreq').attr("required",false);
                         $('p input#EstudanteCpf.desreq').attr("required",false);
                         $('p input#EstudanteRg.desreq').attr("required",false);
-						
+			
+                        $('p.tecnico').hide();
                         $('p.fundamental').show();
                         $('p.superior').hide();
                     }else if(str === "Superior"){
@@ -151,7 +153,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $('p.fundamental input.desreq,p.medio input.desreq').attr("required",false);
                         
                         $('p.fundamental').hide();
+                        $('p.tecnico').hide();
                         $('p.superior').show();
+                        
+                      }else if(str === "Técnico"){
+                        $('p.superior input.desreq').attr("required",false);
+                        $('p input#EstudanteCpf.desreq').attr("required",true);
+                        $('p input#EstudanteRg.desreq').attr("required",true);
+                        
+                        
+                        $('p.fundamental').hide();
+                        $('p.superior').hide();
+                        $('p.tecnico').show();
                     }
                    // alert( str );
                 }).change();
