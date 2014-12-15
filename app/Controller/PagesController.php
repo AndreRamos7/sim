@@ -49,7 +49,7 @@ class PagesController extends AppController {
             
         }
         
-        public function pagConstrucao(){
+        public function construcao(){
             
         }
         

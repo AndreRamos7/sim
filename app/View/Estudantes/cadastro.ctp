@@ -28,7 +28,7 @@
                 <legend>Dados Pessoais</legend>
                 <p> 
                     <label>* Nome completo: </label>
-                    <input name="data[Estudante][nome]" id="EstudanteNome" maxlength="200" type="text" size="80" required  class="long">
+                    <input name="data[Estudante][nome]" id="EstudanteNome" maxlength="200" type="text" size="80" required  class="long" autofocus="true">
                 </p>
                 <p> 
                     <label> Nome da Mãe: </label>
@@ -40,13 +40,13 @@
                 </p>
                 <p> 
                     <label>** RG: </label>
-                    <input name="data[Estudante][rg]" id="EstudanteRg" maxlength="20" type="text" required class="campos campopequeno rg"  autocomplete="off" >
+                    <input name="data[Estudante][rg]" id="EstudanteRg" maxlength="20" type="text" required class="campos campopequeno rg desreq"  autocomplete="off" >
                 </p>
                 <p> 
                     <label>* Orgão Emissor: </label>
                     <input name="data[Estudante][emissor]" id="EstudanteEmissor" maxlength="10" type="text" required  class="campos campopequeno">
                 </p>
-                <p title="Obrigatório para estudantes de nível superior."> 
+                <p id="cpf" title="Obrigatório para estudantes de nível superior."> 
                     <label>** CPF:</label>
                     <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" class="campos campopequeno cpf desreq"  autocomplete="off">
                 </p>
@@ -59,7 +59,7 @@
                     <label>* Data de Nascimento: </label><br>
                     <input name="data[Estudante][dataNascimento]" id="datepicker" maxlength="10" type="text" required  class="campos campopequeno data" autocomplete="off" >
                 </p>
-                <p> 
+				<p title="Ex: cidade onde você nasceu."> 
                     <label> Naturalidade: </label>
                     <input name="data[Estudante][naturalidade]" id="EstudanteNaturalidade" maxlength="30" type="text" >
                 </p>
@@ -70,7 +70,7 @@
                 <legend>Endereço</legend>
                 <p> 
                     <label>* Endereço: </label>
-                    <input name="data[Estudante][endereco]" placeholder="Ex: Rua São João, S/N" id="EstudanteEndereco" maxlength="100" type="text" size="80" required class="long endereco">
+                    <input name="data[Estudante][endereco]" placeholder="Ex: Rua São João, Nº 618" id="EstudanteEndereco" maxlength="100" type="text" size="80" required class="long">
                 </p>                    
                 <p> 
                     <label>* Bairro: </label>
@@ -102,13 +102,12 @@
                     <select id="selectNivel"  class="campos campopequeno" name="data[Estudante][grau]">
                         <option value="1">Fundamental</option>
                         <option value="2">Médio</option>
-                        <option value="3">Superior</option>
+                        <option value="3">Superior</option>                                    
                         <option value="4">Técnico</option>
                         <option value="5">Pré-vestibular</option>
-                        
                     </select>
                 </p>                        
-                
+
                 <p class="tecnico">  Válido somente para cursos com no mínimo 20 meses de duração </p>
                 
                 <p> 
@@ -116,42 +115,32 @@
                     <input name="data[Estudante][nomeEscola]" id="EstudanteNomeEscola" maxlength="200" type="text" size="80" required  class="long">
                 </p>
 
-                <p class="superior"> 
+                <p id="curso"> 
                     <label for="EstudanteCurso">* Curso: </label> 
                     <input name="data[Estudante][curso]" id="EstudanteCurso" maxlength="50" type="text" size="30" required class="campos campopequeno desreq">
                 </p>
 
-                <p class="superior"> 
+                <p id="matricula"> 
                     <label for="EstudanteMatricula" >* Matrícula: </label> 
                     <input name="data[Estudante][matricula]" id="EstudanteMatricula" maxlength="20" type="text" required class="campos campopequeno desreq">
                 </p>
 
-                <p class="superior">  
+                <p id="ini">  
                     <label for="EstudanteDataIni">* Início:</label>  
-                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
+                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq mesano">
                 </p>
 
-                <p class="superior">
+                <p id="fim">
                     <label for="EstudanteDataFim">* Fim: </label>
-                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
-                </p>
-                
-                <p class="tecnico">  
-                    <label for="EstudanteDataIni">* Início:</label>  
-                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
+                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq mesano">
                 </p>
 
-                <p class="tecnico">
-                    <label for="EstudanteDataFim">* Fim: </label>
-                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq mesano" placeholder="mm/aaaa">
-                </p>
-                
-                <p class="superior"> 
+                <p id="periodo"> 
                     <label for="EstudantePeriodo">* Período: </label> 
                     <input name="data[Estudante][periodo]" id="EstudantePeriodo" placeholder=" Ex: 6º semestre" maxlength="50" type="text" size="20" required class="campos campopequeno desreq">
                 </p>
 
-                <p class="fundamental medio"> 
+                <p id="serie"> 
                     <label for="EstudanteSerie" id="EstudanteSerie">* Série/Ano: </label>
                     <input name="data[Estudante][serie]" id="EstudanteSerie" maxlength="2" type="text" required class="campos campopequeno desreq">
                 </p>
@@ -170,7 +159,7 @@
                 <p> <label>* Telefone: </label>
                     <input name="data[Estudante][telefone]" id="EstudanteTelefone" maxlength="15" type="text" required class="campos  campopequeno telefone" autocomplete="off" >        
                 </p>
-                <p> 
+                <p title="Com o dígito 9">
                     <label> Celular: </label>
                     <input name="data[Estudante][celular]" id="EstudanteCelular" maxlength="15" type="text" class="campos campopequeno celular"  autocomplete="off">        
                 </p>
@@ -182,7 +171,7 @@
                 -->
             </fieldset>
             <fieldset class="buttons">
-                <p style= "float:right; font-size:16px;">** Obrigatório para nível superior.<br>* Campos obrigatórios</p>
+                <p style= "float:right; font-size:16px;">** Obrigatório para nível superior.<br>* Campos obrigatórios.</p>
                 <p style=" float:right;"> 
                 <button class="button" value="Voltar" id="btnvoltar" onclick="history.back();"> Voltar </button>  
                 <button class="button" type="submit" value="Salvar cadastro" id="btncadastrar"> Salvar cadastro! </button> </p>	 

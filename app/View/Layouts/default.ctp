@@ -70,9 +70,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
         <script src="/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
-        <script src="http://maps.googleapis.com/maps/api/js"></script>
-
-        <script>
+        
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+		<script>
             var myCenter=new google.maps.LatLng(-1.295338, -47.929356);
             var marker;
 
@@ -109,66 +109,139 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
             google.maps.event.addDomListener(window, 'load', initialize);
             
         </script>
+		
         <script language="JavaScript" type="text/javascript">
            $(document).ready(function() {
-                
+
                 $("fieldset p input.cpf").mask("99999999999");
+				/*
+				,{completed:function(){
+					var strCPF = this.val();
+					if(testaCPF(strCPF)){
+						$("fieldset p#cpf").append("CPF válido!!");
+					}else{
+						$("fieldset p#cpf").append("CPF inválido!!");
+					}
+				}
+				}
+				*/
+                $("input[type='text']").keyup(function(){
+                //alert("asd");          
+                  var str = $(this).val();
+                  var res = str.UpperCase();
+                  $(this).val(res);
+                });         
+                
+                
+		
+                
                 $("fieldset p input.rg").mask("999999-9");
                 $("fieldset p input.data").mask("99/99/9999");
                 $("fieldset p input.cnpj").mask("99.999.999/9999-99");
                 $("fieldset p input.cep").mask("99999-999");
-                $("fieldset p input.celular").mask("(99)9999 9999");
+                $("fieldset p input.celular").mask("(99)99999 9999");
                 $("fieldset p input.telefone").mask("(99)9999 9999");
                 $("fieldset p input.fax").mask("(99)9999 9999");
                 $("fieldset p input.mesano").mask("99/9999");
-                //$("fieldset p input.endereco").mask("aaaaaaa, Nº 999999");
-                
-                
+
                 $( "select#selectNivel" ).change(function () {
                     var str = "";
                     $( "select#selectNivel option:selected" ).each(function() {
                         str = $( this ).text();
                     });
                     if(str === "Fundamental"){                        
-                        $('p.superior input.desreq').attr("required",false);
-                        $('p input#EstudanteCpf.desreq').attr("required",false);
-                        $('p input#EstudanteRg.desreq').attr("required",false);
-                        
-                        $('p.tecnico').hide();
-                        $('p.fundamental').show();
-                        $('p.superior').hide();
+                        $('p#curso input.desreq').attr("required",false);
+						$('p#matricula input.desreq').attr("required",false);
+						$('p#ini input.desreq').attr("required",true);
+						$('p#fim input.desreq').attr("required",true);
+						$('p#serie input.desreq').attr("required",true);
+						$('p#periodo input.desreq').attr("required",false);
+						
+						$('p input#EstudanteCpf.desreq').attr("required",false);
+						$('p input#EstudanteRg.desreq').attr("required",false);
+						
+						$('p#curso').hide();
+						$('p#matricula').hide();
+						$('p#ini').show();
+						$('p#fim').show();
+						$('p#periodo').hide();
+						$('p#serie').show();
                         
                     }else if(str === "Médio"){
-                        $('p.superior input.desreq').attr("required",false);
+                        $('p#curso input.desreq').attr("required",false);
+						$('p#matricula input.desreq').attr("required",false);
+						$('p#ini input.desreq').attr("required",true);
+						$('p#fim input.desreq').attr("required",true);
+						$('p#serie input.desreq').attr("required",true);
+						$('p#periodo input.desreq').attr("required",false);
+						
                         $('p input#EstudanteCpf.desreq').attr("required",false);
-                        $('p input#EstudanteRg.desreq').attr("required",false);
-			
-                        $('p.tecnico').hide();
-                        $('p.fundamental').show();
-                        $('p.superior').hide();
+						$('p input#EstudanteRg.desreq').attr("required",false);
+						
+						$('p#curso').hide();
+						$('p#matricula').hide();
+						$('p#ini').show();
+						$('p#fim').show();
+						$('p#periodo').hide();
+						$('p#serie').show();
                     }else if(str === "Superior"){
-                        $('p.superior input.desreq').attr("required",true);
+                        $('p#curso input.desreq').attr("required",true);
+						$('p#matricula input.desreq').attr("required",true);
+						$('p#ini input.desreq').attr("required",true);
+						$('p#fim input.desreq').attr("required",true);
+						$('p#serie input.desreq').attr("required",false);
+						$('p#periodo input.desreq').attr("required",true);
+						
+						$('p input#EstudanteCpf.desreq').attr("required",true);
+						$('p input#EstudanteRg.desreq').attr("required",true);
+                        
+						$('p#curso').show();
+						$('p#matricula').show();
+						$('p#ini').show();
+						$('p#fim').show();
+						$('p#periodo').show();
+						$('p#serie').hide();
+                    }else if(str === "Técnico"){
+                        $('p#curso input.desreq').attr("required",true);
+						$('p#matricula input.desreq').attr("required",true);
+						$('p#ini input.desreq').attr("required",true);
+						$('p#fim input.desreq').attr("required",true);
+						$('p#serie input.desreq').attr("required",false);
+						$('p#periodo input.desreq').attr("required",true);
+						
                         $('p input#EstudanteCpf.desreq').attr("required",true);
                         $('p input#EstudanteRg.desreq').attr("required",true);
-                        $('p.fundamental input.desreq,p.medio input.desreq').attr("required",false);
                         
-                        $('p.fundamental').hide();
-                        $('p.tecnico').hide();
-                        $('p.superior').show();
-                        
-                      }else if(str === "Técnico"){
-                        $('p.superior input.desreq').attr("required",false);
+						$('p#curso').show();
+						$('p#matricula').show();
+						$('p#ini').show();
+						$('p#fim').show();
+						$('p#periodo').show();
+						$('p#serie').hide();
+                    }else if(str === "Pré-vestibular"){
+                        $('p#curso input.desreq').attr("required",false);
+						$('p#matricula input.desreq').attr("required",false);
+						$('p#ini input.desreq').attr("required",true);
+						$('p#fim input.desreq').attr("required",true);
+						$('p#serie input.desreq').attr("required",false);
+						$('p#periodo input.desreq').attr("required",false);
+						
                         $('p input#EstudanteCpf.desreq').attr("required",true);
                         $('p input#EstudanteRg.desreq').attr("required",true);
                         
                         
-                        $('p.fundamental').hide();
-                        $('p.superior').hide();
-                        $('p.tecnico').show();
-                    }
+						$('p#curso').hide();
+						$('p#matricula').hide();
+						$('p#ini').show();
+						$('p#fim').show();
+						$('p#periodo').hide();
+						$('p#serie').hide();
+                     }
+					 
                    // alert( str );
                 }).change();
-                
+				
+				 
                 $("form#GratuitoCadastrarForm").submit(function(event){
                     var inputCPF = $("form#EmpresaCadastrarForm fieldset p input.cpf");
                     var txtCPF = inputCPF.val();
@@ -176,8 +249,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         event.preventDefault();
                         alert("CPF inválido!!");
                     }
-                });
-                
+                });				
+				
                 $("form#ComumCadastrarForm").submit(function(event){
                     var inputCPF = $("form#EmpresaCadastrarForm fieldset p input.cpf");
                     var txtCPF = inputCPF.val();
@@ -207,7 +280,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                }
                window.print();
             }
-            //Verifica se CPF é válido
+			 //Verifica se CPF é válido
             function testaCPF(strCPF) {
                 var Soma;
                 var Resto;
@@ -232,67 +305,62 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     return false;
                 return true;
             }
-            
-            function mostrarLocal(){
-                $("html, body").animate({scrollTop:$("div#local.orange").offset().top }, 'slow'); 
-            }
+
         </script>
     </head>
     <body>
-        <!--
-        <div onclick="$(this).hide();" style="position: fixed; width: 100%; height: 100%;background-color: rgba(182, 90, 24, 0.9); z-index: 50;"> 
-           <div id="googleMap" style="width:500px;height:380px;margin: 100px auto;"></div> 
-       </div> -->
-    <header>
+       
+       <header>
        <nav>
-            <div class="container">
-                <div class="sixteen columns">
-                    <ul class="mainMenu">
-                        <li><a href="/" title="Home">Página Inicial</a></li>
-                        <li><a href='/info/contato' title='Contato'>Fale Conosco!</a></li>
-                        <li><a href='/info' title='ComoFunciona'>Como Funciona?</a></li>
-                        <li><a href='/info/duvidas' title='Duvidas'>Dúvidas Frequentes</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+            <div class="container">            
+				<div class="sixteen columns">
+					<ul class="mainMenu">
+						<li><a href="/" title="Home">Página Inicial</a></li>
+						<li><a href='/info/contato' title='Contato'>Fale Conosco!</a></li>
+						<li><a href='/info' title='ComoFunciona'>Como Funciona?</a></li>
+						<li><a href='/info/duvidas' title='Duvidas'>Dúvidas Frequentes</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 	      
     </header>
         
-
-    <div id="content">
-        <?php echo $this->fetch('content'); ?>        
-    </div> 
+               
+        <div id="content">
+            <?php echo $this->fetch('content'); ?>        
+        </div> 
         
-    <footer>
-        <div class="container">
+            <footer>
+		<div class="container">
+			
+			<div class="six columns">
+                            <p></p> <br/>
+                                 <p align="center"> SIM | Copyright ‎© 2014 <p>
+                                <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:andre-rammos@hotmail.com">André Ramos</a></p>
+			</div>
 
-            <div class="six columns">
-               <p></p> <br/>
-               <p align="center"> SIM | Copyright ‎© 2014 <p>
-               <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:andre-rammos@hotmail.com">André Ramos</a></p>
-            </div>
+			<div class="four columns social">
+                            <p></p> <br />
+				<h5 align="center"> Redes sociais </h5>
+                                <p align="center">
+                                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img src='/img/ico/you_tube_1.png'></a>
+				<a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img src='/img/ico/facebook.png'></a>
+                                <a href="https://twitter.com/agorasim_"><img src='/img/ico/twitter.png'></a> </p>
+				</div>
 
-            <div class="four columns social">
-                <p></p> <br />
-                <h5 align="center"> Redes sociais </h5>
-                <p align="center">
-                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img src='/img/ico/you_tube_1.png'></a>
-                <a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img src='/img/ico/facebook.png'></a>
-                <a href="https://twitter.com/agorasim_"><img src='/img/ico/twitter.png'></a> </p>
-            </div>
-
-            <div class="six columns">
-                <p></p><br />
-                <h5 align="center"> Entre em contato conosco! </h5>
-                <p align="center"> Mande-nos um email: 
-                <a align="center" href='mailto:contato@sistemasim.com.br'>contato@sistemasim.com.br</a></p>
-            </div>
-            <a id="top" href='#'>&uarr;</a>	
+			<div class="six columns">
+                            <p></p><br />
+				<h5 align="center"> Entre em contato conosco! </h5>
+				 <p align="center"> Mande-nos um email: 
+					<a align="center" href='mailto:contato@sistemasim.com.br'>contato@sistemasim.com.br</a></p>
+                                 
+                        
+                        </div>
+		<a id="top" href='#'>&uarr;</a>	
         </div>
-    </footer>
-        
+	</footer>
     <script type="text/javascript">
         var toper = $('a#top');
         $(window).scroll(function(){
@@ -307,6 +375,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         	return false;
     	}); 
     </script>       
+           
+		   
            
     </body>
 </html>

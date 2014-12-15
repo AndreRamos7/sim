@@ -132,7 +132,7 @@ input, textarea {border: 1px solid #ddd; outline: none;}
 input:focus, textarea:focus {border-color: #b6b6b6;}
 textarea {width: 480px; padding: 7px 10px;}
 input.error, textarea.error {border-color: #cc4847;}
-input{ text-transform: uppercase;}
+input{ text-transform: none;}
 form.register fieldset.row1 label.sexo{width: 33px;}
 
 input[type='submit'] {width: 502px; padding: 12px 0; font-size: 16px; border: none; background: #eee; color: #aaa; cursor: pointer;}

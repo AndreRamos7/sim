@@ -38,14 +38,12 @@ class EmpresasController extends AppController {
                     $dados["chamado"] = " Entre em contato através do número (91)3721-6210 ou aguarde nosso contato! ";
                     
                     $this->set('dados', $dados);                   
-                    $this->Session->setFlash(" Documentos necessários (Cópia e Original): "
-                            . "Cartão CNPJ, Inscrição Estadual e/ou Inscrição Municipal"
-                            . " (Se houver). ", "flash_custom");
+                    $this->Session->setFlash(" Documentos necessários (Cópia e Original): Cartão CNPJ, Inscrição Estadual e/ou Inscrição Municipal (Se houver). ", "flash_custom");
 					
 					$browser = filter_input(INPUT_SERVER, "HTTP_USER_AGENT");
 					$fp = fopen("logDeNavegadores.xml", "a");
 					$escreve = fwrite($fp, "<navegador><protocolo> $protocolo</protocolo> <nav> $browser </nav></navegador>");
-					fclose($fp);                    
+					fclose($fp);
                 }else{
                     $dados["result"] = "Não foi possível cadastrar você!!";                    
                     $this->set('dados', $dados);                   
