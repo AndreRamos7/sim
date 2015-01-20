@@ -44,7 +44,7 @@
                 </p>
                 <p> 
                     <label>* Orgão Emissor: </label>
-                    <input name="data[Estudante][emissor]" id="EstudanteEmissor" maxlength="10" type="text" required  class="campos campopequeno">
+                    <input name="data[Estudante][emissor]" id="EstudanteEmissor" maxlength="10" type="text" required  class="campos campopequeno" placeholder="Ex: SSP, SEGUP, etc.">
                 </p>
                 <p id="cpf" title="Obrigatório para estudantes de nível superior."> 
                     <label>** CPF:</label>

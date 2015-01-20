@@ -69,7 +69,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
          
         <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
-        <script src="/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script>
+        <script src="/js/jquery.maskedinput.min.js" type="text/javascript"></script>
         
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script>
@@ -111,9 +111,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </script>
 		
         <script language="JavaScript" type="text/javascript">
-           $(document).ready(function() {
-
-                $("fieldset p input.cpf").mask("99999999999");
+           $(document).ready(function($) {
+               
 				/*
 				,{completed:function(){
 					var strCPF = this.val();
@@ -133,9 +132,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 });         
                 
                 
-		
+		$.mask.definitions['~']="[+-]";
+
+                $("fieldset p input.cpf").mask("99999999999");
                 
-                $("fieldset p input.rg").mask("999999-9");
+                $("fieldset p input.rg").mask("999999?-9");
                 $("fieldset p input.data").mask("99/99/9999");
                 $("fieldset p input.cnpj").mask("99.999.999/9999-99");
                 $("fieldset p input.cep").mask("99999-999");
@@ -160,6 +161,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						$('p input#EstudanteCpf.desreq').attr("required",false);
 						$('p input#EstudanteRg.desreq').attr("required",false);
 						
+						$('p.tecnico').hide();
 						$('p#curso').hide();
 						$('p#matricula').hide();
 						$('p#ini').show();
@@ -178,6 +180,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $('p input#EstudanteCpf.desreq').attr("required",false);
 						$('p input#EstudanteRg.desreq').attr("required",false);
 						
+						$('p.tecnico').hide();
 						$('p#curso').hide();
 						$('p#matricula').hide();
 						$('p#ini').show();
@@ -195,6 +198,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						$('p input#EstudanteCpf.desreq').attr("required",true);
 						$('p input#EstudanteRg.desreq').attr("required",true);
                         
+						$('p.tecnico').hide();
 						$('p#curso').show();
 						$('p#matricula').show();
 						$('p#ini').show();
@@ -212,6 +216,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $('p input#EstudanteCpf.desreq').attr("required",true);
                         $('p input#EstudanteRg.desreq').attr("required",true);
                         
+						$('p.tecnico').show();
 						$('p#curso').show();
 						$('p#matricula').show();
 						$('p#ini').show();
@@ -229,7 +234,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                         $('p input#EstudanteCpf.desreq').attr("required",true);
                         $('p input#EstudanteRg.desreq').attr("required",true);
                         
-                        
+                        $('p.tecnico').hide();
 						$('p#curso').hide();
 						$('p#matricula').hide();
 						$('p#ini').show();
@@ -243,7 +248,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				
 				 
                 $("form#GratuitoCadastrarForm").submit(function(event){
-                    var inputCPF = $("form#EmpresaCadastrarForm fieldset p input.cpf");
+                    var inputCPF = $("form#GratuitoCadastrarForm fieldset p input.cpf");
                     var txtCPF = inputCPF.val();
                     if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
                         event.preventDefault();
@@ -252,7 +257,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                 });				
 				
                 $("form#ComumCadastrarForm").submit(function(event){
-                    var inputCPF = $("form#EmpresaCadastrarForm fieldset p input.cpf");
+                    var inputCPF = $("form#ComumCadastrarForm fieldset p input.cpf");
                     var txtCPF = inputCPF.val();
                     if(!testaCPF(txtCPF) && inputCPF.attr("required")){                    
                         event.preventDefault();

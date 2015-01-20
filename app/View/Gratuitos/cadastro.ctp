@@ -37,7 +37,7 @@
         </p>
         <p> 
             <label>* Orgão Emissor: </label>
-            <input name="data[Gratuito][emissor]" id="GratuitoEmissor" maxlength="10" type="text" required  class="campos campopequeno">
+            <input name="data[Gratuito][emissor]" id="GratuitoEmissor" maxlength="10" type="text" required  class="campos campopequeno" placeholder="Ex: SSP, SEGUP, etc.">
         </p>
         <p> 
             <label>* CPF:</label>

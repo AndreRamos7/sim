@@ -37,7 +37,7 @@
                     </p>
                     <p>
                         <label for="">* Orgão Emissor: </label>
-                         <input name="data[Comum][emissor]" id="ComumEmissor" maxlength="10" type="text" required  class="campos campopequeno">
+                         <input name="data[Comum][emissor]" id="ComumEmissor" maxlength="10" type="text" required  class="campos campopequeno" placeholder="Ex: SSP, SEGUP, etc.">
                     </p>
                     <p>
                         <label for="">* CPF:</label>
