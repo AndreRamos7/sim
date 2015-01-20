@@ -7,7 +7,7 @@
         <p align="center"> <img src="/img/ico/estudanteico.png"> </p>			
         <h2 align="center"> Cadastro de usuários do tipo Estudantes / <?php echo $cidadeSPC;?></h2>
         <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
-        <a href='/' class='dalej'> Recuperar número de protocolo </a> 
+        <a href='/Castanhal/recuperar' class='dalej'> Recuperar número de protocolo </a> 
     </div>
 </div>
 
