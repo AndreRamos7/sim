@@ -45,10 +45,7 @@ class PagesController extends AppController {
 			throw new NotFoundException();
 		}
 	}
-        public function mensagem() {
-            
-        }
-        
+       
         public function construcao(){
             
         }

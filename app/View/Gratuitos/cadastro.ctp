@@ -37,7 +37,7 @@
         </p>
         <p> 
             <label>* Orgão Emissor: </label>
-            <input name="data[Gratuito][emissor]" id="GratuitoEmissor" maxlength="10" type="text" required  class="campos campopequeno">
+            <input name="data[Gratuito][emissor]" id="GratuitoEmissor" maxlength="10" type="text" required  class="campos campopequeno" placeholder="Ex: SSP, SEGUP, etc.">
         </p>
         <p> 
             <label>* CPF:</label>
@@ -63,7 +63,7 @@
         <legend>Endereço</legend>
         <p> 
             <label>* Endereço: </label>
-            <input name="data[Gratuito][endereco]" placeholder="Ex: Rua São João, S/N" id="GratuitoEndereco" maxlength="100" type="text" size="80" required class="long">
+            <input name="data[Gratuito][endereco]" placeholder="Ex: Rua São João, 618" id="GratuitoEndereco" maxlength="100" type="text" size="80" required class="long">
         </p>
         <p> 
             <label>* Bairro: </label>
@@ -94,7 +94,7 @@
             <label>* Telefone: </label>
             <input name="data[Gratuito][telefone]" id="GratuitoTelefone" maxlength="15" type="text" required class="campos campopequeno telefone" autocomplete="off">        
         </p>
-        <p> 
+        <p title="Com o dígito 9">
             <label>Celular: </label>
             <input name="data[Gratuito][celular]" id="GratuitoCelular" maxlength="15" type="text" class="campos campopequeno celular" autocomplete="off">        
         </p>

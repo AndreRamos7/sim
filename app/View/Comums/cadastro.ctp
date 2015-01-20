@@ -37,7 +37,7 @@
                     </p>
                     <p>
                         <label for="">* Orgão Emissor: </label>
-                         <input name="data[Comum][emissor]" id="ComumEmissor" maxlength="10" type="text" required  class="campos campopequeno">
+                         <input name="data[Comum][emissor]" id="ComumEmissor" maxlength="10" type="text" required  class="campos campopequeno"  placeholder="Ex: SSP, SEGUP, etc.">
                     </p>
                     <p>
                         <label for="">* CPF:</label>
@@ -55,7 +55,7 @@
                 <legend>Endereço</legend>
 
                     <p> <label for="">* Endereço: </label>
-                        <input name="data[Comum][endereco]" placeholder="Ex: Rua São João, S/N" id="ComumEndereco" maxlength="100" type="text" size="80" required class="long">
+                        <input name="data[Comum][endereco]" placeholder="Ex: Rua São João, 618" id="ComumEndereco" maxlength="100" type="text" size="80" required class="long">
                     </p>
 
                     <p>
@@ -95,7 +95,7 @@
                     <label for="">* Telefone: </label>
                     <input name="data[Comum][telefone]" id="ComumTelefone" maxlength="15" type="text" required class="telefone"  autocomplete="off">        
                 </p>            
-                <p>
+                <p title="Com o dígito 9">
                     <label for=""> Celular: </label>
                     <input name="data[Comum][celular]" id="ComumCelular" maxlength="15" type="text" class="celular"  autocomplete="off">
                 <p>

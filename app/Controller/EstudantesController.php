@@ -32,8 +32,9 @@ class EstudantesController extends AppController {
                     $dados["nomeUsuario"] = $nomeUsuario;
                     $dados["result"] = "Estudante cadastrado com sucesso!!";
                     $dados["protocolo"] = $protocolo;
-                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado a partir do dia 02/01/2015.";
-                    
+                    $dados["chamado"] = "Favor comparecer ao escritório do SIM portando documentações solicitadas e o n° de protocolo gerado a partir do dia 26/02/2015. Para evitar transtornos, compareça na data mencionada. Atendimento por ordem de chegada.";
+                    $dados["docs"] = "Documentos necessários (Cópia e Original): CPF (Caso tenha), RG (Caso tenha), Comprovante de residência, Comprovante de Matrícula, Atestado de vínculo e Comprovante de Frequência. Apresentar também esta página impressa.";
+					
                     $this->set('dados', $dados);                              
                     $this->Session->setFlash("Favor guardar seu número de protocolo.", "flash_custom");
                     

@@ -1,30 +1,13 @@
- <div class="container">
-
-    <div class="one-third column">
-        <a href="http://www.contasuper.com.br"><img src="/img/ico/icncard.png">
-        <h4 style="font-size: 28px;"> Crédito Master Card</h4>
-        <p> Conheça as vantagens do crédito MasterCard!</p> </a>
-    </div>
-    <div class="one-third column">
-        <a href="http://00244.transdatasmart.com.br:24401/TDMaxwebcommerce/default.aspx"><img src="/img/ico/icnvale.png">
-        <h4 style="font-size: 28px;"> Vale Transporte </h4>
-        <p> Adquira seus VT's através do nosso sistema online! (Somente para empresas)</p> </a>
-    </div>
-    <div class="one-third column">
-        <a href=""><img src="/img/ico/icnsim.png">
-        <h4 style="font-size: 28px;">Como funciona?</h4>
-        <p> Alguma dúvida? Tire todas as suas dúvidas aqui!</p> </a>
-    </div>
-</div>
-<div class="clear"></div>
-<div class= "orange">
+﻿ <div class= "orange">
     <div class= "container">
-        <h2> Faça seu cadastro online!! </h2>
-        <p> É só escolher a sua cidade no menu abaixo! <p> 
-        <a href="#" class="dalej"> Precisa de ajuda? </a>
+<h2> Seja bem vindo ao SIM! </h2>
+
+        <h1> Escolha a sua cidade no menu abaixo! </h1>
+              
     </div>
 </div>
-<div class="clear"></div>    
+    
+
 <div class="container"> 
     <ul class="ca-menu">
     <li>
@@ -44,8 +27,6 @@
             </div>
         </a>
     </li>
-    
-    <br>
     
     <li>
         <a href="/SantaIsabel" id="botaoAbrirSantaIsabel" title="Santa Isabel">
@@ -80,4 +61,5 @@
     </div>
     
     
-    <div class="clear"> </div>
+    <div class="clear"> </div>	
+		
