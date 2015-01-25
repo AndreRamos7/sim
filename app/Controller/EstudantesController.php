@@ -80,9 +80,9 @@ class EstudantesController extends AppController {
             //$condicaoDeConsulta = array("nome =" => $nomeForm, "cidade = " => $cidade, "dataNascimento =" => $dataNasc);
                     //,"cep =" => $cepForm);
             
-            $where = "nome = '$nomeForm' "
-                    . "and cidade = '$cidade' "
-                    . "and dataNascimento = '$dataNasc' ";
+            $where = "`nome` = '$nomeForm' "
+                    . "and `cidade` = '$cidade' "
+                    . "and `dataNascimento` = '$dataNasc' ";
              //       . "and cep = '$cepForm'";
                 
             /*$query = $this->Estudante->find('first', array(
@@ -95,7 +95,7 @@ class EstudantesController extends AppController {
             //$dataNascUsuario =  $this->Estudante->field("dataNascimento",$condicaoDeConsulta, 'modified desc');
 			//echo $nomeUsuario;
             
-            $todos = $this->Estudante->query("SELECT protocolo,  FROM `estudantes` WHERE $where");
+            $todos = $this->Estudante->query("SELECT * FROM `estudantes` WHERE $where");
                         //print_r($todos);
                         //echo count($todos);
             //if($nomeUsuario != null and $nomeUsuario != "" ){
@@ -133,7 +133,6 @@ class EstudantesController extends AppController {
             }else{
                 $this->redirect("/Error");
             }
-            
     }
     
     
