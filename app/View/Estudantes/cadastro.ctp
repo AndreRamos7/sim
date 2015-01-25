@@ -2,15 +2,15 @@
     $cidadeSPC = ($cidade == "SantaIsabel") ? "Santa Isabel" : $cidade;  
 ?>
 
-<section class='gray'>
+<div class='orange'>
     <div class='container'>
         <p align="center"> <img src="/img/ico/estudanteico.png"> </p>			
         <h2 align="center"> Cadastro de usuários do tipo Estudantes / <?php echo $cidadeSPC;?></h2>
         <p align="center"> Preencha os dados abaixo para fazer o seu pré-cadastramento online. </p>
+        <a href='/Estudantes/recuperacao/Castanhal' class='dalej'> Recuperar número de protocolo </a> 
     </div>
-</section>
+</div>
 
-<div class='clear'></div>
 
 <div class="container">
     <div class="sixteen columns form">
@@ -24,11 +24,12 @@
                     //echo "<script>alert('$msg')</script>";
                  }
             ?>
+            <p align=center> Antes de concluir o cadastro certifique-se de que seus dados estão CORRETOS, pois não poderão ser alterados!!! <p>
             <fieldset class="row1">    
                 <legend>Dados Pessoais</legend>
                 <p> 
                     <label>* Nome completo: </label>
-                    <input name="data[Estudante][nome]" id="EstudanteNome" maxlength="200" type="text" size="80" required  class="long" autofocus="true">
+                    <input name="data[Estudante][nome]" id="EstudanteNome" maxlength="200" type="text" size="80" required  class="long" >
                 </p>
                 <p> 
                     <label> Nome da Mãe: </label>
@@ -40,15 +41,15 @@
                 </p>
                 <p> 
                     <label>** RG: </label>
-                    <input name="data[Estudante][rg]" id="EstudanteRg" maxlength="20" type="text" required class="campos campopequeno rg desreq"  autocomplete="off" >
+                    <input name="data[Estudante][rg]" id="EstudanteRg" maxlength="20" type="text" class="campos campopequeno rg desreq"  autocomplete="off" >
                 </p>
                 <p> 
                     <label>* Orgão Emissor: </label>
-                    <input name="data[Estudante][emissor]" id="EstudanteEmissor" maxlength="10" type="text" required  class="campos campopequeno" placeholder="Ex: SSP, SEGUP, etc.">
+                    <input name="data[Estudante][emissor]" id="EstudanteEmissor" maxlength="10" type="text" class="campos campopequeno" placeholder="Ex: SSP, SEGUP, etc.">
                 </p>
                 <p id="cpf" title="Obrigatório para estudantes de nível superior."> 
                     <label>** CPF:</label>
-                    <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" class="campos campopequeno cpf desreq"  autocomplete="off">
+                    <input name="data[Estudante][cpf]" maxlength="20" type="text" id="EstudanteCpf" required class="campos campopequeno cpf desreq"  autocomplete="off">
                 </p>
                 <p>
                     <label >* Sexo: </label>
@@ -102,13 +103,13 @@
                     <select id="selectNivel"  class="campos campopequeno" name="data[Estudante][grau]">
                         <option value="1">Fundamental</option>
                         <option value="2">Médio</option>
-                        <option value="3">Superior</option>                                    
-                        <option value="4">Técnico</option>
-                        <option value="5">Pré-vestibular</option>
+						<option value="2">Pré-vestibular</option>
+						<option value="2.5">Técnico</option>
+                        <option value="3">Superior</option>
                     </select>
                 </p>                        
 
-                <p class="tecnico">  Válido somente para cursos com no mínimo 20 meses de duração </p>
+                <p class="tecnico">  Válido somente para cursos com no mínimo 12 meses de duração </p>
                 
                 <p> 
                     <label>* Nome da Instituição: </label>
@@ -127,12 +128,12 @@
 
                 <p id="ini">  
                     <label for="EstudanteDataIni">* Início:</label>  
-                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="4" type="text" size="20" required class="campos campopequeno desreq mesano">
+                    <input name="data[Estudante][dataIni]" id="EstudanteDataIni" maxlength="7" type="text" size="20" required class="campos campopequeno desreq mesano">
                 </p>
 
                 <p id="fim">
                     <label for="EstudanteDataFim">* Fim: </label>
-                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="4" type="text" required class="campos campopequeno desreq mesano">
+                    <input name="data[Estudante][dataFim]" id="EstudanteDataFim" maxlength="7" type="text" required class="campos campopequeno desreq mesano">
                 </p>
 
                 <p id="periodo"> 
@@ -171,16 +172,16 @@
                 -->
             </fieldset>
             <fieldset class="buttons">
-                <p style= "float:right; font-size:16px;">** Obrigatório para nível superior.<br>* Campos obrigatórios.</p>
+                <p style= "float:right; font-size:16px;">* Campos obrigatórios.<br>** Obrigatório para nível superior. </p>
                 <p style=" float:right;"> 
-                <button class="button" value="Voltar" id="btnvoltar" onclick="history.back();"> Voltar </button>  
+                    <button class="button" type="button" value="Voltar" id="btnvoltar" onclick="history.back();"> Voltar </button>  
                 <button class="button" type="submit" value="Salvar cadastro" id="btncadastrar"> Salvar cadastro! </button> </p>	 
             </fieldset>
         </form>
         </div>
     </div>
     <script>
-        $("html, body").animate({scrollTop:$("section.gray").offset().top }, 'slow'); //animação obrigatoria em todos os conteudos
+        $("html, body").animate({scrollTop:$("div.orange").offset().top }, 'slow'); //animação obrigatoria em todos os conteudos
 
     </script>
-</div> 
+</div> 	

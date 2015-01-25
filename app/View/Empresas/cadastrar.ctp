@@ -1,4 +1,4 @@
- <?php 
+<?php 
  $msg = $this->Session->flash();
   if(isset($msg) and $msg != ""){
       //echo ("erro em mensagem.ctp");
@@ -25,4 +25,3 @@
     <?php }  else {
         echo "<script> alert('Essa URL não pode ser acessada diretamente!!');</script>";
     }
-

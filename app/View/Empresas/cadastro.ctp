@@ -91,7 +91,7 @@
                     <input name="data[Empresa][telefone]" id="EmpresaTelefone" maxlength="15" type="text" required class="campos campopequeno telefone"  autocomplete="off" >        
                 </p>            
 
-                <p> 
+                <p title="Com o dígito 9">
                     <label> Celular: </label>
                     <input name="data[Empresa][celular]" id="EmpresaCelular" maxlength="15" type="text" class="campos campopequeno celular" autocomplete="off" >        
                 </p>

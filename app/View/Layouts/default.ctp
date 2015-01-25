@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
@@ -20,12 +20,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <!DOCTYPE html>
 <html>
     <head>
+<meta charset="UTF-8" >
         
             <?php echo $this->Html->charset(); ?>
             <title>
                     <?php echo $cakeDescription ?>:
                     <?php echo $this->fetch('title'); ?>
             </title>
+
+
             <?php
                     echo $this->Html->meta('icon');
 
@@ -45,6 +48,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
                     echo $this->fetch('script');
                    // echo filter_input(INPUT_SERVER, "DOCUMENT_ROOT");
             ?>
+
         
         <script type="text/javascript">
             //location.replace();
@@ -69,8 +73,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
          
         <script src="/js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="/js/jquery-1.2.6.pack.js" type="text/javascript"></script>
+		
+		<!--
+        <script src="/js/jquery.maskedinput-1.1.4.pack.js" type="text/javascript"></script> -->
+		
         <script src="/js/jquery.maskedinput.min.js" type="text/javascript"></script>
-        
 		<script src="http://maps.googleapis.com/maps/api/js"></script>
 		<script>
             var myCenter=new google.maps.LatLng(-1.295338, -47.929356);
@@ -111,31 +118,19 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         </script>
 		
         <script language="JavaScript" type="text/javascript">
-           $(document).ready(function($) {
-               
+           $(document).ready(function() {
+
+                
 				/*
-				,{completed:function(){
-					var strCPF = this.val();
-					if(testaCPF(strCPF)){
-						$("fieldset p#cpf").append("CPF válido!!");
-					}else{
-						$("fieldset p#cpf").append("CPF inválido!!");
-					}
-				}
-				}
-				*/
                 $("input[type='text']").keyup(function(){
                 //alert("asd");          
                   var str = $(this).val();
                   var res = str.UpperCase();
                   $(this).val(res);
                 });         
+                */
                 
-                
-		$.mask.definitions['~']="[+-]";
-
                 $("fieldset p input.cpf").mask("99999999999");
-                
                 $("fieldset p input.rg").mask("999999?-9");
                 $("fieldset p input.data").mask("99/99/9999");
                 $("fieldset p input.cnpj").mask("99.999.999/9999-99");
@@ -280,7 +275,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
         <script type="text/javascript">
             function imprimirComprovante(){
                if (!window.print){
-                  alert("Este navegador não suporta impressão!");
+                  alert("Este navegador não possui suporte para impressão!");
                   return;
                }
                window.print();
@@ -317,55 +312,94 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
        
        <header>
        <nav>
-            <div class="container">            
-				<div class="sixteen columns">
-					<ul class="mainMenu">
-						<li><a href="/" title="Home">Página Inicial</a></li>
-						<li><a href='/info/contato' title='Contato'>Fale Conosco!</a></li>
-						<li><a href='/info' title='ComoFunciona'>Como Funciona?</a></li>
-						<li><a href='/info/duvidas' title='Duvidas'>Dúvidas Frequentes</a></li>
-					</ul>
+            <div class="container">
+                <div class="sixteen columns">
+                    <ul class="mainMenu">
+                        <li><a href="/" title="Home">Página Inicial</a></li>
+                        <li><a href="/Info" title='Duvidas'>Dúvidas Frequentes</a></li>
+                        <li><a href='http://webmail.sistemasim.com.br' title='webmail'>Email</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </nav>
+
+       <div class='container'>
+			<div class='slogan'>
+				<div class='ten columns'>
+                                    
+                                    <h1></h1>
+                                    <h2></h2>
+                                   
+                                    
+				</div>
+
+				<div class='six columns'>
+                                    
+                   <ul class="menuH">
+                                                      
+                     <li>
+                        <a href="http://00244.transdatasmart.com.br:24401/TDMaxwebcommerce/default.aspx">
+                            <span class="menuH-icon"><img class="imgIcon" src="/img/ico/icnvale2.png" alt="Vale Transporte"></span>
+                            <div class="menuH-content">
+                                <h2 class="menuH-main">Vale transporte</h2>
+                                <h3 class="menuH-sub">Adquira seus VT's através do nosso sistema online! (Somente para empresas)</h3>
+                            </div>
+                        </a>
+                    </li>                
+                     
+                    <li>
+                        <a href="/Info">
+                            <span class="menuH-icon"><img class="imgIcon" src="/img/ico/icnsim.png" alt="Como Funciona?"></span>
+                            <div class="menuH-content">
+                                <h2 class="menuH-main">Como funciona?</h2>
+                                <h3 class="menuH-sub">Alguma dúvida? Tire todas as suas dúvidas clicando aqui!</h3>
+                            </div>
+                        </a>
+                    </li> 
+                                    
+                        
+                    </ul>
 				</div>
 			</div>
-		</nav>
-
-	      
+		</div>	
     </header>
         
-               
-        <div id="content">
-            <?php echo $this->fetch('content'); ?>        
-        </div> 
+
+    <div id="content">
+        <?php echo $this->fetch('content'); ?>        
+    </div> 
         
-            <footer>
-		<div class="container">
-			
-			<div class="six columns">
-                            <p></p> <br/>
-                                 <p align="center"> SIM | Copyright ‎© 2014 <p>
-                                <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:andre-rammos@hotmail.com">André Ramos</a></p>
-			</div>
+    <footer>
+        <div class="container">
 
-			<div class="four columns social">
-                            <p></p> <br />
-				<h5 align="center"> Redes sociais </h5>
-                                <p align="center">
-                                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img src='/img/ico/you_tube_1.png'></a>
-				<a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img src='/img/ico/facebook.png'></a>
-                                <a href="https://twitter.com/agorasim_"><img src='/img/ico/twitter.png'></a> </p>
-				</div>
+            <div class="six columns">
+               <p></p> <br/>
+               <p align="center"> SIM | Copyright &#8206;© 2014 <p>
+               <p align="center"> Desenvolvido por :<a href="mailto:biasilvabsi11@gmail.com"> Bianca Silva </a> e <a href="mailto:andre-rammos@hotmail.com">André Ramos</a></p>
+            </div>
 
-			<div class="six columns">
-                            <p></p><br />
-				<h5 align="center"> Entre em contato conosco! </h5>
-				 <p align="center"> Mande-nos um email: 
-					<a align="center" href='mailto:contato@sistemasim.com.br'>contato@sistemasim.com.br</a></p>
-                                 
-                        
-                        </div>
-		<a id="top" href='#'>&uarr;</a>	
+            <div class="four columns social">
+                <p></p> <br />
+                <h5 align="center"> Redes sociais </h5>
+                <p align="center">
+                <a href="https://www.youtube.com/channel/UC8JLlfsvyuL2NJfG83h-l5g"><img src='/img/ico/you_tube_1.png'></a>
+                <a href="https://www.facebook.com/pages/Agora-Sim/1420155461570401?ref=hl"><img src='/img/ico/facebook.png'></a>
+                <a href="https://twitter.com/agorasim_"><img src='/img/ico/twitter.png'></a> </p>
+            </div>
+
+            <div class="six columns">
+                <p></p><br />
+                <h5 align="center"> Entre em contato conosco! </h5>
+                <p align="center"> Mande-nos um email: 
+                <a align="center" href='mailto:duvidas@sistemasim.com.br'>contato@sistemasim.com.br</a></p>
+                <p align="center"> Telefone para contato (SIM Castanhal): (91)3721-6210</p>
+            </div>
+            <a id="top" href='#'>&uarr;</a>	
         </div>
-	</footer>
+    </footer>
+
+
     <script type="text/javascript">
         var toper = $('a#top');
         $(window).scroll(function(){
@@ -385,3 +419,4 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
            
     </body>
 </html>
+				

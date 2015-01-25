@@ -41,10 +41,10 @@ class Mysql extends DboSource {
  */
 	protected $_baseConfig = array(
 		'persistent' => true,
-		'host' => 'localhost',
-		'login' => 'root',
-		'password' => '',
-		'database' => 'cake',
+		'host' => 'mysql.sistemasim.com.br',
+		'login' => 'sistemasim',
+		'password' => 'bianca11',
+		'database' => 'sistemasim',
 		'port' => '3306',
 		'flags' => array()
 	);

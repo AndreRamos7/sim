@@ -1,6 +1,5 @@
 <?php
-class InfoController extends AppController {
-
+class InfoController extends AppController {    
     
     public function index() {
         $this->comoFunciona();
@@ -17,10 +16,9 @@ class InfoController extends AppController {
     public function duvidas() {
         $this->redirect("/pages/construcao");
     }
-    
-    
+	
+	public function suspenso () {
+		
+	}
         
-        
-   
-    
 }

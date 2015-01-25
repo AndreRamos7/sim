@@ -24,7 +24,7 @@
                 echo "<script>alert('$msg')</script>";
             }
         ?>
-         
+         <p align=center> Antes de concluir o cadastro certifique-se de que seus dados estão corretos, pois não poderão ser alterados!!! <p>
     <fieldset class="row1">    
         <legend>Dados Pessoais</legend>
         <p> 
@@ -63,7 +63,7 @@
         <legend>Endereço</legend>
         <p> 
             <label>* Endereço: </label>
-            <input name="data[Gratuito][endereco]" placeholder="Ex: Rua São João, S/N" id="GratuitoEndereco" maxlength="100" type="text" size="80" required class="long">
+            <input name="data[Gratuito][endereco]" placeholder="Ex: Rua São João, 618" id="GratuitoEndereco" maxlength="100" type="text" size="80" required class="long">
         </p>
         <p> 
             <label>* Bairro: </label>
@@ -94,7 +94,7 @@
             <label>* Telefone: </label>
             <input name="data[Gratuito][telefone]" id="GratuitoTelefone" maxlength="15" type="text" required class="campos campopequeno telefone" autocomplete="off">        
         </p>
-        <p> 
+        <p title="Com o dígito 9">
             <label>Celular: </label>
             <input name="data[Gratuito][celular]" id="GratuitoCelular" maxlength="15" type="text" class="campos campopequeno celular" autocomplete="off">        
         </p>

@@ -25,4 +25,3 @@
     <?php }  else {
         echo "<script> alert('Essa URL não pode ser acessada diretamente!!');</script>";
     }
-
